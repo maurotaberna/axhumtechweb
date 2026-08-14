@@ -6,12 +6,12 @@ Fecha: 2026-08-02
 
 Las decisiones bloqueantes quedaron confirmadas y aplicadas:
 
-- Operations X es el isotipo oficial.
+- El logo maestro circular recibido el 13 de agosto de 2026 es la fuente oficial.
 - La A queda retirada de las piezas nuevas de la web.
 - Prueba de 7 dias, licencia de pago unico y funcionamiento local confirmados.
 - Mauro Gustavo Exequel Taberna se presenta como fundador y Tecnico en Computacion y Redes.
 - La conversion principal es una conversacion directa; no se publican tablas generales de precios.
-- El branding anterior fue preservado en `_legacy/branding-v1-placeholder-20260802/`.
+- Operations X y el branding anterior fueron preservados en `_legacy/`.
 - El paquete oficial vive en `assets/branding/logos/`.
 
 ## Fuentes revisadas
@@ -25,9 +25,9 @@ Las decisiones bloqueantes quedaron confirmadas y aplicadas:
 
 ## Diagnostico ejecutivo
 
-La direccion de marca esta definida, pero el sistema final de identidad no esta cerrado. Existe una decision conceptual a favor de Operations X y la paleta azul noche, petroleo, cobre, marfil y texto oscuro. Sin embargo, los recursos disponibles muestran variantes incompatibles entre si.
+La direccion de marca quedo cerrada con el logo maestro circular. La X oficial combina dos brazos azul marino a la izquierda, un chevron naranja a la derecha y un aro multicolor. La web mantiene superficies claras y usa azul noche, petroleo, cobre, naranja y marfil.
 
-No conviene incorporar mas material visual a la web hasta resolver el isotipo definitivo y producir capturas comerciales actuales.
+Las nuevas piezas deben derivarse del maestro guardado en `assets/branding/source/axhum-tech-logo-master.png`.
 
 ## Lo que esta definido
 
@@ -35,11 +35,11 @@ No conviene incorporar mas material visual a la web hasta resolver el isotipo de
 - Producto de gestion: Axhum Gestion.
 - Producto gastronomico: Axhum Comanda.
 - Axhum Gym: producto futuro o en desarrollo; no se presenta todavia en la portada.
-- Concepto de marca: Operations X.
+- Concepto de marca: X oficial dentro del aro circular de Axhum Tech.
 - Paleta institucional:
   - Azul noche: `#0D2235`.
   - Azul petroleo: `#23435C`.
-  - Cobre: `#B9944D`.
+  - Naranja del logo: `#F0641E`.
   - Marfil: `#F5F1E7`.
   - Texto oscuro: `#14202C`.
 - Modo claro como presentacion principal.
@@ -55,7 +55,7 @@ No conviene incorporar mas material visual a la web hasta resolver el isotipo de
 - Axhum Gestion implementa un simbolo que visualmente se lee como una A.
 - Las capturas comerciales antiguas tambien muestran una A y una paleta turquesa.
 
-Decision resuelta: Operations X es la forma oficial y la A no se usa en nuevas piezas web.
+Decision resuelta el 14 de agosto de 2026: el logo maestro circular reemplaza Operations X. La A y la X cruzada no se usan en piezas nuevas.
 
 ### 2. Logotipo
 
@@ -127,14 +127,7 @@ Estas condiciones deben confirmarse antes de publicarlas. Tambien debe explicars
 
 ### Identidad
 
-1. Logo maestro definitivo de Axhum Tech.
-2. Isotipo Operations X definitivo.
-3. Wordmark horizontal y vertical.
-4. Versiones clara, oscura y monocromatica.
-5. Logos de Axhum Gestion y Axhum Comanda derivados del mismo sistema.
-6. Favicon y app icons en tamanos normalizados.
-7. Imagen Open Graph para compartir la web.
-8. Manual breve de marca con usos correctos e incorrectos.
+Completado: logo maestro, isotipo circular, firmas horizontales, versiones clara/oscura/monocromatica, firmas de Gestion y Comanda, favicon, imagen Open Graph y reglas de uso.
 
 ### Producto y ventas
 
@@ -163,7 +156,7 @@ Estas condiciones deben confirmarse antes de publicarlas. Tambien debe explicars
 
 ## Decisiones requeridas del propietario
 
-1. Confirmar Operations X como isotipo y retirar la A.
+1. Completado: confirmar el logo maestro circular y retirar Operations X y la A.
 2. Elegir tipografia corporativa: serif editorial o sans moderna.
 3. Confirmar prueba de 7 dias, pago unico y alcance del soporte.
 4. Autorizar o descartar la publicacion del perfil de Mauro Taberna como fundador y Tecnico en Computacion y Redes.

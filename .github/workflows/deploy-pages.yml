@@ -1,0 +1,37 @@
+name: Deploy Axhum Tech to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: axhumtech-pages-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Build production site
+        shell: pwsh
+        run: ./src/build-production.ps1
+
+      - name: Validate JavaScript
+        run: node --check builds/production/script.js
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy builds/production --project-name=axhumtech --branch=main
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

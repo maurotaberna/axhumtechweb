@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 120" role="img" aria-labelledby="title desc">
   <title id="title">Axhum Gestion</title>
-  <desc id="desc">Firma oficial del producto Axhum Gestion</desc>
-  <g transform="translate(10 20)">
-    <path d="M8 72h20L80 8H60z" fill="#0D2235"/>
-    <path d="M8 8h20l52 64H60z" fill="#B9944D"/>
-    <path d="m44 32 8 8-8 8-8-8z" fill="#F5F1E7"/>
+  <desc id="desc">Firma del producto con el isotipo oficial de Axhum Tech</desc>
+  <g transform="translate(10 10)">
+    <circle cx="50" cy="50" r="46" fill="#FFFEFA" stroke="#0B2744" stroke-width="2"/>
+    <path d="M16 16A46 46 0 0 1 72 10" fill="none" stroke="#0B3158" stroke-width="4"/><path d="M72 10A46 46 0 0 1 96 36" fill="none" stroke="#F05A1A" stroke-width="4"/><path d="M96 36A46 46 0 0 1 94 62" fill="none" stroke="#15945B" stroke-width="4"/><path d="M94 62A46 46 0 0 1 61 94" fill="none" stroke="#F2B51D" stroke-width="4"/><path d="M61 94A46 46 0 0 1 20 86" fill="none" stroke="#D92B2B" stroke-width="4"/><path d="M20 86A46 46 0 0 1 16 16" fill="none" stroke="#15895A" stroke-width="4"/>
+    <path d="M22 24Q20 20 25 20h13q3 0 5 3l14 20-10 10zM47 47l10 10-14 20q-2 3-5 3H25q-5 0-2-4z" fill="#0B3158"/><path d="m48 50 19-27q2-3 5-3h13q5 0 2 4L68 50l19 26q3 4-2 4H72q-3 0-5-3z" fill="#F0641E"/>
   </g>
-  <text x="126" y="62" fill="#0D2235" font-family="Manrope, Montserrat, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="4">AXHUM</text>
-  <text x="126" y="100" fill="#B9944D" font-family="Manrope, Montserrat, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="6">GESTION</text>
+  <text x="126" y="58" fill="#0D2235" font-family="Manrope, Montserrat, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="4">AXHUM</text>
+  <text x="126" y="98" fill="#F0641E" font-family="Manrope, Montserrat, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="6">GESTION</text>
 </svg>

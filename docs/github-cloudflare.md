@@ -32,7 +32,7 @@ Un Worker o Pages Functions se agregara solo si aparece una necesidad concreta, 
 
 El proyecto Pages actual fue creado mediante Direct Upload. Cloudflare no permite convertirlo despues en un proyecto con integracion Git nativa. Para conservar `axhumtech.pages.dev`, la automatizacion recomendada es GitHub Actions con Wrangler.
 
-Antes de activar el workflow se necesitan dos secretos en `GitHub > Settings > Secrets and variables > Actions`:
+El workflow activo vive en `.github/workflows/deploy-pages.yml`. Cada push a `main` construye, valida y publica la web. Utiliza estos secretos en `GitHub > Settings > Secrets and variables > Actions`:
 
 - `CLOUDFLARE_ACCOUNT_ID`: ID de la cuenta de Cloudflare.
 - `CLOUDFLARE_API_TOKEN`: token personalizado con permiso `Account > Cloudflare Pages > Edit`, limitado a la cuenta de Axhum Tech.

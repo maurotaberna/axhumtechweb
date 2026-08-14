@@ -24,7 +24,7 @@ Mantener la web separada de Gestion, Comanda, Gym y SaaS, con una estructura cla
 
 ## Branding oficial
 
-- Identidad: Operations X.
+- Identidad: logo maestro circular de Axhum Tech.
 - Fuentes oficiales: `assets/branding/logos/`.
 - Pieza social: `assets/branding/social/axhum-tech-og.png`.
 - Version anterior: `_legacy/branding-v1-placeholder-20260802/`.

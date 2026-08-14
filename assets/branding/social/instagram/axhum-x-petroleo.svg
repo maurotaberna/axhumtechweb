@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
-  <rect width="1000" height="1000" fill="#0D3B4E"/>
-  <circle cx="500" cy="500" r="500" fill="#0D3B4E"/>
-
-  <g transform="translate(108.9 144.4) scale(8.89)">
-    <path d="M8 72h20L80 8H60z" fill="#F4F2EE"/>
-    <path d="M8 8h20l52 64H60z" fill="#B87333"/>
-    <path d="m44 32 8 8-8 8-8-8z" fill="#0D3B4E"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><rect width="1000" height="1000" fill="#0D3B4E"/><image href="axhum-x-transparente.svg" width="1000" height="1000"/></svg>

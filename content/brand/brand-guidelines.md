@@ -1,4 +1,4 @@
-# Axhum Tech - identidad oficial Operations X
+# Axhum Tech - identidad oficial
 
 Estado: memoria comercial vigente para web, Instagram y comunicacion comercial.
 
@@ -22,7 +22,7 @@ Axhum Gym permanece como linea futura y no se comunica en la portada institucion
 
 ## Identidad
 
-El isotipo oficial es Operations X: dos piezas que se cruzan para representar operacion, integracion y experiencia. La X pertenece a Axhum Tech y no debe sustituirse por una A.
+El isotipo oficial es la X del logo maestro circular: dos brazos azul marino a la izquierda y un chevron naranja a la derecha, contenidos por un aro multicolor. La X pertenece a Axhum Tech y no debe sustituirse por una A, una X tipografica ni la version cruzada de Operations X.
 
 ## Paleta
 
@@ -64,10 +64,10 @@ Firmas de producto:
 
 - No reconstruir el logo con texto HTML.
 - No cambiar la proporcion entre isotipo y wordmark.
-- No aplicar sombras, biseles ni degradados al logo.
+- No agregar sombras, biseles ni degradados que no formen parte de los archivos oficiales.
 - No recolorear el cobre para representar advertencias o errores.
 - No usar la version para fondo oscuro sobre una superficie clara.
-- Mantener un area libre minima equivalente al rombo central del isotipo.
+- Mantener un area libre minima equivalente al grosor del aro circular.
 - Por debajo de 120 px de ancho, usar solo el isotipo.
 
 ## Estados funcionales

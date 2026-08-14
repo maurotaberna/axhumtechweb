@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
-  <title id="title">Axhum Tech</title>
-  <rect width="128" height="128" rx="28" fill="#0D2235"/>
-  <path d="M24 100h22l58-72H82z" fill="#F5F1E7"/>
-  <path d="M24 28h22l58 72H82z" fill="#B9944D"/>
-  <path d="m64 54 10 10-10 10-10-10z" fill="#0D2235"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title"><title id="title">Isotipo cuadrado oficial de Axhum Tech</title><rect width="128" height="128" rx="28" fill="#0D2235"/><g transform="translate(14 14)"><circle cx="50" cy="50" r="46" fill="#FFFEFA" stroke="#F5F1E7" stroke-width="2"/><path d="M16 16A46 46 0 0 1 72 10" fill="none" stroke="#0B3158" stroke-width="4"/><path d="M72 10A46 46 0 0 1 96 36" fill="none" stroke="#F05A1A" stroke-width="4"/><path d="M96 36A46 46 0 0 1 94 62" fill="none" stroke="#15945B" stroke-width="4"/><path d="M94 62A46 46 0 0 1 61 94" fill="none" stroke="#F2B51D" stroke-width="4"/><path d="M61 94A46 46 0 0 1 20 86" fill="none" stroke="#D92B2B" stroke-width="4"/><path d="M20 86A46 46 0 0 1 16 16" fill="none" stroke="#15895A" stroke-width="4"/><path d="M22 24Q20 20 25 20h13q3 0 5 3l14 20-10 10zM47 47l10 10-14 20q-2 3-5 3H25q-5 0-2-4z" fill="#0B3158"/><path d="m48 50 19-27q2-3 5-3h13q5 0 2 4L68 50l19 26q3 4-2 4H72q-3 0-5-3z" fill="#F0641E"/></g></svg>
