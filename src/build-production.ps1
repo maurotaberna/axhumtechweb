@@ -1,9 +1,9 @@
 $ErrorActionPreference = "Stop"
 
 $projectRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
-$sourceDir = Join-Path $projectRoot "builds\preview"
-$outputDir = Join-Path $projectRoot "builds\production"
-$expectedOutput = [System.IO.Path]::GetFullPath((Join-Path $projectRoot "builds\production"))
+$sourceDir = Join-Path $projectRoot "builds/preview"
+$outputDir = Join-Path $projectRoot "builds/production"
+$expectedOutput = [System.IO.Path]::GetFullPath((Join-Path $projectRoot "builds/production"))
 
 if (-not (Test-Path -LiteralPath $sourceDir -PathType Container)) {
   throw "No se encontro el sitio fuente en $sourceDir"
@@ -22,16 +22,16 @@ Get-ChildItem -LiteralPath $sourceDir -Filter "*.html" | Copy-Item -Destination 
 Copy-Item -LiteralPath (Join-Path $sourceDir "styles.css") -Destination $outputDir -Force
 Copy-Item -LiteralPath (Join-Path $sourceDir "script.js") -Destination $outputDir -Force
 
-$outputBranding = Join-Path $outputDir "assets\branding"
+$outputBranding = Join-Path $outputDir "assets/branding"
 New-Item -ItemType Directory -Path $outputBranding -Force | Out-Null
-Copy-Item -LiteralPath (Join-Path $projectRoot "assets\branding\logos") -Destination $outputBranding -Recurse -Force
+Copy-Item -LiteralPath (Join-Path $projectRoot "assets/branding/logos") -Destination $outputBranding -Recurse -Force
 
 $outputSocial = Join-Path $outputBranding "social"
 New-Item -ItemType Directory -Path $outputSocial | Out-Null
-Copy-Item -LiteralPath (Join-Path $projectRoot "assets\branding\social\axhum-tech-og.png") -Destination $outputSocial -Force
+Copy-Item -LiteralPath (Join-Path $projectRoot "assets/branding/social/axhum-tech-og.png") -Destination $outputSocial -Force
 
 @("favicon.svg", "favicon-512.png", "_headers", "robots.txt", "sitemap.xml") | ForEach-Object {
-  Copy-Item -LiteralPath (Join-Path $projectRoot "public\$_") -Destination $outputDir -Force
+  Copy-Item -LiteralPath (Join-Path $projectRoot "public/$_") -Destination $outputDir -Force
 }
 
 Get-ChildItem -LiteralPath $outputDir -Filter "*.html" | ForEach-Object {

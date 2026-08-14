@@ -24,7 +24,7 @@ Un Worker o Pages Functions se agregara solo si aparece una necesidad concreta, 
 ## Flujo actual
 
 1. Editar `builds/preview/` y el contenido fuente correspondiente.
-2. Ejecutar `powershell -ExecutionPolicy Bypass -File .\src\build-production.ps1`.
+2. Ejecutar `powershell -ExecutionPolicy Bypass -File .\src\build-production.ps1` en Windows o `pwsh ./src/build-production.ps1` en CI.
 3. Validar `builds/production/`.
 4. Desplegar con `npx.cmd wrangler pages deploy builds/production --project-name axhumtech --branch main`.
 
