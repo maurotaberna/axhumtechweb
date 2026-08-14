@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Axhum Tech</title>
+  <rect width="128" height="128" rx="28" fill="#0D2235"/>
+  <path d="M24 100h22l58-72H82z" fill="#F5F1E7"/>
+  <path d="M24 28h22l58 72H82z" fill="#B9944D"/>
+  <path d="m64 54 10 10-10 10-10-10z" fill="#0D2235"/>
+</svg>

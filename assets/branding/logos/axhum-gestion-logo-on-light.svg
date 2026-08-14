@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 120" role="img" aria-labelledby="title desc">
+  <title id="title">Axhum Gestion</title>
+  <desc id="desc">Firma oficial del producto Axhum Gestion</desc>
+  <g transform="translate(10 20)">
+    <path d="M8 72h20L80 8H60z" fill="#0D2235"/>
+    <path d="M8 8h20l52 64H60z" fill="#B9944D"/>
+    <path d="m44 32 8 8-8 8-8-8z" fill="#F5F1E7"/>
+  </g>
+  <text x="126" y="62" fill="#0D2235" font-family="Manrope, Montserrat, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="4">AXHUM</text>
+  <text x="126" y="100" fill="#B9944D" font-family="Manrope, Montserrat, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="6">GESTION</text>
+</svg>

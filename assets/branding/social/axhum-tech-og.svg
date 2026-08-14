@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Axhum Tech</title>
+  <desc id="desc">Desarrollo de software y soluciones digitales</desc>
+  <rect width="1200" height="630" fill="#F5F1E7"/>
+  <path d="M0 0h1200v18H0z" fill="#B9944D"/>
+  <circle cx="1080" cy="110" r="230" fill="#DCE9E9"/>
+  <circle cx="1110" cy="570" r="280" fill="#F1E3C8"/>
+  <g transform="translate(82 90) scale(1.45)">
+    <path d="M8 84h22L88 12H66z" fill="#0D2235"/>
+    <path d="M8 12h22l58 72H66z" fill="#B9944D"/>
+    <path d="m48 38 10 10-10 10-10-10z" fill="#F5F1E7"/>
+  </g>
+  <text x="250" y="182" fill="#0D2235" font-family="Manrope, Montserrat, Arial, sans-serif" font-size="72" font-weight="700" letter-spacing="10">AXHUM</text>
+  <text x="255" y="230" fill="#B9944D" font-family="Manrope, Montserrat, Arial, sans-serif" font-size="27" font-weight="700" letter-spacing="13">TECH</text>
+  <text x="82" y="392" fill="#14202C" font-family="Manrope, Montserrat, Arial, sans-serif" font-size="64" font-weight="700">Tu necesidad puede</text>
+  <text x="82" y="468" fill="#23435C" font-family="Manrope, Montserrat, Arial, sans-serif" font-size="64" font-weight="700">convertirse en software.</text>
+  <text x="86" y="552" fill="#64717A" font-family="DM Sans, Arial, sans-serif" font-size="25">Software a medida · Plataformas · Automatizacion · Web</text>
+</svg>

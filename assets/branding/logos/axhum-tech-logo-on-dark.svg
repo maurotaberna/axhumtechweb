@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 96" role="img" aria-labelledby="title desc">
+  <title id="title">Axhum Tech</title>
+  <desc id="desc">Logo oficial Operations X para fondos oscuros</desc>
+  <g transform="translate(10 12) scale(.9)">
+    <path d="M8 72h20L80 8H60z" fill="#F5F1E7"/>
+    <path d="M8 8h20l52 64H60z" fill="#B9944D"/>
+    <path d="m44 32 8 8-8 8-8-8z" fill="#0D2235"/>
+  </g>
+  <text x="105" y="50" fill="#F5F1E7" font-family="Manrope, Montserrat, Arial, sans-serif" font-size="39" font-weight="700" letter-spacing="7">AXHUM</text>
+  <text x="108" y="76" fill="#D7B66F" font-family="Manrope, Montserrat, Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="8">TECH</text>
+</svg>

@@ -1,0 +1,13 @@
+# Private, rejected, or historical material
+_legacy/
+backups/
+
+# Generated deployment output
+builds/production/
+
+# Local tooling
+.wrangler/
+node_modules/
+*.log
+.DS_Store
+Thumbs.db
