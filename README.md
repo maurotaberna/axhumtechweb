@@ -44,7 +44,8 @@ El prototipo estatico navegable vive en `builds/preview/` e incluye:
 
 - Repositorio oficial: `https://github.com/maurotaberna/axhumtechweb`.
 - Hosting: Cloudflare Pages.
-- URL: `https://axhumtech.pages.dev`.
+- Dominio oficial: `https://axhumtech.com`.
+- URL tecnica de respaldo: `https://axhumtech.pages.dev`.
 - Build: `powershell -ExecutionPolicy Bypass -File .\src\build-production.ps1`.
 - Salida generada: `builds/production/`.
 

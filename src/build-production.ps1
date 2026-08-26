@@ -38,11 +38,13 @@ Get-ChildItem -LiteralPath $outputDir -Filter "*.html" | ForEach-Object {
   $html = Get-Content -LiteralPath $_.FullName -Raw
   $html = $html.Replace("../../assets/", "./assets/")
   $html = $html.Replace("../../public/", "./")
+  $html = $html.Replace("axhum-tech-logo-professional-50kb.png`"", "axhum-tech-logo-professional-50kb.png?v=logo-professional-20260821`"")
   $html = $html.Replace("axhum-tech-logo-on-light.svg`"", "axhum-tech-logo-on-light.svg?v=logo-master-20260814`"")
   $html = $html.Replace("axhum-mark-on-light.svg`"", "axhum-mark-on-light.svg?v=logo-master-20260814`"")
   $html = $html.Replace("axhum-gestion-logo-on-light.svg`"", "axhum-gestion-logo-on-light.svg?v=logo-master-20260814`"")
   $html = $html.Replace("axhum-comanda-logo-on-light.svg`"", "axhum-comanda-logo-on-light.svg?v=logo-master-20260814`"")
   $html = $html.Replace("axhum-tech-og.png`"", "axhum-tech-og.png?v=logo-master-20260814`"")
+  $html = $html.Replace("favicon-512.png`"", "favicon-512.png?v=logo-professional-20260821`"")
   $html = $html.Replace("favicon.svg`"", "favicon.svg?v=logo-master-20260814`"")
   Set-Content -LiteralPath $_.FullName -Value $html -Encoding utf8
 }

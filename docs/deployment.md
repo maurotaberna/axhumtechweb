@@ -18,7 +18,13 @@ Cloudflare Pages conserva los despliegues anteriores. El rollback se realiza des
 
 ## Dominio
 
-El dominio inicial es el subdominio `pages.dev` asignado por Cloudflare. Un dominio propio se agrega luego desde `Custom domains`, sin mezclar DNS o despliegues de otros productos Axhum.
+- Dominio oficial: `https://axhumtech.com`.
+- Dominio tecnico de Pages: `https://axhumtech.pages.dev`.
+- DNS autoritativo: Cloudflare, una vez reemplazados los nameservers del registrador.
+- Proyecto asociado: `Workers & Pages > axhumtech > Custom domains`.
+- `www.axhumtech.com` debe redirigir con codigo 301 a `https://axhumtech.com`, conservando ruta y parametros.
+
+Durante una migracion se conserva el subdominio `pages.dev` hasta validar DNS, certificado TLS, dominio raiz y redireccion de `www`. No se reutilizan zonas ni proyectos de otros productos Axhum.
 
 ## Regla
 

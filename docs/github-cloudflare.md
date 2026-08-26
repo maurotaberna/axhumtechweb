@@ -5,7 +5,8 @@
 - Repositorio: `https://github.com/maurotaberna/axhumtechweb`
 - Rama de produccion: `main`
 - Proyecto Cloudflare Pages: `axhumtech`
-- URL publica: `https://axhumtech.pages.dev`
+- Dominio oficial: `https://axhumtech.com`
+- URL tecnica de respaldo: `https://axhumtech.pages.dev`
 
 El repositorio contiene codigo, contenido, branding y documentacion de la web. No se versionan `_legacy`, `backups` ni `builds/production`.
 

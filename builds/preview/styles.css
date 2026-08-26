@@ -80,7 +80,9 @@ h3 {
 }
 
 .logo-link img {
-  width: 178px;
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
 }
 
 .main-nav {
@@ -998,7 +1000,9 @@ h3 {
 }
 
 .site-footer img {
-  width: 176px;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
 }
 
 .site-footer p {
@@ -1933,7 +1937,8 @@ h3 {
   }
 
   .logo-link img {
-    width: 142px;
+    width: 56px;
+    height: 56px;
   }
 
   .header-contact {
