@@ -34,6 +34,17 @@ Copy-Item -LiteralPath (Join-Path $projectRoot "assets/branding/social/axhum-tec
   Copy-Item -LiteralPath (Join-Path $projectRoot "public/$_") -Destination $outputDir -Force
 }
 
+# Huella de la hoja de estilos y del script. Sin esto, Cloudflare sigue
+# sirviendo la version anterior hasta un dia entero (`_headers` les pone
+# max-age=86400) y un despliegue queda con el HTML nuevo y los estilos viejos.
+# Ya paso una vez: el sitio salio sin CSS ni JS.
+$huella = {
+  param($archivo)
+  (Get-FileHash -LiteralPath (Join-Path $outputDir $archivo) -Algorithm SHA256).Hash.Substring(0, 10).ToLower()
+}
+$vCss = & $huella "styles.css"
+$vJs = & $huella "script.js"
+
 # UTF-8 sin BOM, explicito: Windows PowerShell 5.1 lee/escribe ANSI por defecto
 # y eso rompe los acentos de los datos estructurados JSON-LD.
 $utf8 = New-Object System.Text.UTF8Encoding($false)
@@ -42,6 +53,8 @@ Get-ChildItem -LiteralPath $outputDir -Filter "*.html" | ForEach-Object {
   $html = [System.IO.File]::ReadAllText($_.FullName, $utf8)
   $html = $html.Replace("../../assets/", "./assets/")
   $html = $html.Replace("../../public/", "./")
+  $html = $html.Replace('href="./styles.css"', 'href="./styles.css?v=' + $vCss + '"')
+  $html = $html.Replace('src="./script.js"', 'src="./script.js?v=' + $vJs + '"')
 
   # URLs limpias. Cloudflare Pages redirige /pagina.html a /pagina con un 308,
   # asi que si dejaramos los .html cada enlace interno y cada canonical
