@@ -49,4 +49,4 @@ El prototipo estatico navegable vive en `builds/preview/` e incluye:
 - Build: `powershell -ExecutionPolicy Bypass -File .\src\build-production.ps1`.
 - Salida generada: `builds/production/`.
 
-La integracion y los pasos de despliegue se documentan en `docs/github-cloudflare.md`.
+La integracion y los pasos de despliegue se documentan en `docs/github-cloudflare.md`. La migracion y validacion del dominio oficial viven en `docs/domain-axhumtech-com.md`.
