@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+# Los buscadores llegan a las paginas por su URL sin extension: /servicios,
+# /posicionamiento, etc. La version .html redirige a esa forma.
+
 Sitemap: https://axhumtech.com/sitemap.xml

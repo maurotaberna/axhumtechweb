@@ -34,10 +34,24 @@ Copy-Item -LiteralPath (Join-Path $projectRoot "assets/branding/social/axhum-tec
   Copy-Item -LiteralPath (Join-Path $projectRoot "public/$_") -Destination $outputDir -Force
 }
 
+# UTF-8 sin BOM, explicito: Windows PowerShell 5.1 lee/escribe ANSI por defecto
+# y eso rompe los acentos de los datos estructurados JSON-LD.
+$utf8 = New-Object System.Text.UTF8Encoding($false)
+
 Get-ChildItem -LiteralPath $outputDir -Filter "*.html" | ForEach-Object {
-  $html = Get-Content -LiteralPath $_.FullName -Raw
+  $html = [System.IO.File]::ReadAllText($_.FullName, $utf8)
   $html = $html.Replace("../../assets/", "./assets/")
   $html = $html.Replace("../../public/", "./")
+
+  # URLs limpias. Cloudflare Pages redirige /pagina.html a /pagina con un 308,
+  # asi que si dejaramos los .html cada enlace interno y cada canonical
+  # apuntaria a una redireccion. En builds/preview los .html se conservan
+  # porque ahi el sitio se abre directamente desde el disco.
+  $html = $html.Replace('href="./index.html"', 'href="/"')
+  $html = $html.Replace('href="./index.html#', 'href="/#')
+  $html = [regex]::Replace($html, 'href="\./([a-z0-9-]+)\.html(#[a-z0-9-]+)?"', 'href="/$1$2"')
+  $html = $html.Replace("https://axhumtech.com/index.html", "https://axhumtech.com/")
+  $html = [regex]::Replace($html, 'https://axhumtech\.com/([a-z0-9-]+)\.html', 'https://axhumtech.com/$1')
   $html = $html.Replace("axhum-tech-logo-professional-50kb.png`"", "axhum-tech-logo-professional-50kb.png?v=logo-professional-20260821`"")
   $html = $html.Replace("axhum-tech-logo-on-light.svg`"", "axhum-tech-logo-on-light.svg?v=mark-centered-20260826`"")
   $html = $html.Replace("axhum-mark-on-light.svg`"", "axhum-mark-on-light.svg?v=mark-centered-20260826`"")
@@ -46,7 +60,7 @@ Get-ChildItem -LiteralPath $outputDir -Filter "*.html" | ForEach-Object {
   $html = $html.Replace("axhum-tech-og.png`"", "axhum-tech-og.png?v=logo-master-20260814`"")
   $html = $html.Replace("favicon-512.png`"", "favicon-512.png?v=mark-centered-20260826`"")
   $html = $html.Replace("favicon.svg`"", "favicon.svg?v=mark-centered-20260826`"")
-  Set-Content -LiteralPath $_.FullName -Value $html -Encoding utf8
+  [System.IO.File]::WriteAllText($_.FullName, $html, $utf8)
 }
 
 Write-Host "Build de produccion creado en $outputDir"

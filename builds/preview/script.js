@@ -1,94 +1,326 @@
-document.documentElement.classList.add("js");
+/* Axhum Tech — interacciones del sitio.
+   Todo es progresivo: sin JS la pagina sigue siendo legible y navegable. */
 
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const progress = document.querySelector(".scroll-progress");
-const revealItems = document.querySelectorAll("[data-reveal]");
-const parallaxItem = document.querySelector("[data-parallax]");
-const menuToggle = document.querySelector(".menu-toggle");
-const siteHeader = document.querySelector(".site-header");
-const mainNavigation = document.querySelector(".main-nav");
-const signalField = document.querySelector("[data-signal-field]");
+(function () {
+  "use strict";
 
-if (menuToggle && siteHeader && mainNavigation) {
-  const closeMenu = () => {
-    siteHeader.classList.remove("menu-open");
-    menuToggle.setAttribute("aria-expanded", "false");
-  };
+  var root = document.documentElement;
+  root.classList.add("js");
 
-  menuToggle.addEventListener("click", () => {
-    const willOpen = !siteHeader.classList.contains("menu-open");
-    siteHeader.classList.toggle("menu-open", willOpen);
-    menuToggle.setAttribute("aria-expanded", String(willOpen));
-  });
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  mainNavigation.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+  /* ---------------------------------------------------------------
+     Ano en curso
+     --------------------------------------------------------------- */
+  var yearSlots = document.querySelectorAll("[data-year]");
+  if (yearSlots.length) {
+    var year = String(new Date().getFullYear());
+    yearSlots.forEach(function (slot) {
+      slot.textContent = year;
+    });
+  }
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 1050) closeMenu();
-  });
-}
+  /* ---------------------------------------------------------------
+     Aparicion por scroll
+     --------------------------------------------------------------- */
+  var revealItems = document.querySelectorAll("[data-reveal]");
 
-if (reduceMotion) {
-  revealItems.forEach((item) => item.classList.add("is-visible"));
-} else {
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach(function (item) {
+      item.classList.add("is-visible");
+    });
+  } else {
+    var revealObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -48px" }
+    );
+
+    revealItems.forEach(function (item, index) {
+      item.style.setProperty("--reveal-delay", Math.min(index % 4, 3) * 80 + "ms");
+      revealObserver.observe(item);
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     Navegacion de escritorio con paneles
+     --------------------------------------------------------------- */
+  var navTriggers = document.querySelectorAll("[data-nav-trigger]");
+
+  function closeAllPanels(except) {
+    navTriggers.forEach(function (trigger) {
+      if (trigger === except) return;
+      var panel = document.getElementById(trigger.getAttribute("aria-controls"));
+      trigger.setAttribute("aria-expanded", "false");
+      if (panel) panel.classList.remove("is-open");
+    });
+  }
+
+  navTriggers.forEach(function (trigger) {
+    var panel = document.getElementById(trigger.getAttribute("aria-controls"));
+    if (!panel) return;
+
+    var parent = trigger.closest("li");
+    var hoverTimer;
+
+    function open() {
+      closeAllPanels(trigger);
+      trigger.setAttribute("aria-expanded", "true");
+      panel.classList.add("is-open");
+    }
+
+    function close() {
+      trigger.setAttribute("aria-expanded", "false");
+      panel.classList.remove("is-open");
+    }
+
+    trigger.addEventListener("click", function (event) {
+      event.preventDefault();
+      if (trigger.getAttribute("aria-expanded") === "true") close();
+      else open();
+    });
+
+    if (parent && window.matchMedia("(hover: hover)").matches) {
+      parent.addEventListener("mouseenter", function () {
+        window.clearTimeout(hoverTimer);
+        open();
       });
+      parent.addEventListener("mouseleave", function () {
+        hoverTimer = window.setTimeout(close, 160);
+      });
+    }
+
+    panel.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        close();
+        trigger.focus();
+      }
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest("[data-nav-trigger]") && !event.target.closest(".nav-panel")) {
+      closeAllPanels();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeAllPanels();
+  });
+
+  /* ---------------------------------------------------------------
+     Menu movil
+     --------------------------------------------------------------- */
+  var menuBtn = document.querySelector(".menu-btn");
+  var drawer = document.getElementById("mobile-drawer");
+
+  if (menuBtn && drawer) {
+    var setDrawer = function (open) {
+      menuBtn.setAttribute("aria-expanded", String(open));
+      drawer.classList.toggle("is-open", open);
+      document.body.style.overflow = open ? "hidden" : "";
+    };
+
+    menuBtn.addEventListener("click", function () {
+      setDrawer(menuBtn.getAttribute("aria-expanded") !== "true");
+    });
+
+    drawer.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        setDrawer(false);
+      });
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && drawer.classList.contains("is-open")) {
+        setDrawer(false);
+        menuBtn.focus();
+      }
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1080 && drawer.classList.contains("is-open")) setDrawer(false);
+    });
+
+    drawer.querySelectorAll(".drawer-title").forEach(function (title) {
+      var sub = document.getElementById(title.getAttribute("aria-controls"));
+      if (!sub) return;
+      title.addEventListener("click", function () {
+        var open = title.getAttribute("aria-expanded") !== "true";
+        title.setAttribute("aria-expanded", String(open));
+        sub.classList.toggle("is-open", open);
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     Brillo que sigue al cursor en las tarjetas
+     --------------------------------------------------------------- */
+  if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
+    document.querySelectorAll(".card").forEach(function (card) {
+      card.addEventListener("pointermove", function (event) {
+        var box = card.getBoundingClientRect();
+        card.style.setProperty("--mx", ((event.clientX - box.left) / box.width) * 100 + "%");
+        card.style.setProperty("--my", ((event.clientY - box.top) / box.height) * 100 + "%");
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------------
+     Progreso de lectura, cabecera fija y CTA movil
+     --------------------------------------------------------------- */
+  var progress = document.querySelector(".progress-bar");
+  var header = document.querySelector(".site-header");
+  var dock = document.querySelector(".dock");
+  var heroPanel = document.querySelector("[data-float]");
+  var lastY = window.scrollY;
+  var ticking = false;
+
+  function onFrame() {
+    var y = window.scrollY;
+    var range = document.documentElement.scrollHeight - window.innerHeight;
+
+    if (progress) {
+      progress.style.transform = "scaleX(" + (range > 0 ? Math.min(y / range, 1) : 0) + ")";
+    }
+
+    if (header) {
+      header.classList.toggle("is-stuck", y > 12);
+    }
+
+    if (dock) {
+      dock.classList.toggle("is-visible", y > 420);
+    }
+
+    if (heroPanel && !reduceMotion && y < window.innerHeight * 1.4) {
+      heroPanel.style.transform = "translate3d(0," + (y * -0.045).toFixed(2) + "px,0)";
+    }
+
+    lastY = y;
+    ticking = false;
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(onFrame);
     },
-    { threshold: 0.16, rootMargin: "0px 0px -40px" }
+    { passive: true }
   );
 
-  revealItems.forEach((item, index) => {
-    item.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
-    revealObserver.observe(item);
-  });
-}
+  onFrame();
 
-if (signalField && !reduceMotion) {
-  signalField.addEventListener("pointermove", (event) => {
-    const bounds = signalField.getBoundingClientRect();
-    const offsetX = ((event.clientX - bounds.left) / bounds.width - 0.5) * 16;
-    const offsetY = ((event.clientY - bounds.top) / bounds.height - 0.5) * 16;
-    signalField.style.setProperty("--signal-x", `${offsetX.toFixed(1)}px`);
-    signalField.style.setProperty("--signal-y", `${offsetY.toFixed(1)}px`);
-  });
+  /* ---------------------------------------------------------------
+     Formulario de contacto -> mensaje de WhatsApp
+     Sin backend: arma el mensaje y abre la conversacion.
+     --------------------------------------------------------------- */
+  var contactForm = document.querySelector("[data-wa-form]");
 
-  signalField.addEventListener("pointerleave", () => {
-    signalField.style.setProperty("--signal-x", "0px");
-    signalField.style.setProperty("--signal-y", "0px");
-  });
-}
+  if (contactForm) {
+    var phone = contactForm.getAttribute("data-wa-phone") || "543865267037";
+    var status = contactForm.querySelector("[data-wa-status]");
 
-let framePending = false;
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-const updatePageMotion = () => {
-  const scrollTop = window.scrollY;
-  const scrollRange = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollRatio = scrollRange > 0 ? scrollTop / scrollRange : 0;
+      var data = new FormData(contactForm);
+      var get = function (key) {
+        return String(data.get(key) || "").trim();
+      };
 
-  if (progress) {
-    progress.style.transform = `scaleX(${scrollRatio})`;
+      var lines = [
+        "Hola Axhum Tech, quiero conversar un proyecto.",
+        "",
+        "Nombre: " + (get("nombre") || "-"),
+        "Negocio: " + (get("negocio") || "-"),
+        "Necesito: " + (get("interes") || "-"),
+      ];
+
+      var detalle = get("detalle");
+      if (detalle) {
+        lines.push("", "Detalle:", detalle);
+      }
+
+      var contacto = get("contacto");
+      if (contacto) {
+        lines.push("", "Me pueden responder a: " + contacto);
+      }
+
+      var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(lines.join("\n"));
+      var opened = window.open(url, "_blank", "noopener");
+
+      if (status) {
+        status.hidden = false;
+        status.textContent = opened
+          ? "Listo. Se abrió WhatsApp con tu mensaje preparado; solo falta enviarlo."
+          : "Tu navegador bloqueó la ventana. Escribinos directamente al +54 3865 267037.";
+      }
+
+      if (!opened) window.location.href = url;
+    });
   }
 
-  if (parallaxItem && !reduceMotion && scrollTop < window.innerHeight * 1.3) {
-    parallaxItem.style.setProperty("--parallax-y", `${scrollTop * 0.08}px`);
-  }
+  /* ---------------------------------------------------------------
+     Diagramas interactivos
+     Cada caja del dibujo enciende su explicacion y el camino que la
+     conecta. Funciona con mouse, con el dedo y con el teclado.
+     --------------------------------------------------------------- */
+  document.querySelectorAll("[data-diagram]").forEach(function (diagrama) {
+    var nodos = diagrama.querySelectorAll("[data-node]");
+    var lineas = diagrama.querySelectorAll("[data-edge]");
+    var notas = diagrama.querySelectorAll("[data-note]");
+    if (!nodos.length || !notas.length) return;
 
-  framePending = false;
-};
+    var hoverReal = window.matchMedia("(hover: hover)").matches;
 
-window.addEventListener(
-  "scroll",
-  () => {
-    if (framePending) return;
-    framePending = true;
-    window.requestAnimationFrame(updatePageMotion);
-  },
-  { passive: true }
-);
+    function activar(clave) {
+      nodos.forEach(function (nodo) {
+        nodo.classList.toggle("is-active", nodo.getAttribute("data-node") === clave);
+        nodo.setAttribute("aria-pressed", String(nodo.getAttribute("data-node") === clave));
+      });
 
-updatePageMotion();
+      lineas.forEach(function (linea) {
+        var toca = linea.getAttribute("data-edge").split(" ").indexOf(clave) !== -1;
+        linea.classList.toggle("is-lit", toca);
+      });
+
+      notas.forEach(function (nota) {
+        nota.classList.toggle("is-active", nota.getAttribute("data-note") === clave);
+      });
+    }
+
+    nodos.forEach(function (nodo) {
+      var clave = nodo.getAttribute("data-node");
+
+      nodo.addEventListener("click", function () {
+        activar(clave);
+      });
+
+      nodo.addEventListener("keydown", function (event) {
+        if (event.key !== "Enter" && event.key !== " " && event.key !== "Spacebar") return;
+        event.preventDefault();
+        activar(clave);
+      });
+
+      nodo.addEventListener("focus", function () {
+        activar(clave);
+      });
+
+      if (hoverReal) {
+        nodo.addEventListener("mouseenter", function () {
+          activar(clave);
+        });
+      }
+    });
+
+    // Arranca con la primera caja explicada, para que el panel nunca este vacio.
+    activar(nodos[0].getAttribute("data-node"));
+  });
+})();

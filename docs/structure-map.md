@@ -29,4 +29,7 @@ Todo material nuevo para la web debe entrar primero por `content/` o `assets/` s
 
 ## Despliegue
 
-El destino de despliegue todavia no esta definido. Cuando se elija, debe quedar documentado en `docs/deployment.md` junto con el flujo de build, variables de entorno y canal de publicacion.
+Cloudflare Pages, proyecto `axhumtech`, dominio `axhumtech.com`. El build lo
+genera `src/build-production.ps1` desde `builds/preview/` y lo publica el flujo
+de GitHub Actions en cada push a `main`. Detalle en `docs/github-cloudflare.md`,
+`docs/deployment.md` y `docs/seo.md`.

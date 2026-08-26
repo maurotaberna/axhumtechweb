@@ -1,32 +1,615 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
   <head>
-    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Axhum Comanda | Pedidos y caja para gastronom&iacute;a</title>
-    <meta name="description" content="Mesas, pedidos, comandas, delivery y caja para bares, caf&eacute;s, rotiser&iacute;as y restaurantes chicos." />
-    <link rel="canonical" href="https://axhumtech.com/comanda.html" /><meta property="og:type" content="website" /><meta property="og:url" content="https://axhumtech.com/comanda.html" /><meta property="og:title" content="Axhum Comanda | Pedidos y caja para gastronom&iacute;a" /><meta property="og:description" content="Mesas, pedidos, comandas, delivery y caja para operaciones gastron&oacute;micas." /><meta property="og:image" content="https://axhumtech.com/assets/branding/social/axhum-tech-og.png" /><meta property="og:locale" content="es_AR" />
-    <meta name="theme-color" content="#F5F1E7" /><link rel="icon" href="../../public/favicon-512.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css" /><script src="./script.js" defer></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Axhum Comanda | Sistema de comandas y caja para gastronom&iacute;a</title>
+    <meta name="description" content="Mesas, comandas, pedidos para llevar, delivery, men&uacute;, insumos y caja para bares, caf&eacute;s, rotiser&iacute;as y restaurantes chicos. Funciona en la PC del local, sin internet." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Axhum Tech" />
+    <link rel="canonical" href="https://axhumtech.com/comanda.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Axhum Tech" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:url" content="https://axhumtech.com/comanda.html" />
+    <meta property="og:title" content="Axhum Comanda | Pedidos y caja para gastronom&iacute;a" />
+    <meta property="og:description" content="Mesas, comandas, delivery y caja, en la PC del local y sin depender de internet." />
+    <meta property="og:image" content="https://axhumtech.com/assets/branding/social/axhum-tech-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Axhum Tech, desarrollo de software y soluciones digitales" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Axhum Comanda | Pedidos y caja para gastronom&iacute;a" />
+    <meta name="twitter:description" content="Mesas, comandas, delivery y caja, en la PC del local y sin depender de internet." />
+    <meta name="twitter:image" content="https://axhumtech.com/assets/branding/social/axhum-tech-og.png" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F4F2EE" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#061C27" />
+    <link rel="icon" href="../../public/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../../public/favicon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="../../public/favicon-512.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://axhumtech.com/#organizacion",
+            "name": "Axhum Tech",
+            "alternateName": "Axhum Tech | Software para empresas",
+            "url": "https://axhumtech.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://axhumtech.com/assets/branding/logos/axhum-tech-logo-professional-50kb.png",
+              "width": 720,
+              "height": 720
+            },
+            "image": "https://axhumtech.com/assets/branding/social/axhum-tech-og.png",
+            "description": "Empresa argentina de desarrollo de software a medida, páginas web, tiendas online, automatizaciones y posicionamiento en Google para negocios y empresas.",
+            "telephone": "+543865267037",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Concepción",
+              "addressRegion": "Tucumán",
+              "addressCountry": "AR"
+            },
+            "areaServed": { "@type": "Country", "name": "Argentina" },
+            "knowsLanguage": "es-AR",
+            "founder": {
+              "@type": "Person",
+              "@id": "https://axhumtech.com/nosotros.html#fundador",
+              "name": "Mauro Gustavo Exequel Taberna",
+              "jobTitle": "Fundador y desarrollador"
+            },
+            "sameAs": ["https://www.instagram.com/axhumtech"],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "telephone": "+543865267037",
+                "availableLanguage": ["Spanish"],
+                "areaServed": "AR"
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://axhumtech.com/#sitio",
+            "url": "https://axhumtech.com/",
+            "name": "Axhum Tech",
+            "inLanguage": "es-AR",
+            "publisher": { "@id": "https://axhumtech.com/#organizacion" }
+          }
+,
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://axhumtech.com/comanda.html#producto",
+            "name": "Axhum Comanda",
+            "url": "https://axhumtech.com/comanda.html",
+            "applicationCategory": "BusinessApplication",
+            "applicationSubCategory": "Sistema de comandas para gastronomía",
+            "operatingSystem": "Windows 10, Windows 11",
+            "inLanguage": "es-AR",
+            "description": "Sistema de comandas y caja para bares, cafés, rotiserías y restaurantes chicos: salón y mesas, comandas activas, pedidos para llevar, delivery, menú, insumos, caja diaria y reportes. Funciona en la PC del local sin depender de internet.",
+            "publisher": { "@id": "https://axhumtech.com/#organizacion" },
+            "featureList": [
+              "Salón, sectores y mesas",
+              "Comandas activas y estados de pedido",
+              "Pedidos para llevar y delivery",
+              "Menú, insumos y costos",
+              "Caja diaria con apertura y cierre",
+              "Reportes de ventas y ticket promedio"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "ARS",
+              "availability": "https://schema.org/InStock",
+              "url": "https://axhumtech.com/contacto.html",
+              "seller": { "@id": "https://axhumtech.com/#organizacion" }
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://axhumtech.com/comanda.html#miga",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://axhumtech.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://axhumtech.com/productos.html" },
+              { "@type": "ListItem", "position": 3, "name": "Axhum Comanda" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://axhumtech.com/comanda.html#preguntas",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Axhum Comanda necesita internet?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Se usa localmente en una PC con Windows dentro del local, así que el salón sigue funcionando aunque se caiga la conexión."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Emite factura fiscal?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Los comprobantes y reportes son internos de gestión y no reemplazan una factura fiscal. Si tu local necesita facturar, lo conversamos: la facturación electrónica está resuelta en Axhum Gestión + ARCA y se puede evaluar para gastronomía."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Sirve para un local con delivery?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Los pedidos para llevar y de delivery se manejan separados de las mesas, con los datos que hacen falta para la entrega."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Se puede probar antes de comprar?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí, hay 7 días de prueba, y antes te hacemos una demostración enfocada en cómo trabaja tu local."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div class="scroll-progress" aria-hidden="true"></div>
-    <header class="site-header"><a class="logo-link" href="./index.html" aria-label="Axhum Tech, inicio"><img src="../../assets/branding/logos/axhum-tech-logo-professional-50kb.png" alt="Axhum Tech" /></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Men&uacute;</button><nav id="main-navigation" class="main-nav" aria-label="Navegaci&oacute;n principal"><a href="./servicios.html">Soluciones</a><a href="./index.html#proceso">Proceso</a><a href="./index.html#productos" aria-current="page">Productos</a><a href="./nosotros.html">Nosotros</a><a class="mobile-contact-link" href="./contacto.html">Contacto</a></nav><a class="header-contact" href="./contacto.html">Hablemos <span>&#8599;</span></a></header>
-    <main>
-      <section class="page-hero product-page-hero comanda-page-hero">
-        <div data-reveal><img class="page-product-logo" src="../../assets/branding/logos/axhum-comanda-logo-on-light.svg" alt="Axhum Comanda" /><p class="overline">Sistema de comandas para gastronom&iacute;a</p><h1>Pedidos claros. Servicio m&aacute;s &aacute;gil.</h1><p>Organiz&aacute; mesas, comandas, pedidos externos y caja desde la PC del local, sin depender de internet.</p><div class="hero-actions"><a class="button button-primary" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20una%20demo%20de%20Axhum%20Comanda." target="_blank" rel="noreferrer">Pedir una demo</a><a class="text-link" href="#funciones">Ver funciones <span>&#8595;</span></a></div></div>
-        <div class="product-facts" data-reveal><div><strong>7 d&iacute;as</strong><span>de prueba</span></div><div><strong>Pago &uacute;nico</strong><span>sin cuota mensual de licencia</span></div><div><strong>Una PC</strong><span>en el local gastron&oacute;mico</span></div></div>
+    <a class="skip-link" href="#contenido">Ir al contenido</a>
+    <div class="progress-bar" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="./index.html" aria-label="Axhum Tech, ir al inicio">
+          <img src="../../assets/branding/logos/axhum-tech-logo-professional-50kb.png" alt="" width="52" height="52" />
+          <span class="brand-text">
+            <strong>Axhum Tech</strong>
+            <span>Software &middot; Web &middot; SEO</span>
+          </span>
+        </a>
+
+        <nav aria-label="Navegaci&oacute;n principal">
+          <ul class="nav">
+            <li>
+              <button class="nav-link" type="button" data-nav-trigger aria-expanded="false" aria-controls="panel-servicios">Servicios <i class="caret" aria-hidden="true"></i></button>
+              <div class="nav-panel" id="panel-servicios">
+                <a href="./software-a-medida.html"><strong>Software a medida</strong><small>Sistemas, plataformas y apps para tu operaci&oacute;n</small></a>
+                <a href="./webs.html"><strong>P&aacute;ginas web y tiendas</strong><small>Dise&ntilde;o, desarrollo, dominio y hosting</small></a>
+                <a href="./posicionamiento.html"><strong>Posicionamiento en Google</strong><small>SEO, Google Business Profile y contenido</small></a>
+                <a href="./servicios.html"><strong>Ver todos los servicios</strong><small>Automatizaci&oacute;n, CRM, SaaS e integraciones</small></a>
+              </div>
+            </li>
+            <li>
+              <button class="nav-link" type="button" data-nav-trigger aria-expanded="false" aria-controls="panel-productos">Productos <i class="caret" aria-hidden="true"></i></button>
+              <div class="nav-panel" id="panel-productos">
+                <a href="./gestion.html"><strong>Axhum Gesti&oacute;n</strong><small>Ventas, stock, caja y clientes</small></a>
+                <a href="./comanda.html" aria-current="page"><strong>Axhum Comanda</strong><small>Mesas, pedidos y caja para gastronom&iacute;a</small></a>
+                <a href="./arena.html"><strong>Arena</strong><small>Gesti&oacute;n integral para gimnasios</small></a>
+                <a href="./productos.html"><strong>Todo el ecosistema</strong><small>Distribuidora, CRM, Bot y Log&iacute;stica</small></a>
+              </div>
+            </li>
+            <li><a class="nav-link" href="./nosotros.html">Nosotros</a></li>
+            <li><a class="nav-link" href="./faq.html">Preguntas</a></li>
+          </ul>
+        </nav>
+
+        <a class="header-cta" href="./contacto.html">Pedir propuesta <span aria-hidden="true">&#8599;</span></a>
+
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Abrir men&uacute;">
+          <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="drawer" id="mobile-drawer">
+      <div class="drawer-group">
+        <button class="drawer-title" type="button" aria-expanded="false" aria-controls="drawer-servicios">Servicios <i class="caret" aria-hidden="true"></i></button>
+        <div class="drawer-sub" id="drawer-servicios"><div>
+          <a href="./software-a-medida.html">Software a medida</a>
+          <a href="./webs.html">P&aacute;ginas web y tiendas online</a>
+          <a href="./posicionamiento.html">Posicionamiento en Google</a>
+          <a href="./servicios.html">Todos los servicios</a>
+        </div></div>
+      </div>
+      <div class="drawer-group">
+        <button class="drawer-title" type="button" aria-expanded="false" aria-controls="drawer-productos">Productos <i class="caret" aria-hidden="true"></i></button>
+        <div class="drawer-sub" id="drawer-productos"><div>
+          <a href="./gestion.html">Axhum Gesti&oacute;n</a>
+          <a href="./comanda.html" aria-current="page">Axhum Comanda</a>
+          <a href="./arena.html">Arena &middot; gimnasios</a>
+          <a href="./productos.html">Todo el ecosistema</a>
+        </div></div>
+      </div>
+      <div class="drawer-group"><a href="./nosotros.html">Nosotros</a></div>
+      <div class="drawer-group"><a href="./faq.html">Preguntas frecuentes</a></div>
+      <div class="drawer-group"><a href="./contacto.html">Contacto</a></div>
+      <div class="drawer-foot">
+        <a class="btn btn--wide" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20conversar%20un%20proyecto." target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+      </div>
+      <p class="drawer-meta">+54 3865 267037 &middot; Argentina</p>
+    </div>
+
+    <main id="contenido">
+      <section class="page-hero">
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Migas de pan">
+            <a href="./index.html">Inicio</a><span aria-hidden="true">/</span>
+            <a href="./productos.html">Productos</a><span aria-hidden="true">/</span>
+            <span>Axhum Comanda</span>
+          </nav>
+          <div class="hero-split">
+            <div data-reveal>
+              <img src="../../assets/branding/logos/axhum-comanda-logo-on-light.svg" alt="Axhum Comanda" width="260" height="52" style="height: 52px; width: auto; margin-bottom: 22px" />
+              <p class="eyebrow">Sistema de comandas para gastronom&iacute;a</p>
+              <h1>Pedidos claros. Servicio m&aacute;s &aacute;gil.</h1>
+              <p class="lede">Organiz&aacute; mesas, comandas, pedidos para llevar, delivery y caja desde la PC del local. Sin papelitos, sin gritar a la cocina y sin depender de internet.</p>
+              <div class="actions">
+                <a class="btn btn--lg" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20una%20demo%20de%20Axhum%20Comanda." target="_blank" rel="noreferrer">Pedir una demo <span aria-hidden="true">&#8599;</span></a>
+                <a class="arrow-link" href="#funciones">Ver funciones <span aria-hidden="true">&#8595;</span></a>
+              </div>
+            </div>
+            <div class="panel panel--tone" data-reveal>
+              <p class="eyebrow">De un vistazo</p>
+              <ul class="checklist">
+                <li><strong>7 d&iacute;as de prueba.</strong> Prob&aacute;s el circuito completo en tu local.</li>
+                <li><strong>Pago &uacute;nico.</strong> Licencia por equipo, sin cuota mensual.</li>
+                <li><strong>Funciona sin internet.</strong> El servicio no se frena si se corta la conexi&oacute;n.</li>
+                <li><strong>Una PC central.</strong> Pensado para el mostrador del local.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section id="funciones" class="section feature-section"><div class="section-title" data-reveal><p class="overline">Flujo gastron&oacute;mico</p><h2>La operaci&oacute;n del sal&oacute;n, ordenada.</h2></div><div class="feature-grid"><article data-reveal><span>01</span><h3>Sal&oacute;n y mesas</h3><p>Organizaci&oacute;n de sectores y apertura de pedidos desde cada mesa.</p></article><article data-reveal><span>02</span><h3>Comandas activas</h3><p>Seguimiento de pedidos abiertos, estados, &iacute;tems y subtotales.</p></article><article data-reveal><span>03</span><h3>Para llevar y delivery</h3><p>Separaci&oacute;n clara de pedidos externos y datos necesarios para la entrega.</p></article><article data-reveal><span>04</span><h3>Caja diaria</h3><p>Apertura, cierre y control entre montos esperados y contados.</p></article><article data-reveal><span>05</span><h3>Men&uacute; e insumos</h3><p>Platos, bebidas, categor&iacute;as, precios, costos y stock.</p></article><article data-reveal><span>06</span><h3>Reportes y alertas</h3><p>Ventas, ticket promedio, horarios, medios de pago y productos destacados.</p></article></div></section>
+      <section class="section section--dark" id="como-funciona">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">C&oacute;mo funciona</p>
+            <h2>C&oacute;mo viaja un pedido desde que lo piden hasta que se cobra.</h2>
+            <p class="lede">Vengan de donde vengan, todos los pedidos entran al mismo lugar. Eso es lo que evita el papelito perdido y la mesa que reclama.</p>
+          </div>
 
-      <section class="section fit-section"><div data-reveal><p class="overline">Para qui&eacute;n es</p><h2>Equipos chicos que necesitan velocidad y control.</h2></div><ul class="fit-list" data-reveal><li>Bares</li><li>Caf&eacute;s</li><li>Rotiser&iacute;as</li><li>Restaurantes chicos</li><li>Locales con pedidos para llevar</li><li>Negocios gastron&oacute;micos con una PC central</li></ul></section>
+          <div class="diagram" data-diagram data-reveal>
+            <div class="diagram-canvas">
+      <svg class="dg-ancho" viewBox="0 0 720 500" role="img" aria-label="Diagrama: los pedidos de mesa, para llevar y delivery entran a una comanda, pasan por cocina o mostrador y terminan en la caja." xmlns="http://www.w3.org/2000/svg">
+        <title>Diagrama: los pedidos de mesa, para llevar y delivery entran a una comanda, pasan por cocina o mostrador y terminan en la caja.</title>
+      <defs>
+        <marker id="dg-punta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path class="dg-punta" d="M0 0 L10 5 L0 10 Z" />
+        </marker>
+        <marker id="dg-punta-on" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path class="dg-punta dg-punta--on" d="M0 0 L10 5 L0 10 Z" />
+        </marker>
+      </defs>
+      <path class="dg-edge" data-edge="mesa comanda" d="M106 96 C106 118 360 118 360 140" />
+      <path class="dg-edge" data-edge="llevar comanda" d="M360 96 L360 140" />
+      <path class="dg-edge" data-edge="delivery comanda" d="M614 96 C614 118 360 118 360 140" />
+      <path class="dg-edge" data-edge="comanda cocina" d="M360 228 C360 250 234 250 234 272" />
+      <path class="dg-edge" data-edge="comanda entrega" d="M360 228 C360 250 486 250 486 272" />
+      <path class="dg-edge" data-edge="cocina caja" d="M234 360 C234 382 360 382 360 404" />
+      <path class="dg-edge" data-edge="entrega caja" d="M486 360 C486 382 360 382 360 404" />
+      <g class="dg-node" data-node="mesa" tabindex="0" role="button" aria-pressed="false" aria-label="Salón: Mesa">
+        <rect class="dg-focus" x="2" y="2" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="8" y="8" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="106" y="44" text-anchor="middle">Sal&oacute;n</text>
+        <text class="dg-label" x="106" y="67" text-anchor="middle">Mesa</text>
+      </g>
+      <g class="dg-node" data-node="llevar" tabindex="0" role="button" aria-pressed="false" aria-label="Mostrador: Para llevar">
+        <rect class="dg-focus" x="256" y="2" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="262" y="8" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="360" y="44" text-anchor="middle">Mostrador</text>
+        <text class="dg-label" x="360" y="67" text-anchor="middle">Para llevar</text>
+      </g>
+      <g class="dg-node" data-node="delivery" tabindex="0" role="button" aria-pressed="false" aria-label="Afuera: Delivery">
+        <rect class="dg-focus" x="510" y="2" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="516" y="8" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="614" y="44" text-anchor="middle">Afuera</text>
+        <text class="dg-label" x="614" y="67" text-anchor="middle">Delivery</text>
+      </g>
+      <g class="dg-node" data-node="comanda" tabindex="0" role="button" aria-pressed="false" aria-label="El corazón: Comanda abierta">
+        <rect class="dg-focus" x="256" y="134" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="262" y="140" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="360" y="166" text-anchor="middle">El coraz&oacute;n</text>
+        <text class="dg-label" x="360" y="192" text-anchor="middle">Comanda</text>
+        <text class="dg-label" x="360" y="214" text-anchor="middle">abierta</text>
+      </g>
+      <g class="dg-node" data-node="cocina" tabindex="0" role="button" aria-pressed="false" aria-label="Preparación: Cocina y barra">
+        <rect class="dg-focus" x="130" y="266" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="136" y="272" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="234" y="298" text-anchor="middle">Preparaci&oacute;n</text>
+        <text class="dg-label" x="234" y="324" text-anchor="middle">Cocina</text>
+        <text class="dg-label" x="234" y="346" text-anchor="middle">y barra</text>
+      </g>
+      <g class="dg-node" data-node="entrega" tabindex="0" role="button" aria-pressed="false" aria-label="Sale: Entrega">
+        <rect class="dg-focus" x="382" y="266" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="388" y="272" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="486" y="308" text-anchor="middle">Sale</text>
+        <text class="dg-label" x="486" y="331" text-anchor="middle">Entrega</text>
+      </g>
+      <g class="dg-node" data-node="caja" tabindex="0" role="button" aria-pressed="false" aria-label="Cierra: Cobro y caja">
+        <rect class="dg-focus" x="256" y="398" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="262" y="404" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="360" y="440" text-anchor="middle">Cierra</text>
+        <text class="dg-label" x="360" y="463" text-anchor="middle">Cobro y caja</text>
+      </g>
+      </svg>
+      <svg class="dg-movil" viewBox="0 0 360 846" role="img" aria-label="Diagrama: los pedidos de mesa, para llevar y delivery entran a una comanda, pasan por cocina o mostrador y terminan en la caja." xmlns="http://www.w3.org/2000/svg">
+        <title>Diagrama: los pedidos de mesa, para llevar y delivery entran a una comanda, pasan por cocina o mostrador y terminan en la caja.</title>
+      <defs>
+        <marker id="dg-punta-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path class="dg-punta" d="M0 0 L10 5 L0 10 Z" />
+        </marker>
+        <marker id="dg-punta-on-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path class="dg-punta dg-punta--on" d="M0 0 L10 5 L0 10 Z" />
+        </marker>
+      </defs>
+      <path class="dg-edge dg-edge--m" data-edge="mesa llevar delivery comanda" d="M180 326 L180 366" />
+      <path class="dg-edge dg-edge--m" data-edge="comanda cocina entrega" d="M180 454 L180 494" />
+      <path class="dg-edge dg-edge--m" data-edge="cocina entrega caja" d="M180 710 L180 750" />
+      <text class="dg-aside" x="34" y="20" text-anchor="start">ENTRAN POR CUALQUIERA</text>
+      <g class="dg-node" data-node="mesa" tabindex="0" role="button" aria-pressed="false" aria-label="Salón: Mesa">
+        <rect class="dg-focus" x="28" y="28" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="34" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="70" text-anchor="middle">Sal&oacute;n</text>
+        <text class="dg-label" x="180" y="93" text-anchor="middle">Mesa</text>
+      </g>
+      <g class="dg-node" data-node="llevar" tabindex="0" role="button" aria-pressed="false" aria-label="Mostrador: Para llevar">
+        <rect class="dg-focus" x="28" y="130" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="136" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="172" text-anchor="middle">Mostrador</text>
+        <text class="dg-label" x="180" y="195" text-anchor="middle">Para llevar</text>
+      </g>
+      <g class="dg-node" data-node="delivery" tabindex="0" role="button" aria-pressed="false" aria-label="Afuera: Delivery">
+        <rect class="dg-focus" x="28" y="232" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="238" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="274" text-anchor="middle">Afuera</text>
+        <text class="dg-label" x="180" y="297" text-anchor="middle">Delivery</text>
+      </g>
+      <path class="dg-llave" d="M16 78 L16 282" />
+      <path class="dg-llave" d="M16 78 L34 78" />
+      <path class="dg-llave" d="M16 180 L34 180" />
+      <path class="dg-llave" d="M16 282 L34 282" />
+      <g class="dg-node" data-node="comanda" tabindex="0" role="button" aria-pressed="false" aria-label="El corazón: Comanda abierta">
+        <rect class="dg-focus" x="28" y="360" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="366" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="392" text-anchor="middle">El coraz&oacute;n</text>
+        <text class="dg-label" x="180" y="418" text-anchor="middle">Comanda</text>
+        <text class="dg-label" x="180" y="440" text-anchor="middle">abierta</text>
+      </g>
+      <text class="dg-aside" x="34" y="506" text-anchor="start">EN PARALELO</text>
+      <g class="dg-node" data-node="cocina" tabindex="0" role="button" aria-pressed="false" aria-label="Preparación: Cocina y barra">
+        <rect class="dg-focus" x="28" y="514" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="520" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="546" text-anchor="middle">Preparaci&oacute;n</text>
+        <text class="dg-label" x="180" y="572" text-anchor="middle">Cocina</text>
+        <text class="dg-label" x="180" y="594" text-anchor="middle">y barra</text>
+      </g>
+      <g class="dg-node" data-node="entrega" tabindex="0" role="button" aria-pressed="false" aria-label="Sale: Entrega">
+        <rect class="dg-focus" x="28" y="616" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="622" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="658" text-anchor="middle">Sale</text>
+        <text class="dg-label" x="180" y="681" text-anchor="middle">Entrega</text>
+      </g>
+      <path class="dg-llave" d="M16 564 L16 666" />
+      <path class="dg-llave" d="M16 564 L34 564" />
+      <path class="dg-llave" d="M16 666 L34 666" />
+      <g class="dg-node" data-node="caja" tabindex="0" role="button" aria-pressed="false" aria-label="Cierra: Cobro y caja">
+        <rect class="dg-focus" x="28" y="744" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="750" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="786" text-anchor="middle">Cierra</text>
+        <text class="dg-label" x="180" y="809" text-anchor="middle">Cobro y caja</text>
+      </g>
+      </svg>
+            </div>
+            <div class="diagram-notes">
+              <p class="eyebrow">Paso a paso</p>
+          <div class="dg-note" data-note="mesa">
+            <h3>Mesa</h3>
+            <p>Abr&iacute;s el pedido desde la mesa y va sumando &iacute;tems durante todo el servicio. En cualquier momento se ve el subtotal, sin tener que sumar de memoria.</p>
+          </div>
+          <div class="dg-note" data-note="llevar">
+            <h3>Para llevar</h3>
+            <p>El pedido de mostrador no ocupa una mesa ni ensucia el mapa del sal&oacute;n. Queda en su propia lista, con su nombre y su hora.</p>
+          </div>
+          <div class="dg-note" data-note="delivery">
+            <h3>Delivery</h3>
+            <p>Se separa de todo lo dem&aacute;s y guarda los datos que hacen falta para entregar: direcci&oacute;n, tel&eacute;fono y c&oacute;mo paga.</p>
+          </div>
+          <div class="dg-note" data-note="comanda">
+            <h3>Comanda abierta</h3>
+            <p>Todos los pedidos, vengan de donde vengan, se ven en una sola pantalla con su estado. Es la respuesta a la pregunta que se hace cien veces por noche: &iquest;esto ya sali&oacute;?</p>
+          </div>
+          <div class="dg-note" data-note="cocina">
+            <h3>Cocina y barra</h3>
+            <p>Lo que hay que preparar queda escrito, no gritado. Menos platos equivocados y menos discusiones sobre qui&eacute;n dijo qu&eacute;.</p>
+          </div>
+          <div class="dg-note" data-note="entrega">
+            <h3>Entrega</h3>
+            <p>El pedido se marca como entregado y deja de figurar como pendiente. El sal&oacute;n se ve como est&aacute; realmente, no como estaba hace veinte minutos.</p>
+          </div>
+          <div class="dg-note" data-note="caja">
+            <h3>Cobro y caja</h3>
+            <p>Se cobra contra la comanda, as&iacute; que no se pierde nada de lo que se consumi&oacute;. Al cierre, el turno queda cuadrado con su ticket promedio y sus medios de pago.</p>
+          </div>
+              <p class="dg-hint">Toc&aacute; cada caja del dibujo</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section class="section honesty-panel"><div data-reveal><p class="overline">Alcance claro</p><h2>Hecho para una operaci&oacute;n concreta.</h2></div><div data-reveal><p>Axhum Comanda se usa localmente en una PC con Windows. Los registros y comprobantes son internos y no reemplazan una factura fiscal.</p><p>En la demo revisamos el circuito del local para confirmar si el producto se adapta a la forma real de trabajar.</p></div></section>
+      <section class="section" id="funciones">
+        <div class="wrap">
+          <div class="section-head section-head--split" data-reveal>
+            <div>
+              <p class="eyebrow">Flujo gastron&oacute;mico</p>
+              <h2>La operaci&oacute;n del sal&oacute;n, ordenada.</h2>
+            </div>
+            <p class="lede">Cada pantalla est&aacute; hecha para usarse con el local lleno: pocos clics, texto grande y estados que se entienden de un vistazo.</p>
+          </div>
 
-      <section class="contact" data-reveal><p class="overline">Conoc&eacute; Axhum Comanda</p><h2>Mostranos c&oacute;mo toma pedidos tu equipo.</h2><div class="contact-bottom"><p>Preparamos una demostraci&oacute;n enfocada en sal&oacute;n, para llevar, delivery o el flujo que m&aacute;s te importe.</p><a class="button button-copper" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20probar%20Axhum%20Comanda." target="_blank" rel="noreferrer">Solicitar demo <span>&#8599;</span></a></div></section>
+          <div class="grid grid--3">
+            <article class="card" data-reveal>
+              <span class="card-num">01</span>
+              <h3>Sal&oacute;n y mesas</h3>
+              <p>Sectores, mesas y apertura de pedidos desde cada una, con el estado del sal&oacute;n visible en una sola pantalla.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">02</span>
+              <h3>Comandas activas</h3>
+              <p>Seguimiento de pedidos abiertos, estados, &iacute;tems agregados y subtotales al momento.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">03</span>
+              <h3>Para llevar y delivery</h3>
+              <p>Pedidos externos separados de las mesas, con los datos necesarios para la entrega.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">04</span>
+              <h3>Caja diaria</h3>
+              <p>Apertura, cierre y control entre el monto esperado y el contado, por turno.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">05</span>
+              <h3>Men&uacute; e insumos</h3>
+              <p>Platos, bebidas, categor&iacute;as, precios, costos y stock de lo que se consume.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">06</span>
+              <h3>Reportes y alertas</h3>
+              <p>Ventas, ticket promedio, horarios pico, medios de pago y productos m&aacute;s pedidos.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tone">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">Para qui&eacute;n es</p>
+            <h2>Equipos chicos que necesitan velocidad y control.</h2>
+          </div>
+          <ul class="chips" data-reveal>
+            <li>Bares</li><li>Caf&eacute;s</li><li>Rotiser&iacute;as</li><li>Restaurantes chicos</li><li>Pizzer&iacute;as</li><li>Casas de comida</li><li>Locales con pedidos para llevar</li><li>Cervecer&iacute;as</li><li>Food trucks con base fija</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap split split--wide-right">
+          <div data-reveal>
+            <p class="eyebrow">Sin letra chica</p>
+            <h2>Alcance claro.</h2>
+            <p class="lede">Axhum Comanda resuelve una operaci&oacute;n concreta y muy bien. Estas son las preguntas que siempre aparecen.</p>
+            <div class="actions" style="margin-top: 24px">
+              <a class="arrow-link" href="./contacto.html">Consultar mi caso <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </div>
+          <div class="faq" data-reveal>
+            <details>
+              <summary>&iquest;Axhum Comanda necesita internet?</summary>
+              <div class="faq-answer"><p>No. Se usa localmente en una PC con Windows dentro del local, as&iacute; que el sal&oacute;n sigue funcionando aunque se caiga la conexi&oacute;n.</p></div>
+            </details>
+            <details>
+              <summary>&iquest;Emite factura fiscal?</summary>
+              <div class="faq-answer"><p>No. Los comprobantes y reportes son internos de gesti&oacute;n y no reemplazan una factura fiscal. Si tu local necesita facturar, lo conversamos: la facturaci&oacute;n electr&oacute;nica est&aacute; resuelta en <a href="./gestion.html">Axhum Gesti&oacute;n + ARCA</a> y se puede evaluar para gastronom&iacute;a.</p></div>
+            </details>
+            <details>
+              <summary>&iquest;Sirve para un local con delivery?</summary>
+              <div class="faq-answer"><p>S&iacute;. Los pedidos para llevar y de delivery se manejan separados de las mesas, con los datos que hacen falta para la entrega.</p></div>
+            </details>
+            <details>
+              <summary>&iquest;Se puede probar antes de comprar?</summary>
+              <div class="faq-answer"><p>S&iacute;, hay 7 d&iacute;as de prueba, y antes te hacemos una demostraci&oacute;n enfocada en c&oacute;mo trabaja tu local.</p></div>
+            </details>
+            <details>
+              <summary>&iquest;Funciona con varias computadoras o tablets?</summary>
+              <div class="faq-answer"><p>Est&aacute; pensado para una PC central en el local. Si necesit&aacute;s que los mozos tomen el pedido desde una tablet en la mesa, eso se resuelve como <a href="./software-a-medida.html">desarrollo a medida</a>.</p></div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <div class="wrap cta-inner">
+          <div data-reveal>
+            <p class="eyebrow">Conoc&eacute; Axhum Comanda</p>
+            <h2>Mostranos c&oacute;mo toma pedidos tu equipo.</h2>
+          </div>
+          <div data-reveal>
+            <p>Preparamos una demostraci&oacute;n enfocada en sal&oacute;n, para llevar, delivery o el flujo que m&aacute;s te importe, con tu propio men&uacute; de ejemplo.</p>
+            <div class="actions" style="margin-top: 26px">
+              <a class="btn btn--lg" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20probar%20Axhum%20Comanda." target="_blank" rel="noreferrer">Solicitar demo <span aria-hidden="true">&#8599;</span></a>
+              <a class="btn btn--on-dark-ghost btn--lg" href="./productos.html">Ver otros productos</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer class="site-footer"><img src="../../assets/branding/logos/axhum-tech-logo-professional-50kb.png" alt="Axhum Tech" /><p>Desarrollo de software &middot; Soluciones a medida &middot; Productos digitales &middot; Web</p><div><a href="./servicios.html">Soluciones</a><a href="./contacto.html">Contacto</a></div><small>&copy; 2026 Axhum Tech.</small></footer>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="../../assets/branding/logos/axhum-tech-logo-professional-50kb.png" alt="Axhum Tech" width="62" height="62" />
+            <p>Empresa de desarrollo de software, p&aacute;ginas web y soluciones digitales para negocios y empresas de Argentina.</p>
+            <a class="arrow-link" href="https://wa.me/543865267037" target="_blank" rel="noreferrer">+54 3865 267037 <span aria-hidden="true">&#8599;</span></a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="./software-a-medida.html">Software a medida</a></li>
+              <li><a href="./webs.html">P&aacute;ginas web</a></li>
+              <li><a href="./posicionamiento.html">Posicionamiento en Google</a></li>
+              <li><a href="./webs.html#tiendas">Tiendas online</a></li>
+              <li><a href="./servicios.html">Todos los servicios</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Productos</h4>
+            <ul>
+              <li><a href="./gestion.html">Axhum Gesti&oacute;n</a></li>
+              <li><a href="./comanda.html" aria-current="page">Axhum Comanda</a></li>
+              <li><a href="./arena.html">Arena &middot; gimnasios</a></li>
+              <li><a href="./productos.html">Ecosistema completo</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Empresa</h4>
+            <ul>
+              <li><a href="./nosotros.html">Nosotros</a></li>
+              <li><a href="./faq.html">Preguntas frecuentes</a></li>
+              <li><a href="./contacto.html">Contacto</a></li>
+              <li><a href="https://www.instagram.com/axhumtech" target="_blank" rel="noreferrer">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <small>&copy; <span data-year>2026</span> Axhum Tech &middot; Fundada por Mauro Gustavo Exequel Taberna</small>
+          <nav aria-label="Enlaces del pie">
+            <a href="./servicios.html">Servicios</a>
+            <a href="./productos.html">Productos</a>
+            <a href="./contacto.html">Contacto</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <div class="dock">
+      <a class="btn" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20conversar%20un%20proyecto." target="_blank" rel="noreferrer">WhatsApp</a>
+      <a class="btn btn--ghost" href="./contacto.html">Pedir propuesta</a>
+    </div>
   </body>
 </html>

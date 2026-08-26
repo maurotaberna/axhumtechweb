@@ -1,73 +1,662 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-AR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Axhum Gesti&oacute;n | Sistema de gesti&oacute;n para comercios</title>
-    <meta name="description" content="Ventas, stock, caja, clientes, proveedores y reportes desde una PC con Windows. Prob&aacute; Axhum Gesti&oacute;n durante 7 d&iacute;as." />
+    <title>Axhum Gesti&oacute;n | Sistema de gesti&oacute;n para comercios con facturaci&oacute;n</title>
+    <meta name="description" content="Ventas, stock, caja, clientes, compras y reportes desde una PC con Windows, incluso sin internet. Con edici&oacute;n de facturaci&oacute;n electr&oacute;nica ARCA y 7 d&iacute;as de prueba." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="author" content="Axhum Tech" />
     <link rel="canonical" href="https://axhumtech.com/gestion.html" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Axhum Tech" />
+    <meta property="og:locale" content="es_AR" />
     <meta property="og:url" content="https://axhumtech.com/gestion.html" />
     <meta property="og:title" content="Axhum Gesti&oacute;n | Sistema de gesti&oacute;n para comercios" />
-    <meta property="og:description" content="Ventas, stock, caja, clientes, proveedores y reportes en una sola herramienta." />
+    <meta property="og:description" content="Ventas, stock, caja y clientes en una sola PC. Con o sin facturaci&oacute;n electr&oacute;nica ARCA." />
     <meta property="og:image" content="https://axhumtech.com/assets/branding/social/axhum-tech-og.png" />
-    <meta property="og:locale" content="es_AR" />
-    <meta name="theme-color" content="#F5F1E7" />
-    <link rel="icon" href="../../public/favicon-512.png" type="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Axhum Tech, desarrollo de software y soluciones digitales" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Axhum Gesti&oacute;n | Sistema de gesti&oacute;n para comercios" />
+    <meta name="twitter:description" content="Ventas, stock, caja y clientes en una sola PC. Con o sin facturaci&oacute;n electr&oacute;nica ARCA." />
+    <meta name="twitter:image" content="https://axhumtech.com/assets/branding/social/axhum-tech-og.png" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#F4F2EE" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#061C27" />
+    <link rel="icon" href="../../public/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="../../public/favicon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="../../public/favicon-512.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://axhumtech.com/#organizacion",
+            "name": "Axhum Tech",
+            "alternateName": "Axhum Tech | Software para empresas",
+            "url": "https://axhumtech.com/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://axhumtech.com/assets/branding/logos/axhum-tech-logo-professional-50kb.png",
+              "width": 720,
+              "height": 720
+            },
+            "image": "https://axhumtech.com/assets/branding/social/axhum-tech-og.png",
+            "description": "Empresa argentina de desarrollo de software a medida, páginas web, tiendas online, automatizaciones y posicionamiento en Google para negocios y empresas.",
+            "telephone": "+543865267037",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Concepción",
+              "addressRegion": "Tucumán",
+              "addressCountry": "AR"
+            },
+            "areaServed": { "@type": "Country", "name": "Argentina" },
+            "knowsLanguage": "es-AR",
+            "founder": {
+              "@type": "Person",
+              "@id": "https://axhumtech.com/nosotros.html#fundador",
+              "name": "Mauro Gustavo Exequel Taberna",
+              "jobTitle": "Fundador y desarrollador"
+            },
+            "sameAs": ["https://www.instagram.com/axhumtech"],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "telephone": "+543865267037",
+                "availableLanguage": ["Spanish"],
+                "areaServed": "AR"
+              }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://axhumtech.com/#sitio",
+            "url": "https://axhumtech.com/",
+            "name": "Axhum Tech",
+            "inLanguage": "es-AR",
+            "publisher": { "@id": "https://axhumtech.com/#organizacion" }
+          }
+,
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://axhumtech.com/gestion.html#producto",
+            "name": "Axhum Gestión",
+            "url": "https://axhumtech.com/gestion.html",
+            "applicationCategory": "BusinessApplication",
+            "applicationSubCategory": "Sistema de gestión comercial",
+            "operatingSystem": "Windows 10, Windows 11",
+            "inLanguage": "es-AR",
+            "description": "Sistema de gestión para comercios y empresas: ventas, punto de venta, productos, stock, caja, clientes, cuentas corrientes, compras, proveedores, usuarios con permisos y reportes. Funciona en una PC con Windows sin depender de internet, y tiene una edición con facturación electrónica ARCA.",
+            "publisher": { "@id": "https://axhumtech.com/#organizacion" },
+            "featureList": [
+              "Punto de venta y caja",
+              "Productos, precios y stock",
+              "Clientes y cuentas corrientes",
+              "Compras y proveedores",
+              "Usuarios con permisos por pantalla",
+              "Reportes de ventas, compras, caja e inventario",
+              "Respaldo y restauración de datos",
+              "Facturación electrónica ARCA en la edición + ARCA"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "ARS",
+              "availability": "https://schema.org/InStock",
+              "url": "https://axhumtech.com/contacto.html",
+              "seller": { "@id": "https://axhumtech.com/#organizacion" }
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://axhumtech.com/gestion.html#miga",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://axhumtech.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Productos", "item": "https://axhumtech.com/productos.html" },
+              { "@type": "ListItem", "position": 3, "name": "Axhum Gestión" }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://axhumtech.com/gestion.html#preguntas",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Axhum Gestión emite factura electrónica?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "La edición Axhum Gestión + ARCA sí: emite facturas A, B y C con CAE, notas de crédito y libro de IVA. La edición común no tiene ninguna opción de facturación y sirve para todo lo demás. Se elige una u otra según si necesitás facturar."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Funciona sin internet?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. El programa se instala en la PC del negocio y los datos quedan ahí, así que la caja sigue funcionando aunque se corte la conexión. La facturación electrónica sí necesita internet en el momento de emitir, porque la autoriza ARCA."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Se paga una cuota mensual?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. La licencia es un pago único por equipo y no vence sola. Hay 7 días de prueba para usarlo antes de decidir."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Puedo cargar mis productos que ya tengo en una planilla?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. El programa importa productos desde planilla, y antes de confirmar te muestra qué va a entrar, qué se va a actualizar y qué filas tienen problemas, para revisarlo."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Sirve para más de una computadora?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Esta edición está pensada para operar en una PC. Si necesitás varios puestos trabajando a la vez o acceso desde afuera del local, el camino es la edición online o un desarrollo a medida."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
-    <div class="scroll-progress" aria-hidden="true"></div>
+    <a class="skip-link" href="#contenido">Ir al contenido</a>
+    <div class="progress-bar" aria-hidden="true"></div>
+
     <header class="site-header">
-      <a class="logo-link" href="./index.html" aria-label="Axhum Tech, inicio"><img src="../../assets/branding/logos/axhum-tech-logo-professional-50kb.png" alt="Axhum Tech" /></a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Men&uacute;</button>
-      <nav id="main-navigation" class="main-nav" aria-label="Navegaci&oacute;n principal">
-        <a href="./servicios.html">Soluciones</a><a href="./index.html#proceso">Proceso</a><a href="./index.html#productos" aria-current="page">Productos</a><a href="./nosotros.html">Nosotros</a><a class="mobile-contact-link" href="./contacto.html">Contacto</a>
-      </nav>
-      <a class="header-contact" href="./contacto.html">Hablemos <span>&#8599;</span></a>
+      <div class="wrap header-inner">
+        <a class="brand" href="./index.html" aria-label="Axhum Tech, ir al inicio">
+          <img src="../../assets/branding/logos/axhum-tech-logo-professional-50kb.png" alt="" width="52" height="52" />
+          <span class="brand-text">
+            <strong>Axhum Tech</strong>
+            <span>Software &middot; Web &middot; SEO</span>
+          </span>
+        </a>
+
+        <nav aria-label="Navegaci&oacute;n principal">
+          <ul class="nav">
+            <li>
+              <button class="nav-link" type="button" data-nav-trigger aria-expanded="false" aria-controls="panel-servicios">Servicios <i class="caret" aria-hidden="true"></i></button>
+              <div class="nav-panel" id="panel-servicios">
+                <a href="./software-a-medida.html"><strong>Software a medida</strong><small>Sistemas, plataformas y apps para tu operaci&oacute;n</small></a>
+                <a href="./webs.html"><strong>P&aacute;ginas web y tiendas</strong><small>Dise&ntilde;o, desarrollo, dominio y hosting</small></a>
+                <a href="./posicionamiento.html"><strong>Posicionamiento en Google</strong><small>SEO, Google Business Profile y contenido</small></a>
+                <a href="./servicios.html"><strong>Ver todos los servicios</strong><small>Automatizaci&oacute;n, CRM, SaaS e integraciones</small></a>
+              </div>
+            </li>
+            <li>
+              <button class="nav-link" type="button" data-nav-trigger aria-expanded="false" aria-controls="panel-productos">Productos <i class="caret" aria-hidden="true"></i></button>
+              <div class="nav-panel" id="panel-productos">
+                <a href="./gestion.html" aria-current="page"><strong>Axhum Gesti&oacute;n</strong><small>Ventas, stock, caja y clientes</small></a>
+                <a href="./comanda.html"><strong>Axhum Comanda</strong><small>Mesas, pedidos y caja para gastronom&iacute;a</small></a>
+                <a href="./arena.html"><strong>Arena</strong><small>Gesti&oacute;n integral para gimnasios</small></a>
+                <a href="./productos.html"><strong>Todo el ecosistema</strong><small>Distribuidora, CRM, Bot y Log&iacute;stica</small></a>
+              </div>
+            </li>
+            <li><a class="nav-link" href="./nosotros.html">Nosotros</a></li>
+            <li><a class="nav-link" href="./faq.html">Preguntas</a></li>
+          </ul>
+        </nav>
+
+        <a class="header-cta" href="./contacto.html">Pedir propuesta <span aria-hidden="true">&#8599;</span></a>
+
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Abrir men&uacute;">
+          <i aria-hidden="true"></i><i aria-hidden="true"></i><i aria-hidden="true"></i>
+        </button>
+      </div>
     </header>
-    <main>
-      <section class="page-hero product-page-hero gestion-page-hero">
-        <div data-reveal>
-          <img class="page-product-logo" src="../../assets/branding/logos/axhum-gestion-logo-on-light.svg" alt="Axhum Gesti&oacute;n" />
-          <p class="overline">Sistema de gesti&oacute;n para comercios y empresas</p>
-          <h1>Todo lo importante, en una operaci&oacute;n clara.</h1>
-          <p>Vend&eacute;, control&aacute; stock, registr&aacute; caja y entend&eacute; tu negocio desde una sola PC, incluso sin internet.</p>
-          <div class="hero-actions"><a class="button button-primary" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20una%20demo%20de%20Axhum%20Gestion." target="_blank" rel="noreferrer">Pedir una demo</a><a class="text-link" href="#funciones">Ver funciones <span>&#8595;</span></a></div>
+
+    <div class="drawer" id="mobile-drawer">
+      <div class="drawer-group">
+        <button class="drawer-title" type="button" aria-expanded="false" aria-controls="drawer-servicios">Servicios <i class="caret" aria-hidden="true"></i></button>
+        <div class="drawer-sub" id="drawer-servicios"><div>
+          <a href="./software-a-medida.html">Software a medida</a>
+          <a href="./webs.html">P&aacute;ginas web y tiendas online</a>
+          <a href="./posicionamiento.html">Posicionamiento en Google</a>
+          <a href="./servicios.html">Todos los servicios</a>
+        </div></div>
+      </div>
+      <div class="drawer-group">
+        <button class="drawer-title" type="button" aria-expanded="false" aria-controls="drawer-productos">Productos <i class="caret" aria-hidden="true"></i></button>
+        <div class="drawer-sub" id="drawer-productos"><div>
+          <a href="./gestion.html" aria-current="page">Axhum Gesti&oacute;n</a>
+          <a href="./comanda.html">Axhum Comanda</a>
+          <a href="./arena.html">Arena &middot; gimnasios</a>
+          <a href="./productos.html">Todo el ecosistema</a>
+        </div></div>
+      </div>
+      <div class="drawer-group"><a href="./nosotros.html">Nosotros</a></div>
+      <div class="drawer-group"><a href="./faq.html">Preguntas frecuentes</a></div>
+      <div class="drawer-group"><a href="./contacto.html">Contacto</a></div>
+      <div class="drawer-foot">
+        <a class="btn btn--wide" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20conversar%20un%20proyecto." target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+      </div>
+      <p class="drawer-meta">+54 3865 267037 &middot; Argentina</p>
+    </div>
+
+    <main id="contenido">
+      <section class="page-hero">
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Migas de pan">
+            <a href="./index.html">Inicio</a><span aria-hidden="true">/</span>
+            <a href="./productos.html">Productos</a><span aria-hidden="true">/</span>
+            <span>Axhum Gesti&oacute;n</span>
+          </nav>
+          <div class="hero-split">
+            <div data-reveal>
+              <img src="../../assets/branding/logos/axhum-gestion-logo-on-light.svg" alt="Axhum Gesti&oacute;n" width="260" height="52" style="height: 52px; width: auto; margin-bottom: 22px" />
+              <p class="eyebrow">Sistema de gesti&oacute;n para comercios y empresas</p>
+              <h1>Todo el negocio, en una operaci&oacute;n clara.</h1>
+              <p class="lede">Vend&eacute;, control&aacute; el stock, cerr&aacute; la caja y entend&eacute; c&oacute;mo viene el mes desde una sola PC. Sin depender de internet y con los datos en tu propia computadora.</p>
+              <div class="actions">
+                <a class="btn btn--lg" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20una%20demo%20de%20Axhum%20Gestion." target="_blank" rel="noreferrer">Pedir una demo <span aria-hidden="true">&#8599;</span></a>
+                <a class="arrow-link" href="#ediciones">Ver las dos ediciones <span aria-hidden="true">&#8595;</span></a>
+              </div>
+            </div>
+            <div class="panel panel--tone" data-reveal>
+              <p class="eyebrow">De un vistazo</p>
+              <ul class="checklist">
+                <li><strong>7 d&iacute;as de prueba.</strong> Us&aacute;s el programa completo antes de decidir.</li>
+                <li><strong>Pago &uacute;nico.</strong> Licencia por equipo, sin cuota mensual.</li>
+                <li><strong>Funciona sin internet.</strong> La caja no se frena si se corta la conexi&oacute;n.</li>
+                <li><strong>Dos ediciones.</strong> Con facturaci&oacute;n electr&oacute;nica ARCA o sin ella.</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="product-facts" data-reveal>
-          <div><strong>7 d&iacute;as</strong><span>de prueba</span></div><div><strong>Pago &uacute;nico</strong><span>sin cuota mensual de licencia</span></div><div><strong>Local</strong><span>funciona sin internet</span></div>
+      </section>
+
+      <section class="section section--dark" id="como-funciona">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">C&oacute;mo funciona</p>
+            <h2>El circuito completo de una venta, sin planillas sueltas.</h2>
+            <p class="lede">Cada movimiento actualiza el siguiente. Por eso el stock y la caja cierran solos en vez de tener que cuadrarlos a mano.</p>
+          </div>
+
+          <div class="diagram" data-diagram data-reveal>
+            <div class="diagram-canvas">
+      <svg class="dg-ancho" viewBox="0 0 720 300" role="img" aria-label="Diagrama del circuito de Axhum Gestion: compra, stock, venta, caja, cuenta corriente y reportes, que vuelven a la compra." xmlns="http://www.w3.org/2000/svg">
+        <title>Diagrama del circuito de Axhum Gestion: compra, stock, venta, caja, cuenta corriente y reportes, que vuelven a la compra.</title>
+      <defs>
+        <marker id="dg-punta" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path class="dg-punta" d="M0 0 L10 5 L0 10 Z" />
+        </marker>
+        <marker id="dg-punta-on" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path class="dg-punta dg-punta--on" d="M0 0 L10 5 L0 10 Z" />
+        </marker>
+      </defs>
+      <path class="dg-edge" data-edge="compra stock" d="M204 60 L262 60" />
+      <path class="dg-edge" data-edge="stock venta" d="M458 60 L516 60" />
+      <path class="dg-edge" data-edge="venta caja" d="M614 104 L614 190" />
+      <path class="dg-edge" data-edge="caja cuenta" d="M516 234 L458 234" />
+      <path class="dg-edge" data-edge="cuenta reportes" d="M262 234 L204 234" />
+      <path class="dg-edge dg-edge--soft" data-edge="reportes compra" d="M106 190 L106 104" />
+      <g class="dg-node" data-node="compra" tabindex="0" role="button" aria-pressed="false" aria-label="Entra: Compra a proveedor">
+        <rect class="dg-focus" x="2" y="10" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="8" y="16" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="106" y="42" text-anchor="middle">Entra</text>
+        <text class="dg-label" x="106" y="68" text-anchor="middle">Compra a</text>
+        <text class="dg-label" x="106" y="90" text-anchor="middle">proveedor</text>
+      </g>
+      <g class="dg-node" data-node="stock" tabindex="0" role="button" aria-pressed="false" aria-label="Se acomoda: Stock actualizado">
+        <rect class="dg-focus" x="256" y="10" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="262" y="16" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="360" y="42" text-anchor="middle">Se acomoda</text>
+        <text class="dg-label" x="360" y="68" text-anchor="middle">Stock</text>
+        <text class="dg-label" x="360" y="90" text-anchor="middle">actualizado</text>
+      </g>
+      <g class="dg-node" data-node="venta" tabindex="0" role="button" aria-pressed="false" aria-label="Mostrador: Venta">
+        <rect class="dg-focus" x="510" y="10" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="516" y="16" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="614" y="52" text-anchor="middle">Mostrador</text>
+        <text class="dg-label" x="614" y="75" text-anchor="middle">Venta</text>
+      </g>
+      <g class="dg-node" data-node="caja" tabindex="0" role="button" aria-pressed="false" aria-label="Cierre del día: Caja">
+        <rect class="dg-focus" x="510" y="184" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="516" y="190" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="614" y="226" text-anchor="middle">Cierre del d&iacute;a</text>
+        <text class="dg-label" x="614" y="249" text-anchor="middle">Caja</text>
+      </g>
+      <g class="dg-node" data-node="cuenta" tabindex="0" role="button" aria-pressed="false" aria-label="Si es fiado: Cliente y su cuenta">
+        <rect class="dg-focus" x="256" y="184" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="262" y="190" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="360" y="216" text-anchor="middle">Si es fiado</text>
+        <text class="dg-label" x="360" y="242" text-anchor="middle">Cliente y</text>
+        <text class="dg-label" x="360" y="264" text-anchor="middle">su cuenta</text>
+      </g>
+      <g class="dg-node" data-node="reportes" tabindex="0" role="button" aria-pressed="false" aria-label="Lo que decide: Reportes">
+        <rect class="dg-focus" x="2" y="184" width="208" height="100" rx="19" />
+        <rect class="dg-box" x="8" y="190" width="196" height="88" rx="14" />
+        <text class="dg-kicker" x="106" y="226" text-anchor="middle">Lo que decide</text>
+        <text class="dg-label" x="106" y="249" text-anchor="middle">Reportes</text>
+      </g>
+      </svg>
+      <svg class="dg-movil" viewBox="0 0 360 792" role="img" aria-label="Diagrama del circuito de Axhum Gestion: compra, stock, venta, caja, cuenta corriente y reportes, que vuelven a la compra." xmlns="http://www.w3.org/2000/svg">
+        <title>Diagrama del circuito de Axhum Gestion: compra, stock, venta, caja, cuenta corriente y reportes, que vuelven a la compra.</title>
+      <defs>
+        <marker id="dg-punta-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path class="dg-punta" d="M0 0 L10 5 L0 10 Z" />
+        </marker>
+        <marker id="dg-punta-on-m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path class="dg-punta dg-punta--on" d="M0 0 L10 5 L0 10 Z" />
+        </marker>
+      </defs>
+      <path class="dg-edge dg-edge--m" data-edge="compra stock" d="M180 96 L180 136" />
+      <path class="dg-edge dg-edge--m" data-edge="stock venta" d="M180 224 L180 264" />
+      <path class="dg-edge dg-edge--m" data-edge="venta caja" d="M180 352 L180 392" />
+      <path class="dg-edge dg-edge--m" data-edge="caja cuenta" d="M180 480 L180 520" />
+      <path class="dg-edge dg-edge--m" data-edge="cuenta reportes" d="M180 608 L180 648" />
+      <path class="dg-edge dg-edge--m dg-edge--soft" data-edge="reportes compra" d="M180 736 L180 746 Q180 756 170 756 L26 756 Q16 756 16 746 L16 62 Q16 52 26 52 L34 52" />
+      <g class="dg-node" data-node="compra" tabindex="0" role="button" aria-pressed="false" aria-label="Entra: Compra a proveedor">
+        <rect class="dg-focus" x="28" y="2" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="8" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="34" text-anchor="middle">Entra</text>
+        <text class="dg-label" x="180" y="60" text-anchor="middle">Compra a</text>
+        <text class="dg-label" x="180" y="82" text-anchor="middle">proveedor</text>
+      </g>
+      <g class="dg-node" data-node="stock" tabindex="0" role="button" aria-pressed="false" aria-label="Se acomoda: Stock actualizado">
+        <rect class="dg-focus" x="28" y="130" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="136" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="162" text-anchor="middle">Se acomoda</text>
+        <text class="dg-label" x="180" y="188" text-anchor="middle">Stock</text>
+        <text class="dg-label" x="180" y="210" text-anchor="middle">actualizado</text>
+      </g>
+      <g class="dg-node" data-node="venta" tabindex="0" role="button" aria-pressed="false" aria-label="Mostrador: Venta">
+        <rect class="dg-focus" x="28" y="258" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="264" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="300" text-anchor="middle">Mostrador</text>
+        <text class="dg-label" x="180" y="323" text-anchor="middle">Venta</text>
+      </g>
+      <g class="dg-node" data-node="caja" tabindex="0" role="button" aria-pressed="false" aria-label="Cierre del día: Caja">
+        <rect class="dg-focus" x="28" y="386" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="392" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="428" text-anchor="middle">Cierre del d&iacute;a</text>
+        <text class="dg-label" x="180" y="451" text-anchor="middle">Caja</text>
+      </g>
+      <g class="dg-node" data-node="cuenta" tabindex="0" role="button" aria-pressed="false" aria-label="Si es fiado: Cliente y su cuenta">
+        <rect class="dg-focus" x="28" y="514" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="520" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="546" text-anchor="middle">Si es fiado</text>
+        <text class="dg-label" x="180" y="572" text-anchor="middle">Cliente y</text>
+        <text class="dg-label" x="180" y="594" text-anchor="middle">su cuenta</text>
+      </g>
+      <g class="dg-node" data-node="reportes" tabindex="0" role="button" aria-pressed="false" aria-label="Lo que decide: Reportes">
+        <rect class="dg-focus" x="28" y="642" width="304" height="100" rx="19" />
+        <rect class="dg-box" x="34" y="648" width="292" height="88" rx="14" />
+        <text class="dg-kicker" x="180" y="684" text-anchor="middle">Lo que decide</text>
+        <text class="dg-label" x="180" y="707" text-anchor="middle">Reportes</text>
+      </g>
+      <text class="dg-aside" x="30" y="780" text-anchor="start">Y OTRA VUELTA</text>
+      </svg>
+            </div>
+            <div class="diagram-notes">
+              <p class="eyebrow">Paso a paso</p>
+          <div class="dg-note" data-note="compra">
+            <h3>Compra a proveedor</h3>
+            <p>Carg&aacute;s el remito o la factura del proveedor y la mercader&iacute;a entra al sistema con su costo. De paso queda registrada la deuda y su vencimiento.</p>
+          </div>
+          <div class="dg-note" data-note="stock">
+            <h3>Stock actualizado</h3>
+            <p>Las cantidades suben con la compra y bajan con cada venta, sin que nadie tenga que anotarlo. Cuando algo baja del m&iacute;nimo, el sistema avisa antes de que te quedes sin.</p>
+          </div>
+          <div class="dg-note" data-note="venta">
+            <h3>Venta</h3>
+            <p>Punto de venta r&aacute;pido, con c&oacute;digo de barras, medios de pago y descuentos. En la edici&oacute;n + ARCA, ac&aacute; mismo sale la factura electr&oacute;nica con su CAE.</p>
+          </div>
+          <div class="dg-note" data-note="caja">
+            <h3>Caja</h3>
+            <p>Apertura, cierre y la diferencia entre lo que el sistema esperaba y lo que hay contado. Es el control que te dice, sin discutir con nadie, si algo no cuadr&oacute;.</p>
+          </div>
+          <div class="dg-note" data-note="cuenta">
+            <h3>Cliente y su cuenta</h3>
+            <p>La venta a cuenta queda asociada al cliente con su saldo, sus pagos parciales y su historial. Se termin&oacute; el cuaderno que solo entiende una persona.</p>
+          </div>
+          <div class="dg-note" data-note="reportes">
+            <h3>Reportes</h3>
+            <p>Qu&eacute; se vendi&oacute;, qu&eacute; dej&oacute; margen, qu&eacute; est&aacute; parado y qui&eacute;n te debe. Con eso ya sab&eacute;s qu&eacute; comprar la semana que viene, y el circuito arranca otra vez.</p>
+          </div>
+              <p class="dg-hint">Toc&aacute; cada caja del dibujo</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="funciones" class="section feature-section">
-        <div class="section-title" data-reveal><p class="overline">Funciones principales</p><h2>Lo que necesit&aacute;s para operar todos los d&iacute;as.</h2></div>
-        <div class="feature-grid">
-          <article data-reveal><span>01</span><h3>Ventas y caja</h3><p>Punto de venta, medios de pago, apertura, cierre y control de diferencias.</p></article>
-          <article data-reveal><span>02</span><h3>Productos y stock</h3><p>Cat&aacute;logo, c&oacute;digos, costos, precios, promociones y alertas de reposici&oacute;n.</p></article>
-          <article data-reveal><span>03</span><h3>Clientes y cuentas</h3><p>Datos de contacto, cuenta corriente, saldos y pagos parciales.</p></article>
-          <article data-reveal><span>04</span><h3>Compras y proveedores</h3><p>Ingreso de mercader&iacute;a, contactos, deudas y vencimientos.</p></article>
-          <article data-reveal><span>05</span><h3>Reportes</h3><p>Ventas, compras, inventario, caja y auditor&iacute;a por per&iacute;odo.</p></article>
-          <article data-reveal><span>06</span><h3>Respaldo local</h3><p>Herramientas para conservar y recuperar la informaci&oacute;n del negocio.</p></article>
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head section-head--split" data-reveal>
+            <div>
+              <p class="eyebrow">Funciones</p>
+              <h2>Lo que necesit&aacute;s para operar todos los d&iacute;as.</h2>
+            </div>
+            <p class="lede">Pensado para que lo use gente que atiende al p&uacute;blico, no para que lo configure un t&eacute;cnico.</p>
+          </div>
+
+          <div class="grid grid--3">
+            <article class="card" data-reveal>
+              <span class="card-num">01</span>
+              <h3>Ventas y caja</h3>
+              <p>Punto de venta &aacute;gil, medios de pago, descuentos, apertura y cierre de caja con control de diferencias entre lo esperado y lo contado.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">02</span>
+              <h3>Productos y stock</h3>
+              <p>Cat&aacute;logo, c&oacute;digos de barra, costos, precios, promociones, alertas de reposici&oacute;n e importaci&oacute;n desde planilla con revisi&oacute;n previa.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">03</span>
+              <h3>Clientes y cuentas corrientes</h3>
+              <p>Datos de contacto, fiado, saldos, pagos parciales e historial de compras de cada cliente.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">04</span>
+              <h3>Compras y proveedores</h3>
+              <p>Ingreso de mercader&iacute;a, actualizaci&oacute;n de costos, contactos, deudas y vencimientos a pagar.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">05</span>
+              <h3>Usuarios y permisos</h3>
+              <p>Cada empleado con su usuario y su rol: se define qu&eacute; pantallas ve y qu&eacute; puede hacer en cada una.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">06</span>
+              <h3>Reportes</h3>
+              <p>Ventas, compras, inventario, caja y auditor&iacute;a por per&iacute;odo, con la informaci&oacute;n que se necesita para decidir.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">07</span>
+              <h3>Presupuestos y comprobantes</h3>
+              <p>Presupuestos y comprobantes internos en PDF, listos para imprimir o mandar por WhatsApp.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">08</span>
+              <h3>Respaldo y restauraci&oacute;n</h3>
+              <p>Herramientas para guardar copias de la informaci&oacute;n del negocio y recuperarla si hace falta.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="card-num">09</span>
+              <h3>Aviso de versi&oacute;n nueva</h3>
+              <p>El programa avisa cuando hay una versi&oacute;n publicada y te deja el enlace. No se actualiza solo: la caja de un comercio no se reinicia sola.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="section fit-section">
-        <div data-reveal><p class="overline">Para qui&eacute;n es</p><h2>Comercios que necesitan control sin una estructura pesada.</h2></div>
-        <ul class="fit-list" data-reveal><li>Kioscos y minimarkets</li><li>Almacenes y autoservicios</li><li>Verduler&iacute;as</li><li>Ferreter&iacute;as</li><li>Comercios generales</li><li>Empresas peque&ntilde;as con operaci&oacute;n local</li></ul>
+      <section class="section section--dark" id="ediciones">
+        <div class="wrap">
+          <div class="section-head section-head--split" data-reveal>
+            <div>
+              <p class="eyebrow">Dos ediciones</p>
+              <h2>&iquest;Necesit&aacute;s facturar o no?</h2>
+            </div>
+            <p class="lede">Es la &uacute;nica diferencia entre las dos. Todo lo dem&aacute;s es id&eacute;ntico, y se puede migrar de una a la otra sin perder los datos.</p>
+          </div>
+
+          <div class="grid grid--2">
+            <article class="product-card" data-reveal>
+              <div class="product-card-top">
+                <p class="kicker">Axhum Gesti&oacute;n</p>
+                <span class="badge badge--live">Disponible</span>
+              </div>
+              <h3>Para el comercio que no factura.</h3>
+              <p>Sirve para todo excepto facturar: ventas, stock, caja, clientes, compras y reportes. No trae opciones de IVA ni de facturaci&oacute;n, as&iacute; que no hay pantallas de m&aacute;s para confundir a quien atiende.</p>
+              <ul class="product-specs"><li>Windows</li><li>Sin internet</li><li>Prueba de 7 d&iacute;as</li></ul>
+            </article>
+
+            <article class="product-card" data-reveal>
+              <div class="product-card-top">
+                <p class="kicker">Axhum Gesti&oacute;n + ARCA</p>
+                <span class="badge badge--live">Disponible</span>
+              </div>
+              <h3>Con facturaci&oacute;n electr&oacute;nica.</h3>
+              <p>Lo mismo que la edici&oacute;n com&uacute;n m&aacute;s facturaci&oacute;n electr&oacute;nica: facturas A, B y C con CAE, notas de cr&eacute;dito, condici&oacute;n de IVA del receptor y libro de IVA.</p>
+              <ul class="product-specs"><li>Facturas A, B y C</li><li>Notas de cr&eacute;dito</li><li>Libro de IVA</li></ul>
+            </article>
+          </div>
+
+          <div class="panel" style="margin-top: clamp(24px, 3vw, 40px)" data-reveal>
+            <p style="margin: 0"><strong>Sobre la puesta en marcha de la facturaci&oacute;n:</strong> para emitir en producci&oacute;n hace falta tramitar en ARCA el certificado digital, las autorizaciones de servicio y el punto de venta electr&oacute;nico. Ese tr&aacute;mite lo acompa&ntilde;amos durante la instalaci&oacute;n, con una gu&iacute;a paso a paso incluida en la entrega.</p>
+          </div>
+        </div>
       </section>
 
-      <section class="section honesty-panel">
-        <div data-reveal><p class="overline">Alcance claro</p><h2>Sin letra chica.</h2></div>
-        <div data-reveal><p>Axhum Gesti&oacute;n est&aacute; pensado inicialmente para una PC con Windows. Sus comprobantes y reportes son internos de gesti&oacute;n: no emite factura fiscal ni se integra con ARCA/AFIP.</p><p>La instalaci&oacute;n, capacitaci&oacute;n y soporte se conversan de acuerdo con la necesidad del negocio.</p></div>
+      <section class="section section--tone">
+        <div class="wrap">
+          <div class="section-head" data-reveal>
+            <p class="eyebrow">Para qui&eacute;n es</p>
+            <h2>Comercios que necesitan control sin una estructura pesada.</h2>
+          </div>
+          <ul class="chips" data-reveal>
+            <li>Kioscos y minimarkets</li><li>Almacenes y autoservicios</li><li>Verduler&iacute;as</li><li>Ferreter&iacute;as</li><li>Perfumer&iacute;as</li><li>Indumentaria</li><li>Repuestos y accesorios</li><li>Viveros</li><li>Comercios generales</li><li>Peque&ntilde;as empresas con operaci&oacute;n local</li>
+          </ul>
+        </div>
       </section>
 
-      <section class="contact" data-reveal><p class="overline">Conoc&eacute; Axhum Gesti&oacute;n</p><h2>Una demo vale m&aacute;s que una lista de funciones.</h2><div class="contact-bottom"><p>Contanos qu&eacute; vend&eacute;s y c&oacute;mo trabaj&aacute;s. Te mostramos el flujo con un ejemplo cercano a tu negocio.</p><a class="button button-copper" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20probar%20Axhum%20Gestion." target="_blank" rel="noreferrer">Solicitar demo <span>&#8599;</span></a></div></section>
+      <section class="section">
+        <div class="wrap split split--wide-right">
+          <div data-reveal>
+            <p class="eyebrow">Sin letra chica</p>
+            <h2>Alcance claro.</h2>
+            <p class="lede">Preferimos decir de entrada qu&eacute; hace y qu&eacute; no, para que no haya sorpresas despu&eacute;s de la compra.</p>
+            <div class="actions" style="margin-top: 24px">
+              <a class="arrow-link" href="./contacto.html">Consultar mi caso <span aria-hidden="true">&#8594;</span></a>
+            </div>
+          </div>
+          <div class="faq" data-reveal>
+            <details>
+              <summary>&iquest;Axhum Gesti&oacute;n emite factura electr&oacute;nica?</summary>
+              <div class="faq-answer"><p>La edici&oacute;n <strong>Axhum Gesti&oacute;n + ARCA</strong> s&iacute;: emite facturas A, B y C con CAE, notas de cr&eacute;dito y libro de IVA. La edici&oacute;n com&uacute;n no tiene ninguna opci&oacute;n de facturaci&oacute;n y sirve para todo lo dem&aacute;s. Se elige una u otra seg&uacute;n si necesit&aacute;s facturar.</p></div>
+            </details>
+            <details>
+              <summary>&iquest;Funciona sin internet?</summary>
+              <div class="faq-answer"><p>S&iacute;. El programa se instala en la PC del negocio y los datos quedan ah&iacute;, as&iacute; que la caja sigue funcionando aunque se corte la conexi&oacute;n. La facturaci&oacute;n electr&oacute;nica s&iacute; necesita internet en el momento de emitir, porque la autoriza ARCA.</p></div>
+            </details>
+            <details>
+              <summary>&iquest;Se paga una cuota mensual?</summary>
+              <div class="faq-answer"><p>No. La licencia es un pago &uacute;nico por equipo y no vence sola. Hay 7 d&iacute;as de prueba para usarlo antes de decidir.</p></div>
+            </details>
+            <details>
+              <summary>&iquest;Puedo cargar mis productos que ya tengo en una planilla?</summary>
+              <div class="faq-answer"><p>S&iacute;. El programa importa productos desde planilla, y antes de confirmar te muestra qu&eacute; va a entrar, qu&eacute; se va a actualizar y qu&eacute; filas tienen problemas, para revisarlo.</p></div>
+            </details>
+            <details>
+              <summary>&iquest;Sirve para m&aacute;s de una computadora?</summary>
+              <div class="faq-answer"><p>Esta edici&oacute;n est&aacute; pensada para operar en una PC. Si necesit&aacute;s varios puestos trabajando a la vez o acceso desde afuera del local, el camino es la <a href="./productos.html#gestion-online">edici&oacute;n online</a> o un <a href="./software-a-medida.html">desarrollo a medida</a>.</p></div>
+            </details>
+            <details>
+              <summary>&iquest;Qu&eacute; pasa si cambio de computadora?</summary>
+              <div class="faq-answer"><p>La licencia se emite para un equipo. Si cambi&aacute;s de PC, se reemite: nos escrib&iacute;s, nos pas&aacute;s el c&oacute;digo del equipo nuevo y te mandamos la clave.</p></div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band">
+        <div class="wrap cta-inner">
+          <div data-reveal>
+            <p class="eyebrow">Conoc&eacute; Axhum Gesti&oacute;n</p>
+            <h2>Una demo vale m&aacute;s que una lista de funciones.</h2>
+          </div>
+          <div data-reveal>
+            <p>Contanos qu&eacute; vend&eacute;s y c&oacute;mo trabaj&aacute;s. Te mostramos el circuito con un ejemplo cercano a tu negocio y te decimos qu&eacute; edici&oacute;n te conviene.</p>
+            <div class="actions" style="margin-top: 26px">
+              <a class="btn btn--lg" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20probar%20Axhum%20Gestion." target="_blank" rel="noreferrer">Solicitar demo <span aria-hidden="true">&#8599;</span></a>
+              <a class="btn btn--on-dark-ghost btn--lg" href="./productos.html">Ver otros productos</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer class="site-footer"><img src="../../assets/branding/logos/axhum-tech-logo-professional-50kb.png" alt="Axhum Tech" /><p>Desarrollo de software &middot; Soluciones a medida &middot; Productos digitales &middot; Web</p><div><a href="./servicios.html">Soluciones</a><a href="./contacto.html">Contacto</a></div><small>&copy; 2026 Axhum Tech.</small></footer>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="../../assets/branding/logos/axhum-tech-logo-professional-50kb.png" alt="Axhum Tech" width="62" height="62" />
+            <p>Empresa de desarrollo de software, p&aacute;ginas web y soluciones digitales para negocios y empresas de Argentina.</p>
+            <a class="arrow-link" href="https://wa.me/543865267037" target="_blank" rel="noreferrer">+54 3865 267037 <span aria-hidden="true">&#8599;</span></a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Servicios</h4>
+            <ul>
+              <li><a href="./software-a-medida.html">Software a medida</a></li>
+              <li><a href="./webs.html">P&aacute;ginas web</a></li>
+              <li><a href="./posicionamiento.html">Posicionamiento en Google</a></li>
+              <li><a href="./webs.html#tiendas">Tiendas online</a></li>
+              <li><a href="./servicios.html">Todos los servicios</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Productos</h4>
+            <ul>
+              <li><a href="./gestion.html" aria-current="page">Axhum Gesti&oacute;n</a></li>
+              <li><a href="./comanda.html">Axhum Comanda</a></li>
+              <li><a href="./arena.html">Arena &middot; gimnasios</a></li>
+              <li><a href="./productos.html">Ecosistema completo</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Empresa</h4>
+            <ul>
+              <li><a href="./nosotros.html">Nosotros</a></li>
+              <li><a href="./faq.html">Preguntas frecuentes</a></li>
+              <li><a href="./contacto.html">Contacto</a></li>
+              <li><a href="https://www.instagram.com/axhumtech" target="_blank" rel="noreferrer">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <small>&copy; <span data-year>2026</span> Axhum Tech &middot; Fundada por Mauro Gustavo Exequel Taberna</small>
+          <nav aria-label="Enlaces del pie">
+            <a href="./servicios.html">Servicios</a>
+            <a href="./productos.html">Productos</a>
+            <a href="./contacto.html">Contacto</a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <div class="dock">
+      <a class="btn" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20conversar%20un%20proyecto." target="_blank" rel="noreferrer">WhatsApp</a>
+      <a class="btn btn--ghost" href="./contacto.html">Pedir propuesta</a>
+    </div>
   </body>
 </html>

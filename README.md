@@ -31,14 +31,37 @@ Mantener la web separada de Gestion, Comanda, Gym y SaaS, con una estructura cla
 
 ## Web navegable
 
-El prototipo estatico navegable vive en `builds/preview/` e incluye:
+El sitio vive en `builds/preview/`. Ahi estan los archivos fuente: cada pagina es
+un HTML completo y autonomo, con enlaces `.html` para poder abrirla desde el
+disco. `builds/production/` se genera desde ahi.
 
-- Inicio.
-- Axhum Gestion.
-- Axhum Comanda.
-- Servicios.
-- Nosotros.
-- Contacto.
+| Archivo | URL publicada |
+| --- | --- |
+| `index.html` | `/` |
+| `servicios.html` | `/servicios` |
+| `software-a-medida.html` | `/software-a-medida` |
+| `webs.html` | `/webs` (tiendas online en `#tiendas`) |
+| `posicionamiento.html` | `/posicionamiento` |
+| `productos.html` | `/productos` |
+| `gestion.html` | `/gestion` |
+| `comanda.html` | `/comanda` |
+| `arena.html` | `/arena` |
+| `faq.html` | `/faq` |
+| `nosotros.html` | `/nosotros` |
+| `contacto.html` | `/contacto` |
+| `404.html` | pagina de error (no indexada) |
+
+Al agregar una pagina hay que sumarla al menu (cabecera y cajon movil), al pie y
+a `public/sitemap.xml`.
+
+### Previsualizar
+
+```
+python -m http.server 5410 --directory "E:\Axhum Tech\Web Axhum Tech"
+```
+
+y abrir `http://localhost:5410/builds/preview/index.html`. Hay que servir la raiz
+del proyecto, no `builds/preview`, porque las paginas referencian `../../assets/`.
 
 ## Publicacion
 
@@ -49,4 +72,8 @@ El prototipo estatico navegable vive en `builds/preview/` e incluye:
 - Build: `powershell -ExecutionPolicy Bypass -File .\src\build-production.ps1`.
 - Salida generada: `builds/production/`.
 
-La integracion y los pasos de despliegue se documentan en `docs/github-cloudflare.md`. La migracion y validacion del dominio oficial viven en `docs/domain-axhumtech-com.md`.
+El build reescribe los enlaces `.html` a URLs limpias (`/servicios`), porque
+Cloudflare Pages redirige `pagina.html` a `pagina`. Por eso `builds/production/`
+no se navega bien abriendola a mano: es para desplegar, no para mirar.
+
+La integracion y los pasos de despliegue se documentan en `docs/github-cloudflare.md`. La migracion y validacion del dominio oficial viven en `docs/domain-axhumtech-com.md`. Las decisiones de SEO y posicionamiento estan en `docs/seo.md`.

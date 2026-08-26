@@ -4,6 +4,10 @@
   Permissions-Policy: camera=(), geolocation=(), microphone=()
   X-Frame-Options: DENY
 
+# El HTML se revalida siempre: los despliegues tienen que verse enseguida.
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
 /assets/*
   Cache-Control: public, max-age=604800
 
@@ -12,3 +16,15 @@
 
 /*.js
   Cache-Control: public, max-age=86400
+
+/*.png
+  Cache-Control: public, max-age=604800
+
+/*.svg
+  Cache-Control: public, max-age=604800
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+/robots.txt
+  Cache-Control: public, max-age=3600
