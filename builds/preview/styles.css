@@ -720,7 +720,7 @@ h3 {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
 }
 
@@ -784,6 +784,96 @@ h3 {
   background:
     radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.55), transparent 28%),
     var(--copper-pale);
+}
+
+.product-saas {
+  color: var(--navy);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(229, 200, 143, 0.24)),
+    repeating-linear-gradient(90deg, rgba(45, 91, 108, 0.06) 0, rgba(45, 91, 108, 0.06) 1px, transparent 1px, transparent 24px),
+    var(--paper);
+}
+
+.product-logo-lockup {
+  position: relative;
+  z-index: 2;
+}
+
+.product-logo-lockup span {
+  margin-top: 12px;
+  display: block;
+  color: var(--petrol);
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.product-portfolio {
+  margin-top: 88px;
+  padding-top: 58px;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.58fr) minmax(0, 1.42fr);
+  gap: clamp(42px, 7vw, 110px);
+  border-top: 1px solid rgba(20, 44, 61, 0.18);
+}
+
+.portfolio-heading h3 {
+  max-width: 480px;
+  margin: 0;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.3vw, 3.8rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.portfolio-list {
+  border-top: 1px solid rgba(20, 44, 61, 0.18);
+}
+
+.portfolio-list article {
+  min-height: 138px;
+  padding: 26px 0;
+  display: grid;
+  grid-template-columns: minmax(150px, 0.5fr) minmax(170px, 0.55fr) minmax(240px, 1fr);
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid rgba(20, 44, 61, 0.18);
+  transition: padding 240ms ease, background 240ms ease;
+}
+
+.portfolio-list article:hover {
+  padding-inline: 16px;
+  background: rgba(255, 254, 250, 0.58);
+}
+
+.portfolio-list span {
+  color: var(--copper);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+.portfolio-list strong {
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  letter-spacing: -0.025em;
+}
+
+.portfolio-list p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.product-portfolio > .text-link {
+  grid-column: 2;
+  justify-self: start;
 }
 
 .product-topline {
@@ -1027,6 +1117,69 @@ h3 {
 
 .commercial-proof {
   background: var(--white);
+}
+
+.company-mission {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(60px, 9vw, 150px);
+  background:
+    linear-gradient(125deg, rgba(229, 200, 143, 0.24), transparent 45%),
+    var(--ivory);
+  border-block: 1px solid var(--line);
+}
+
+.mission-statement h2 {
+  max-width: 850px;
+  margin: 0 0 30px;
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.2vw, 5.6rem);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 0.98;
+}
+
+.mission-statement > p:not(.overline) {
+  max-width: 700px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.mission-facts {
+  border-top: 1px solid var(--line);
+}
+
+.mission-facts article {
+  min-height: 160px;
+  padding: 28px 0;
+  display: grid;
+  grid-template-columns: 105px minmax(130px, 0.55fr) 1fr;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mission-facts span {
+  color: var(--copper);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.mission-facts strong {
+  color: var(--navy);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: -0.025em;
+}
+
+.mission-facts p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .business-spectrum {
@@ -1893,6 +2046,7 @@ h3 {
   .method,
   .about,
   .business-spectrum,
+  .company-mission,
   .founder-section,
   .page-hero,
   .service-catalog,
@@ -1902,6 +2056,23 @@ h3 {
   .brand-architecture,
   .before-chat {
     grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-saas {
+    grid-column: 1 / -1;
+    min-height: 450px;
+  }
+
+  .product-portfolio {
+    grid-template-columns: 1fr;
+  }
+
+  .product-portfolio > .text-link {
+    grid-column: 1;
   }
 
   .about-mark {
@@ -2038,6 +2209,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .product-saas {
+    grid-column: auto;
+  }
+
   .products-heading {
     gap: 34px;
     margin-bottom: 48px;
@@ -2063,6 +2238,12 @@ h3 {
 
   .spectrum-list p {
     grid-column: 2;
+  }
+
+  .mission-facts article,
+  .portfolio-list article {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 
   .proof-grid article,

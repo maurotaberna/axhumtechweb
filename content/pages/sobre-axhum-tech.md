@@ -1,6 +1,10 @@
 # Sobre Axhum Tech
 
-Axhum Tech desarrolla software de gestion y experiencias digitales para equipos que necesitan trabajar con mas orden, claridad y confianza.
+Axhum Tech desarrolla software, plataformas, automatizaciones y experiencias digitales para equipos que necesitan trabajar con mas orden, claridad y confianza.
+
+## Mision
+
+Convertir la tecnologia en una ventaja concreta para cada negocio. Escuchamos, ordenamos y construimos soluciones que simplifican el trabajo, mejoran la experiencia de clientes y abren nuevas posibilidades de crecimiento.
 
 ## Fundador
 
@@ -15,3 +19,4 @@ Participa directamente en el relevamiento, la demostracion y el acompanamiento c
 - Soluciones enfocadas en problemas cotidianos.
 - Productos separados dentro de una marca consistente.
 - Mejora continua sobre una base mantenible.
+- Primera version util entre 2 y 8 semanas cuando la complejidad y el alcance lo permiten.

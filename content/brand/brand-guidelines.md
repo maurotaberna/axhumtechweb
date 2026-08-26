@@ -12,13 +12,22 @@ Axhum Gestion, Axhum Comanda y Axhum CRM son productos propios que demuestran ca
 
 Productos activos:
 
-- Axhum Gestion: escritorio y SaaS/online.
+- Axhum Gestion: escritorio.
+- Axhum Gestion Online: SaaS en version 0.9 y evolucion; no comunicar como version 1.0 terminada.
 - Axhum Comanda: sistema para restaurantes. No comunicarlo como SaaS completo hasta que esa linea este desarrollada.
 - Axhum CRM: version en desarrollo. No comunicarlo como producto comercial cerrado hasta nuevo aviso.
+- Arena: gestion para gimnasios en ediciones Desktop y SaaS.
+- Axhum Distribuidora: version 1.0 para Windows lista para implementacion.
+- Axhum Bot: automatizaciones multiempresa sobre WhatsApp.
+- Axhum Logistica: plataforma empresarial funcional que requiere infraestructura e implementacion por cliente.
 - Paginas web para empresas y negocios.
+- Tiendas online.
+- Automatizaciones de WhatsApp.
 - Sistemas y soluciones a medida.
 
-Axhum Gym permanece como linea futura y no se comunica en la portada institucional.
+## Mision
+
+Hacer que la tecnologia correcta este al alcance de cada negocio. Axhum Tech transforma problemas reales en herramientas claras, mantenibles y preparadas para crecer.
 
 ## Identidad
 

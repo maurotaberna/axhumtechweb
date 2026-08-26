@@ -7,12 +7,26 @@
 - Plataformas, portales, paneles y aplicaciones.
 - Automatizaciones e integraciones para operaciones de cualquier escala.
 - Software de escritorio.
-- Sitios institucionales, landings, catalogos y experiencias web.
+- Sitios institucionales con diseno, dominio, hosting, seguridad y puesta online.
+- Tiendas online con catalogo, pagos, pedidos e integraciones.
+- Automatizaciones de WhatsApp para turnos, consultas, recordatorios y seguimiento.
+- Plataformas SaaS y productos web multiusuario.
 - Soluciones para gimnasios, clubes, distribuidoras, comercios, gastronomia y servicios profesionales.
 - Datos, reportes y tableros operativos.
 - Evolucion de soluciones existentes.
 
-La primera version funcional se plantea en hasta 8 semanas cuando existe un alcance inicial acordado. Proyectos mayores se organizan en etapas.
+La primera version funcional se plantea entre 2 y 8 semanas, segun complejidad, cuando existe un alcance inicial acordado. Proyectos mayores se organizan en etapas.
+
+## Ecosistema de productos
+
+- Axhum Gestion Desktop: gestion comercial local para Windows.
+- Axhum Gestion Online: edicion SaaS en evolucion para operar desde la web.
+- Axhum Comanda: operacion gastronomica.
+- Arena: gestion de gimnasios en Desktop y SaaS.
+- Axhum Distribuidora: operacion mayorista, depositos, reparto y facturacion.
+- Axhum CRM: producto comercial en evolucion.
+- Axhum Bot: automatizaciones y turnos por WhatsApp.
+- Axhum Logistica: plataforma empresarial que requiere implementacion e infraestructura por cliente.
 
 No se publica una tabla general de precios. Cada propuesta parte de una conversacion y una definicion concreta de alcance.
 
