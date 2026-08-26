@@ -30,7 +30,7 @@ $outputSocial = Join-Path $outputBranding "social"
 New-Item -ItemType Directory -Path $outputSocial | Out-Null
 Copy-Item -LiteralPath (Join-Path $projectRoot "assets/branding/social/axhum-tech-og.png") -Destination $outputSocial -Force
 
-@("favicon.svg", "favicon-512.png", "_headers", "robots.txt", "sitemap.xml") | ForEach-Object {
+@("favicon.svg", "favicon-512.png", "_headers", "_worker.js", "robots.txt", "sitemap.xml") | ForEach-Object {
   Copy-Item -LiteralPath (Join-Path $projectRoot "public/$_") -Destination $outputDir -Force
 }
 

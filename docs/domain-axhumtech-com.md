@@ -4,6 +4,18 @@
 
 Publicar la web de Axhum Tech en `https://axhumtech.com` y mantener `https://axhumtech.pages.dev` solamente como dominio tecnico de Cloudflare Pages.
 
+## Estado actual
+
+- Dominio principal: `https://axhumtech.com`.
+- Estado en Cloudflare Pages: `Active`, con SSL habilitado.
+- Nameservers autoritativos: `huxley.ns.cloudflare.com` y `kinsley.ns.cloudflare.com`.
+- DNS raiz: CNAME proxificado hacia `axhumtech.pages.dev` mediante CNAME flattening.
+- `www`: dominio personalizado de Pages con SSL, redirigido por codigo 301 al dominio raiz.
+- `axhumtech.pages.dev`: URL tecnica redirigida por codigo 301 al dominio oficial.
+- Las redirecciones conservan ruta y parametros de consulta.
+
+La canonicalizacion vive en `public/_worker.js` y se copia a `builds/production/_worker.js` durante el build. Es una Pages Function en modo avanzado; las solicitudes del dominio oficial continúan hacia los archivos estaticos mediante `env.ASSETS`.
+
 ## Estado previo a la migracion
 
 - Registrador y DNS actual: Hostinger.
@@ -15,20 +27,18 @@ Publicar la web de Axhum Tech en `https://axhumtech.com` y mantener `https://axh
 
 ## Activacion en Cloudflare
 
-1. Agregar `axhumtech.com` como sitio o zona en la cuenta de Cloudflare que contiene el proyecto Pages `axhumtech`.
-2. Copiar los dos nameservers asignados por Cloudflare.
-3. En Hostinger, reemplazar los nameservers de parking por los asignados por Cloudflare.
-4. Esperar a que la zona aparezca como `Active` en Cloudflare.
-5. En `Workers & Pages > axhumtech > Custom domains`, agregar `axhumtech.com`.
-6. Verificar que Cloudflare cree el registro DNS y emita el certificado TLS.
-7. Configurar `www.axhumtech.com` para redirigir con codigo 301 a `https://axhumtech.com`, conservando rutas y parametros.
-8. Cuando el dominio principal funcione, redirigir `axhumtech.pages.dev` a `https://axhumtech.com` mediante Bulk Redirects.
+1. Se agrego `axhumtech.com` como zona en la cuenta de Cloudflare que contiene el proyecto Pages `axhumtech`.
+2. En Hostinger se reemplazaron los nameservers de parking por `huxley.ns.cloudflare.com` y `kinsley.ns.cloudflare.com`.
+3. La zona se activo y se agregaron `axhumtech.com` y `www.axhumtech.com` como dominios personalizados de Pages.
+4. Cloudflare creo los registros DNS proxificados y emitio los certificados TLS.
+5. La aplicacion aplica redirecciones 301 hacia `https://axhumtech.com` desde cualquier hostname alternativo.
 
 ## Validacion
 
 - `https://axhumtech.com` responde con codigo 200 y certificado valido.
 - `http://axhumtech.com` redirige a HTTPS.
-- `https://www.axhumtech.com/ruta` redirige a `https://axhumtech.com/ruta`.
+- `https://www.axhumtech.com/ruta?x=1` redirige a `https://axhumtech.com/ruta?x=1`.
+- `https://axhumtech.pages.dev/ruta?x=1` redirige a `https://axhumtech.com/ruta?x=1`.
 - `robots.txt` referencia `https://axhumtech.com/sitemap.xml`.
 - El sitemap y las etiquetas canonical usan solamente `https://axhumtech.com`.
 - El formulario de contacto, WhatsApp, imagen social y recursos de marca cargan correctamente.
