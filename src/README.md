@@ -1,14 +1,23 @@
-# Source
+# Herramientas de la web
 
-Codigo de la web cuando exista la implementacion.
+- `build-production.ps1`: genera `builds/production/` desde `builds/preview/`,
+  copia assets y archivos publicos, normaliza URLs y versiona CSS/JS.
+- `validate-seo.mjs`: verifica el resultado del build (metadatos, JSON-LD,
+  identidad remota, sitemap, recursos y enlaces internos). Usa solo Node.js.
 
-## Esperado
+Desde la raiz del proyecto:
 
-- Componentes
-- Layouts
-- Integracion con contenido
-- Rutas
-- Configuracion de build
+```powershell
+./src/build-production.ps1
+node --check builds/production/script.js
+node src/validate-seo.mjs
+node --test src/validate-seo.test.mjs
+```
 
-Por ahora esta carpeta queda vacia a proposito para no mezclar contenido con implementacion.
+El HTML/CSS/JS editable vive en `builds/preview/`, no en esta carpeta.
+Los textos de referencia viven en `content/`, los assets en `assets/` y los
+archivos de rastreo/despliegue en `public/`. GitHub Actions ejecuta las
+validaciones antes de publicar en Cloudflare Pages.
 
+El validador revisa las convenciones del HTML estatico de este proyecto; no
+sustituye una prueba visual ni la inspeccion de URL de Search Console.

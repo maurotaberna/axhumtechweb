@@ -1,200 +1,169 @@
-# SEO y posicionamiento
+# SEO y posicionamiento de Axhum Tech
 
-Estado al 2026-08-26. Este documento explica que quedo hecho, por que, y que hay
-que hacer a mano fuera del repositorio.
+Actualizado: 2026-08-27. Modalidad confirmada por el titular: **100% remota**.
+Mercado comunicado: Argentina. Marca: Axhum Tech. Web: https://axhumtech.com/.
 
-## URLs
+## Estado y limites
 
-Cloudflare Pages responde `/pagina.html` con un **308 hacia `/pagina`**. Si el
-sitio publicara enlaces con `.html`, cada enlace interno, cada `canonical` y cada
-entrada del sitemap apuntaria a una redireccion.
+- La web tiene paginas por servicio, metadatos, sitemap y datos estructurados.
+- Se eliminaron las promesas de atencion presencial de Nosotros, Contacto y FAQ.
+- La empresa se describe como `Organization`, no como un negocio local.
+- Search Console: alta, verificacion y envio del sitemap **pendientes de confirmar**.
+- Correo institucional: en configuracion; falta la direccion confirmada y operativa.
+- No se han contratado anuncios, creado perfiles ni modificado DNS en este trabajo.
+- La preparacion tecnica no demuestra indexacion ni garantiza posiciones en Google.
 
-Por eso el build reescribe las URLs:
+## Identidad comercial
 
-| Fuente (`builds/preview/`) | Produccion (`builds/production/`) |
+Descripcion base para perfiles institucionales:
+
+> Axhum Tech es una empresa argentina de desarrollo de software con atencion
+> 100% remota. Creamos software a medida, paginas web, tiendas online,
+> automatizaciones, CRM e integraciones para negocios y empresas. Tambien
+> desarrollamos productos propios y acompanamos su implementacion y soporte.
+
+La primera version funcional de un proyecto puede plantearse entre 2 y 8
+semanas, dependiendo del alcance acordado y la complejidad. No presentar ese
+rango como una garantia universal ni como plazo de resultados SEO.
+
+No inventar oficinas, direcciones de atencion, clientes, testimonios ni resenas.
+Mantener nombre, logo, dominio y telefono consistentes en los perfiles reales.
+La procedencia geografica del fundador no implica una sede abierta al publico.
+
+## Google Search Console: siguiente paso
+
+Search Console permite comprobar indexacion y rendimiento; no es obligatorio
+registrarse para aparecer en Google y no compra ni garantiza posicionamiento.
+
+1. Iniciar sesion en https://search.google.com/search-console con una cuenta de
+   Google controlada por el titular. No compartir contrasenas ni codigos de acceso.
+2. Revisar si ya existe una propiedad para no duplicar trabajo. Si no, agregar
+   una propiedad de tipo **Dominio** e introducir `axhumtech.com`, sin protocolo.
+3. Copiar el registro TXT de verificacion que entregue Google. El valor real
+   debe venir de esa cuenta; no inventarlo ni publicar uno de ejemplo.
+4. En Cloudflare, zona `axhumtech.com`, DNS, agregar un registro **TXT** con
+   nombre `@`, contenido `google-site-verification=...` y TTL automatico.
+   Conservar los TXT existentes, MX, SPF, DKIM y DMARC del correo. No cambiar
+   nameservers ni sustituir registros para esta verificacion.
+5. Volver a Search Console y pulsar Verificar. Si el TXT todavia no se detecta,
+   comprobar nombre/contenido y esperar propagacion. Conservarlo despues del alta.
+6. En Sitemaps, enviar **https://axhumtech.com/sitemap.xml** y comprobar su estado.
+7. En Inspeccion de URL, priorizar `/`, `/software-a-medida`, `/webs`,
+   `/servicios` y `/nosotros`. Ejecutar la prueba en directo y solicitar
+   indexacion si corresponde. Esto no garantiza inclusion ni un plazo.
+8. Registrar fecha, propiedad verificada, estado del sitemap y problemas reales
+   observados. No marcar este checklist como completado sin evidencia.
+
+Alternativa si no hay acceso a DNS: propiedad de prefijo
+`https://axhumtech.com/` con la etiqueta de verificacion real en el `head` de
+`builds/preview/index.html`. Esta alternativa tiene una cobertura mas limitada.
+
+El mail institucional sirve como contacto comercial, pero su configuracion no
+verifica automaticamente Search Console. Su publicacion en la web puede hacerse
+despues: confirmar direccion, probar envio/recepcion, agregar enlace de correo en
+Contacto y actualizar el `email` de Organization de forma consistente.
+
+## Google Business Profile / Maps: no aplica
+
+Google excluye a las empresas exclusivamente online de Google Business Profile.
+Axhum Tech no ofrece atencion presencial: **no crear una ficha**, tampoco con
+direccion oculta, una oficina virtual o una zona de servicio ficticia.
+
+El servicio de posicionamiento que Axhum Tech ofrece a otros negocios puede
+incluir fichas para clientes que si cumplan los requisitos. Eso no vuelve elegible
+a Axhum Tech. Solo reconsiderar si cambia realmente la modalidad de atencion y
+se revisan nuevamente los requisitos de Google.
+
+## Contenido y captacion: orden de trabajo propuesto
+
+| Prioridad | Pagina / consulta objetivo | Contenido que debe demostrar |
+| --- | --- | --- |
+| Marca | `/`, `/nosotros`: Axhum Tech | Empresa real, mision, fundador, modalidad y contacto |
+| Desarrollo | `/software-a-medida`: software a medida para empresas | Alcance, etapas, integraciones y ejemplos reales |
+| Web | `/webs`: paginas web y tiendas online para empresas | Diseno, desarrollo, hosting, mantenimiento y entregables |
+| Operacion | `/servicios`: CRM, automatizaciones, WhatsApp, SaaS | Problema que resuelve cada servicio y limites |
+| Productos | `/productos`, `/gestion`, `/comanda`, `/arena` | Funciones y estado comercial real de cada producto |
+| SEO | `/posicionamiento` | Metodo, medicion y diferencias entre SEO y Maps |
+| Dudas | `/faq`, `/contacto` | Alcance, plazos, soporte remoto y como consultar |
+
+Estas son prioridades editoriales, no un estudio de volumen de busqueda. Ajustar
+con consultas e impresiones reales de Search Console cuando haya datos.
+
+Trabajo inicial propuesto (no automatizado ni programado):
+
+- Semana 1: verificar propiedad, enviar sitemap, corregir impedimentos de rastreo
+  y completar el correo confirmado en el sitio.
+- Semanas 2 a 4: documentar proyectos reales con permiso del cliente: necesidad,
+  solucion, capturas autorizadas y resultado comprobable. Si es una demo, decirlo.
+- Completar perfiles institucionales reales, como Instagram y LinkedIn, con el
+  dominio oficial. Agregar a `sameAs` solo URLs que efectivamente pertenezcan a la marca.
+- Despues de acumular datos: comparar periodos equivalentes en Search Console,
+  separar consultas de marca de consultas de servicios y revisar paginas que
+  reciben impresiones pero pocos clics. No fijar objetivos numericos sin una base.
+- Para medir consultas comerciales, definir antes analitica y requisitos de
+  privacidad. Un clic a WhatsApp no equivale a una venta ni a una consulta enviada.
+
+## URLs y estructura tecnica
+
+El HTML/CSS/JS editable vive en `builds/preview/`. `src/build-production.ps1`
+genera `builds/production/`, copia assets y archivos publicos y transforma:
+
+| Fuente | Produccion |
 | --- | --- |
 | `href="./index.html"` | `href="/"` |
 | `href="./servicios.html"` | `href="/servicios"` |
 | `href="./webs.html#tiendas"` | `href="/webs#tiendas"` |
 | `https://axhumtech.com/gestion.html` | `https://axhumtech.com/gestion` |
 
-En `builds/preview/` se conservan los `.html` porque ahi el sitio se abre
-directamente desde el disco o con un servidor estatico simple. La reescritura
-vive en `src/build-production.ps1`.
+Cloudflare Pages redirige las URLs `.html` a la forma limpia. Canonicals,
+enlaces, JSON-LD y sitemap deben usar la URL final. No editar el build generado.
 
-**Consecuencia:** `builds/production/` no se navega bien abriendo los archivos a
-mano, porque sus enlaces son absolutos. Para mirar el sitio, usar
-`builds/preview/`.
+Cada pagina tiene titulo y descripcion propios, un `h1`, canonical, Open Graph
+y Twitter Card. La 404 lleva `noindex`, no tiene canonical ni entra al sitemap.
 
-## Paginas y palabras clave
+Los datos estructurados usan `Organization`, `WebSite` y el tipo correspondiente
+a cada pagina. La portada describe la oferta con `Service` y un canal online.
+No usar `ProfessionalService` ni `LocalBusiness` para la empresa exclusivamente
+remota. La informacion debe coincidir con lo visible. Los FAQ no garantizan
+resultados enriquecidos ni un panel de empresa.
 
-| Pagina | Intencion principal |
-| --- | --- |
-| `/` | Axhum Tech, software a medida, paginas web, posicionamiento |
-| `/servicios` | Catalogo completo de servicios |
-| `/software-a-medida` | Desarrollo de software a medida, sistemas de gestion |
-| `/webs` | Diseno de paginas web, landings, tiendas online (`#tiendas`) |
-| `/posicionamiento` | Posicionamiento en Google, SEO, ficha de Google Business Profile |
-| `/productos` | Ecosistema de productos propios |
-| `/gestion` | Sistema de gestion para comercios, facturacion ARCA |
-| `/comanda` | Sistema de comandas para gastronomia |
-| `/arena` | Software de gestion para gimnasios |
-| `/faq` | Preguntas frecuentes (bloque de respuestas de Google) |
-| `/nosotros` | Marca, criterio y fundador |
-| `/contacto` | Conversion: WhatsApp y formulario |
+El JSON-LD usa UTF-8 real, nunca entidades HTML como `&aacute;`. Todas las copias
+de Organization deben mantenerse consistentes. El build usa UTF-8 explicito.
 
-Cada pagina tiene un solo `h1`, `title` propio, `meta description` de entre 70 y
-180 caracteres, `canonical`, Open Graph y Twitter Card.
+- `public/sitemap.xml`: 12 paginas indexables. Agregar nuevas paginas aqui y
+  actualizar `lastmod` solo tras cambios significativos, incluido el marcado.
+- `public/robots.txt`: permite rastreo y declara el sitemap.
+- `public/_headers`: seguridad y cache; el HTML se revalida.
+- `public/_worker.js`: redireccion de otros hosts al dominio oficial.
+- `.github/workflows/deploy-pages.yml`: build, validaciones y deploy a Pages.
 
-## Datos estructurados (JSON-LD)
+## Validacion y rastreo
 
-Todas las paginas publican un `@graph` con:
+```powershell
+./src/build-production.ps1
+node --check builds/production/script.js
+node src/validate-seo.mjs
+node --test src/validate-seo.test.mjs
+```
 
-- `Organization` (`#organizacion`) con telefono, localidad, `sameAs` y fundador.
-- `WebSite` (`#sitio`).
-- Un nodo propio de la pagina: `WebPage`, `Service`, `SoftwareApplication`,
-  `CollectionPage`, `AboutPage` o `ContactPage` segun corresponda.
-- `BreadcrumbList`, que ademas se muestra en pantalla con `.crumbs`.
-- `FAQPage` en las paginas que tienen preguntas visibles. **El texto del JSON-LD
-  y el texto visible tienen que decir lo mismo**: si se edita uno, editar el otro.
+El validador comprueba titulos, canonical, indexabilidad, un `h1`, imagenes con
+`alt`, JSON-LD, identidad remota consistente, sitemap, enlaces y anclas internas.
+Corre antes de cada despliegue. No sustituye la inspeccion de Google.
 
-⚠️ Dentro de `<script type="application/ld+json">` las entidades HTML **no** se
-decodifican: `&aacute;` se publicaria tal cual. Por eso el JSON-LD lleva acentos
-en UTF-8 real, y `src/build-production.ps1` lee y escribe con UTF-8 explicito
-(Windows PowerShell 5.1 usa ANSI por defecto y romperia los acentos).
+Comprobar tambien el sitio publicado: respuestas 200 de las paginas, 404 real
+para rutas inexistentes, redirecciones y ausencia de desafios para rastreadores.
 
-## Archivos de indexacion
+Cloudflare agrega un bloque administrado al robots.txt publicado, distinto del
+archivo fuente. El 2026-08-27 la respuesta observada permite el rastreo general y
+no contiene un bloqueo especifico de Googlebot. No se modificaron esas reglas.
+Revisar siempre la respuesta en vivo y Search Console: un HTTP 200 con un
+user-agent simulado no demuestra que Google haya rastreado o indexado la pagina.
+No deducir acceso de todos los buscadores a partir de la regla de un solo bot.
 
-- `public/sitemap.xml`: las 12 paginas indexables con `lastmod`. La 404 no entra.
-  **Al agregar una pagina hay que sumarla aca.**
-- `public/robots.txt`: todo permitido, con el sitemap declarado.
-- `builds/preview/404.html`: Cloudflare Pages la sirve con estado 404 real.
-  Lleva `noindex` y no tiene `canonical`.
+## Referencias oficiales
 
-## Cabeceras
-
-`public/_headers` fija `nosniff`, `Referrer-Policy`, `Permissions-Policy` y
-`X-Frame-Options`, el HTML se revalida siempre y los estaticos se cachean.
-
-## Verificacion
-
-`node --check builds/production/script.js` ya corre en el flujo de despliegue.
-Ademas conviene revisar a mano, despues de cada cambio grande:
-
-1. Que el JSON-LD de cada pagina sea JSON valido y no tenga entidades HTML.
-2. Que ningun enlace interno de `builds/production/` conserve `.html`.
-3. Que cada `canonical` figure en el sitemap.
-4. Que cada pagina tenga exactamente un `h1` y todas las imagenes tengan `alt`.
-
-## Alta en Google, paso a paso
-
-Son **dos altas distintas** y conviene no confundirlas. Para una empresa sin
-local a la calle, la que de verdad importa es la primera.
-
-### 1. Google Search Console (obligatoria, no depende de tener local)
-
-Es lo que hace que Google entienda, indexe y rankee el sitio. No pregunta por
-direccion ni por local. Es gratis. Sin esto, el resto no sirve de mucho.
-
-1. Entrar a `search.google.com/search-console` con la cuenta de Google de la
-   empresa (no una personal que despues no se pueda transferir).
-2. Elegir el tipo de propiedad **Dominio**, no "Prefijo de URL". La de dominio
-   cubre `axhumtech.com`, `www`, subdominios y http/https de una sola vez.
-3. Google devuelve un registro `TXT` del estilo
-   `google-site-verification=xxxxxxxx`.
-4. Cargarlo en Cloudflare: panel de `axhumtech.com` -> DNS -> Add record ->
-   Type `TXT`, Name `@`, Content el valor que dio Google. Guardar.
-5. Esperar unos minutos y darle **Verificar**.
-6. Ya dentro: **Sitemaps** -> agregar `sitemap.xml`.
-7. **Inspeccion de URL** -> pegar `https://axhumtech.com/` -> "Solicitar
-   indexacion". Repetir con las paginas de servicio. Hay cupo diario, asi que
-   conviene priorizar `/`, `/posicionamiento`, `/webs` y `/software-a-medida`.
-
-Si por algun motivo no se puede tocar el DNS, la alternativa es la propiedad de
-tipo "Prefijo de URL" con la etiqueta `<meta name="google-site-verification">`
-en el `<head>`. En ese caso hay que sumarla a las 13 paginas de
-`builds/preview/`, o al menos a `index.html`.
-
-### 2. Google Business Profile (la ficha de Maps): se puede, con una condicion
-
-Se puede tener ficha **sin local a la calle**, como *empresa de servicio a
-domicilio* (service-area business): se carga una direccion real solo para
-verificar, se la **oculta** y se declaran las zonas de cobertura.
-
-⚠️ **La condicion excluyente:** Google exige que el negocio tenga contacto
-presencial con los clientes. Una empresa 100% remota no califica y la ficha se
-puede suspender. Axhum si califica por la instalacion, la capacitacion y el
-soporte presencial de Gestion y Comanda; la ficha tiene que describir *ese*
-servicio local, no el desarrollo remoto.
-
-Pasos:
-
-1. `business.google.com` -> agregar empresa.
-2. Nombre **exactamente** "Axhum Tech", igual que en el sitio y en el JSON-LD.
-   El nombre, el telefono y la web tienen que coincidir en todos lados.
-3. Categoria principal: desarrollador de software. Secundarias: diseñador de
-   sitios web, consultor de marketing.
-4. Cuando pregunta si los clientes pueden visitar la direccion: **No**.
-5. Cargar las zonas de cobertura (hasta 20; el limite razonable es unas 2 horas
-   de manejo desde la base): Concepcion, Aguilares, Monteros, San Miguel de
-   Tucuman y alrededores.
-6. Verificacion: hoy suele ser por video. Hay que mostrar la zona, el lugar de
-   trabajo y algo que pruebe que la empresa opera ahi.
-7. Completar telefono `+54 3865 267037`, web `https://axhumtech.com`, horarios,
-   servicios, descripcion y fotos reales.
-8. Pedir reseñas a clientes reales. No se compran ni se inventan.
-
-No sirven: casilla de correo, oficina virtual ni una direccion prestada.
-
-### 3. Bing Webmaster Tools (opcional, cuesta cinco minutos)
-
-`bing.com/webmasters` permite importar todo desde Search Console con un clic.
-Alimenta a Bing y a Copilot.
-
-## El robots.txt en vivo no es el del repositorio
-
-Cloudflare **inyecta un bloque propio arriba** del `public/robots.txt`. Se ve
-con `curl -s https://axhumtech.com/robots.txt`. Ese bloque:
-
-- Deja pasar a Googlebot y declara `Content-Signal: search=yes`. **La busqueda
-  normal de Google no esta afectada.**
-- Bloquea `Google-Extended`, que solo controla el entrenamiento y el grounding
-  de Gemini. Segun la documentacion de Google, esto **no** afecta el ranking ni
-  la aparicion en AI Overviews.
-- Bloquea `GPTBot`, `ClaudeBot`, `CCBot`, `Bytespider`, `Applebot-Extended`,
-  `meta-externalagent` y `Amazonbot`. Consecuencia real: Axhum Tech **no puede
-  ser citada en las respuestas de ChatGPT, Claude ni Perplexity**.
-
-**El bloqueo es solo por robots.txt, no por HTTP.** Verificado el 2026-08-27
-pidiendo la portada y el sitemap con el user-agent de cada rastreador: Googlebot,
-Bingbot, GPTBot, ClaudeBot y PerplexityBot reciben **200**, ninguno recibe 403.
-Es decir, no hay regla de firewall bloqueando; lo que hay es una directiva que
-los bots seros respetan por su cuenta. El efecto practico es el mismo para los
-que obedecen, pero el sitio no esta "caido" para nadie.
-
-Para repetir la comprobacion:
-
-    curl -s -o /dev/null -w "%{http_code}
-"       -A "Mozilla/5.0 (compatible; GPTBot/1.1; +https://openai.com/gptbot)"       https://axhumtech.com/
-
-Se cambia en el panel de Cloudflare, en el control de rastreadores de IA, que
-tiene tres categorias: **Search**, **Agent** y **Training**. Para que los
-asistentes puedan citar al sitio hay que permitir **Agent**.
-
-⚠️ **No usar el bloqueo de Training a la ligera.** Cloudflare clasifica a
-Googlebot y a Bingbot como rastreadores de proposito mixto (busqueda +
-entrenamiento) y los trata con la regla mas restrictiva. Bloquear Training
-—incluida la opcion vieja "Block AI bots"— puede terminar bloqueando a
-Googlebot, que es exactamente lo contrario de lo que busca este sitio. Desde el
-2026-09-15 rigen defaults nuevos con ese criterio.
-
-Para una empresa que vende posicionamiento, aparecer en asistentes de IA suele
-convenir mas que proteger el contenido de la portada.
-
-## Pendiente, fuera del repositorio
-
-- Dar de alta el sitio en Google Search Console y enviar el sitemap (arriba).
-- Crear la ficha de Google Business Profile (arriba).
-- Decidir que hacer con el bloqueo de rastreadores de IA de Cloudflare (arriba).
-- Configurar **analitica**: el sitio hoy no carga ningun script de medicion.
-- Completar `sameAs` de la `Organization` cuando existan mas perfiles publicos.
+- Search Console: https://developers.google.com/search/docs/monitor-debug/search-console-start?hl=es
+- Elegibilidad de Maps: https://support.google.com/business/answer/13763036?hl=es
+- Datos de empresa: https://developers.google.com/search/docs/appearance/structured-data/organization?hl=es
+- Sitemaps: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+- Solicitudes de indexacion: https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl

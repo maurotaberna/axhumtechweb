@@ -8,6 +8,8 @@ Axhum Tech es una empresa de software, desarrollo web y soluciones digitales par
 
 Axhum Tech debe comunicarse como empresa de soluciones digitales, no unicamente como empresa de software de gestion.
 
+Modalidad confirmada el 2026-08-27: atencion 100% remota en toda Argentina. No ofrecer visitas, soporte presencial ni una oficina abierta al publico. El posicionamiento propio se trabaja en la busqueda web; no crear una ficha de Google Business Profile para esta modalidad exclusivamente online.
+
 Axhum Gestion, Axhum Comanda y Axhum CRM son productos propios que demuestran capacidad de ejecucion. No definen ni limitan la oferta general de Axhum Tech.
 
 Productos activos:
