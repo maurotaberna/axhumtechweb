@@ -218,14 +218,56 @@
   onFrame();
 
   /* ---------------------------------------------------------------
-     Formulario de contacto -> mensaje de WhatsApp
-     Sin backend: arma el mensaje y abre la conversacion.
+     Formulario de contacto -> WhatsApp o correo
+     Sin backend: arma el mensaje y lo entrega por el canal que eligio
+     la persona. Los radios son reales, asi que la eleccion se ve
+     aunque el JS no llegue a correr.
      --------------------------------------------------------------- */
   var contactForm = document.querySelector("[data-wa-form]");
 
   if (contactForm) {
     var phone = contactForm.getAttribute("data-wa-phone") || "543865267037";
+    var mail = contactForm.getAttribute("data-wa-mail") || "hola@axhumtech.com";
     var status = contactForm.querySelector("[data-wa-status]");
+    var label = contactForm.querySelector("[data-wa-label]");
+    var hint = contactForm.querySelector("[data-wa-hint]");
+
+    var canalElegido = function () {
+      var marcado = contactForm.querySelector('input[name="canal"]:checked');
+      return marcado ? marcado.value : "whatsapp";
+    };
+
+    var textos = {
+      whatsapp: {
+        boton: "Enviar por WhatsApp",
+        nota:
+          "Al enviar se abre WhatsApp con el mensaje ya escrito: revisás y tocás enviar. No guardamos tus datos en ningún servidor.",
+        ok: "Listo. Se abrió WhatsApp con tu mensaje preparado; solo falta enviarlo.",
+        bloqueado: "Tu navegador bloqueó la ventana. Escribinos directamente al +54 3865 267037.",
+      },
+      correo: {
+        boton: "Enviar por correo",
+        nota:
+          "Al enviar se abre tu programa de correo con el mensaje ya escrito a " +
+          mail +
+          ": revisás y tocás enviar. No guardamos tus datos en ningún servidor.",
+        ok: "Listo. Se abrió tu correo con el mensaje preparado; solo falta enviarlo.",
+        bloqueado: "No pudimos abrir tu correo. Escribinos directamente a " + mail + ".",
+      },
+    };
+
+    var refrescarTextos = function () {
+      var t = textos[canalElegido()] || textos.whatsapp;
+      if (label) label.textContent = t.boton;
+      if (hint) hint.textContent = t.nota;
+      if (status) status.hidden = true;
+    };
+
+    contactForm.querySelectorAll('input[name="canal"]').forEach(function (radio) {
+      radio.addEventListener("change", refrescarTextos);
+    });
+
+    refrescarTextos();
 
     contactForm.addEventListener("submit", function (event) {
       event.preventDefault();
@@ -235,12 +277,14 @@
         return String(data.get(key) || "").trim();
       };
 
+      var interes = get("interes") || "-";
+
       var lines = [
         "Hola Axhum Tech, quiero conversar un proyecto.",
         "",
         "Nombre: " + (get("nombre") || "-"),
         "Negocio: " + (get("negocio") || "-"),
-        "Necesito: " + (get("interes") || "-"),
+        "Necesito: " + interes,
       ];
 
       var detalle = get("detalle");
@@ -253,17 +297,33 @@
         lines.push("", "Me pueden responder a: " + contacto);
       }
 
-      var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(lines.join("\n"));
-      var opened = window.open(url, "_blank", "noopener");
+      var cuerpo = lines.join("\n");
+      var canal = canalElegido();
+      var t = textos[canal] || textos.whatsapp;
+      var url;
+      var opened;
+
+      if (canal === "correo") {
+        var asunto = interes === "-" ? "Consulta desde axhumtech.com" : "Consulta: " + interes;
+        url =
+          "mailto:" +
+          mail +
+          "?subject=" +
+          encodeURIComponent(asunto) +
+          "&body=" +
+          encodeURIComponent(cuerpo);
+        window.location.href = url;
+        opened = true;
+      } else {
+        url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(cuerpo);
+        opened = window.open(url, "_blank", "noopener");
+        if (!opened) window.location.href = url;
+      }
 
       if (status) {
         status.hidden = false;
-        status.textContent = opened
-          ? "Listo. Se abrió WhatsApp con tu mensaje preparado; solo falta enviarlo."
-          : "Tu navegador bloqueó la ventana. Escribinos directamente al +54 3865 267037.";
+        status.textContent = opened ? t.ok : t.bloqueado;
       }
-
-      if (!opened) window.location.href = url;
     });
   }
 

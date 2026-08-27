@@ -51,6 +51,7 @@
             "image": "https://axhumtech.com/assets/branding/social/axhum-tech-og.png",
             "description": "Empresa argentina de desarrollo de software a medida, páginas web, tiendas online, automatizaciones y posicionamiento en Google. Atención 100% remota para negocios y empresas de toda Argentina.",
             "telephone": "+543865267037",
+            "email": "hola@axhumtech.com",
             "areaServed": { "@type": "Country", "name": "Argentina" },
             "knowsLanguage": "es-AR",
             "founder": {
@@ -66,6 +67,7 @@
                 "contactType": "sales",
                 "url": "https://axhumtech.com/contacto.html",
                 "telephone": "+543865267037",
+                "email": "hola@axhumtech.com",
                 "availableLanguage": ["Spanish"],
                 "areaServed": "AR"
               }
@@ -173,8 +175,9 @@
       <div class="drawer-group"><a href="./contacto.html" aria-current="page">Contacto</a></div>
       <div class="drawer-foot">
         <a class="btn btn--wide" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20conversar%20un%20proyecto." target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+        <a class="btn btn--ghost btn--wide" href="mailto:hola@axhumtech.com?subject=Consulta&amp;body=Hola%20Axhum%20Tech%2C%20quiero%20conversar%20un%20proyecto.">Escribir por correo</a>
       </div>
-      <p class="drawer-meta">+54 3865 267037 &middot; Argentina</p>
+      <p class="drawer-meta">+54 3865 267037 &middot; hola@axhumtech.com &middot; Argentina</p>
     </div>
 
     <main id="contenido">
@@ -191,6 +194,7 @@
               <p class="lede">No hace falta que prepares un documento t&eacute;cnico. Puede ser una idea, un proceso manual que te consume horas, una herramienta que ya no alcanza o simplemente la necesidad de que te encuentren en Google.</p>
               <div class="actions">
                 <a class="btn btn--lg" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20conversar%20un%20proyecto." target="_blank" rel="noreferrer">Escribir por WhatsApp <span aria-hidden="true">&#8599;</span></a>
+                <a class="btn btn--ghost btn--lg" href="mailto:hola@axhumtech.com?subject=Consulta&amp;body=Hola%20Axhum%20Tech%2C%20quiero%20conversar%20un%20proyecto.">Escribir por correo</a>
                 <a class="arrow-link" href="#formulario">Prefiero dejar mis datos <span aria-hidden="true">&#8595;</span></a>
               </div>
             </div>
@@ -198,6 +202,7 @@
               <p class="eyebrow">D&oacute;nde encontrarnos</p>
               <ul class="checklist">
                 <li><strong>WhatsApp.</strong> <a href="https://wa.me/543865267037" target="_blank" rel="noreferrer">+54 3865 267037</a> &mdash; es la v&iacute;a m&aacute;s r&aacute;pida.</li>
+                <li><strong>Correo.</strong> <a href="mailto:hola@axhumtech.com">hola@axhumtech.com</a> &mdash; si prefer&iacute;s dejarlo por escrito.</li>
                 <li><strong>Instagram.</strong> <a href="https://www.instagram.com/axhumtech" target="_blank" rel="noreferrer">@axhumtech</a></li>
                 <li><strong>Modalidad.</strong> Atenci&oacute;n 100% remota, sin atenci&oacute;n presencial.</li>
                 <li><strong>Alcance.</strong> Toda Argentina, por videollamada y WhatsApp.</li>
@@ -222,7 +227,7 @@
           </div>
 
           <div class="panel" data-reveal>
-            <form class="form" data-wa-form data-wa-phone="543865267037">
+            <form class="form" data-wa-form data-wa-phone="543865267037" data-wa-mail="hola@axhumtech.com">
               <div class="field">
                 <label for="nombre">Tu nombre</label>
                 <input id="nombre" name="nombre" type="text" autocomplete="name" required placeholder="C&oacute;mo te llam&aacute;s" />
@@ -260,9 +265,29 @@
                 <input id="contacto" name="contacto" type="text" autocomplete="email" placeholder="Correo o tel&eacute;fono alternativo" />
               </div>
 
-              <button class="btn btn--lg btn--wide" type="submit">Enviar por WhatsApp <span aria-hidden="true">&#8599;</span></button>
+              <fieldset class="channel">
+                <legend>&iquest;Por d&oacute;nde prefer&iacute;s que llegue?</legend>
+                <div class="channel-options">
+                  <label class="channel-option">
+                    <input type="radio" name="canal" value="whatsapp" checked />
+                    <span class="channel-option-text">
+                      <strong>WhatsApp</strong>
+                      <span>+54 3865 267037</span>
+                    </span>
+                  </label>
+                  <label class="channel-option">
+                    <input type="radio" name="canal" value="correo" />
+                    <span class="channel-option-text">
+                      <strong>Correo</strong>
+                      <span>hola@axhumtech.com</span>
+                    </span>
+                  </label>
+                </div>
+              </fieldset>
 
-              <p class="form-note">Al enviar se abre WhatsApp con el mensaje ya escrito: revis&aacute;s y toc&aacute;s enviar. No guardamos tus datos en ning&uacute;n servidor.</p>
+              <button class="btn btn--lg btn--wide" type="submit"><span data-wa-label>Enviar por WhatsApp</span> <span aria-hidden="true">&#8599;</span></button>
+
+              <p class="form-note" data-wa-hint>Al enviar se abre WhatsApp con el mensaje ya escrito: revis&aacute;s y toc&aacute;s enviar. No guardamos tus datos en ning&uacute;n servidor.</p>
               <p class="form-note" data-wa-status role="status" hidden></p>
             </form>
           </div>
@@ -342,6 +367,7 @@
             <img src="../../assets/branding/logos/axhum-tech-logo-professional-50kb.png" alt="Axhum Tech" width="62" height="62" />
             <p>Empresa de desarrollo de software, p&aacute;ginas web y soluciones digitales para negocios y empresas de Argentina.</p>
             <a class="arrow-link" href="https://wa.me/543865267037" target="_blank" rel="noreferrer">+54 3865 267037 <span aria-hidden="true">&#8599;</span></a>
+            <a class="arrow-link" href="mailto:hola@axhumtech.com">hola@axhumtech.com <span aria-hidden="true">&#8594;</span></a>
           </div>
 
           <div class="footer-col">
@@ -389,7 +415,8 @@
 
     <div class="dock">
       <a class="btn" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20conversar%20un%20proyecto." target="_blank" rel="noreferrer">WhatsApp</a>
-      <a class="btn btn--ghost" href="./contacto.html" aria-current="page">Pedir propuesta</a>
+      <a class="btn btn--ghost" href="mailto:hola@axhumtech.com?subject=Consulta&amp;body=Hola%20Axhum%20Tech%2C%20quiero%20conversar%20un%20proyecto.">Correo</a>
+      <a class="btn btn--ghost" href="./contacto.html" aria-current="page">Propuesta</a>
     </div>
   </body>
 </html>
