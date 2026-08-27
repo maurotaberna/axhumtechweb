@@ -34,15 +34,41 @@ La web institucional de Snoop Consulting se uso como referencia de categoria, no
 
 ## Sistema de pagina
 
+### Portada (revisada 2026-08-26)
+
+La portada tenia nueve secciones y un catalogo completo de servicios. Mauro la
+vio "muy pesada y cargada": el visitante tenia que leer mucho antes de
+reconocer su propio caso. La regla ahora es una sola:
+
+> El que entra tiene que ver que necesidad le podemos resolver, de una.
+
+Cinco bloques, ni uno mas:
+
+1. Hero centrado: titular, promesa en una frase y dos acciones.
+2. **Que necesitas resolver**: cuatro necesidades reales, cada una enlazando a
+   su pagina (Google, web, sistema a medida, producto listo). Es el corazon de
+   la portada.
+3. Productos propios: tres tarjetas, sin detalle de specs.
+4. Como trabajamos: cuatro pasos cortos.
+5. Cierre y contacto.
+
+Lo que se saco de la portada sigue existiendo en su pagina: la marquesina, la
+grilla de nueve servicios, las industrias, las metricas y las preguntas
+frecuentes. Los servicios secundarios se conservan como una linea de enlaces
+(`.also`) para no perder enlazado interno sin sumar peso visual.
+
+Al agregar algo nuevo a la portada, la pregunta es si ayuda a que alguien se
+reconozca en los primeros dos scrolls. Si no, va a una pagina interna.
+
+### Paginas internas
+
 1. Encabezado institucional.
 2. Propuesta de valor y llamado a la accion.
-3. Principios de trabajo.
-4. Problemas y soluciones.
-5. Productos propios.
-6. Metodo de trabajo.
-7. Presentacion de la empresa.
-8. Contacto.
-9. Pie institucional.
+3. Diagrama interactivo cuando el servicio lo permite.
+4. Desarrollo del tema.
+5. Metodo de trabajo.
+6. Contacto.
+7. Pie institucional.
 
 ## Pendientes para produccion
 
