@@ -165,10 +165,31 @@ con `curl -s https://axhumtech.com/robots.txt`. Ese bloque:
   `meta-externalagent` y `Amazonbot`. Consecuencia real: Axhum Tech **no puede
   ser citada en las respuestas de ChatGPT, Claude ni Perplexity**.
 
-Es una decision comercial, no un error. Se cambia en el panel de Cloudflare, en
-la seccion de control de rastreadores de IA. Para una empresa que vende
-posicionamiento, aparecer en asistentes de IA suele convenir mas que proteger
-el contenido de la portada.
+**El bloqueo es solo por robots.txt, no por HTTP.** Verificado el 2026-08-27
+pidiendo la portada y el sitemap con el user-agent de cada rastreador: Googlebot,
+Bingbot, GPTBot, ClaudeBot y PerplexityBot reciben **200**, ninguno recibe 403.
+Es decir, no hay regla de firewall bloqueando; lo que hay es una directiva que
+los bots seros respetan por su cuenta. El efecto practico es el mismo para los
+que obedecen, pero el sitio no esta "caido" para nadie.
+
+Para repetir la comprobacion:
+
+    curl -s -o /dev/null -w "%{http_code}
+"       -A "Mozilla/5.0 (compatible; GPTBot/1.1; +https://openai.com/gptbot)"       https://axhumtech.com/
+
+Se cambia en el panel de Cloudflare, en el control de rastreadores de IA, que
+tiene tres categorias: **Search**, **Agent** y **Training**. Para que los
+asistentes puedan citar al sitio hay que permitir **Agent**.
+
+⚠️ **No usar el bloqueo de Training a la ligera.** Cloudflare clasifica a
+Googlebot y a Bingbot como rastreadores de proposito mixto (busqueda +
+entrenamiento) y los trata con la regla mas restrictiva. Bloquear Training
+—incluida la opcion vieja "Block AI bots"— puede terminar bloqueando a
+Googlebot, que es exactamente lo contrario de lo que busca este sitio. Desde el
+2026-09-15 rigen defaults nuevos con ese criterio.
+
+Para una empresa que vende posicionamiento, aparecer en asistentes de IA suele
+convenir mas que proteger el contenido de la portada.
 
 ## Pendiente, fuera del repositorio
 
