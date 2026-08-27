@@ -878,30 +878,12 @@ b {
   margin-bottom: 22px;
 }
 
+/* Solo color. Antes esto era un inline-block con un subrayado en ::after, y
+   cuando el titulo ocupaba mas de un renglon la linea se dibujaba al ancho de
+   todo el bloque en vez del ultimo renglon, y el punto final quedaba empujado
+   a un renglon aparte. */
 .hero h1 .accent {
-  position: relative;
-  display: inline-block;
   color: var(--copper-bright);
-}
-
-.hero h1 .accent::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0.06em;
-  height: 0.09em;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--copper), var(--ember));
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: underline 1s var(--ease-out) 0.5s forwards;
-}
-
-@keyframes underline {
-  to {
-    transform: scaleX(1);
-  }
 }
 
 .hero-intro {
@@ -2141,9 +2123,16 @@ a.card,
   }
 }
 
+/* En pantallas chicas mantenemos dos columnas: apilar las cuatro dejaba un pie
+   de mas de una pantalla de alto. La marca ocupa el ancho completo para que su
+   parrafo siga siendo legible. */
 @media (max-width: 560px) {
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px clamp(18px, 5vw, 32px);
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
   }
 }
 
@@ -2566,4 +2555,164 @@ a.card,
   .diagram-canvas svg.dg-movil {
     display: block;
   }
+}
+
+/* --------------------------------------------------------------------------
+   21. Home: hero centrado y tarjetas de necesidad
+   El objetivo de la portada es que el visitante reconozca su problema
+   en el primer scroll, sin tener que leer un catalogo completo.
+   -------------------------------------------------------------------------- */
+
+.hero--center {
+  text-align: center;
+}
+
+.hero--center .hero-inner {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.hero--center .hero-intro {
+  margin-inline: auto;
+  margin-bottom: 34px;
+}
+
+.hero--center .actions,
+.hero--center .hero-proof {
+  justify-content: center;
+}
+
+.needs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 22px);
+}
+
+@media (max-width: 760px) {
+  .needs {
+    grid-template-columns: 1fr;
+  }
+}
+
+.need {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: clamp(26px, 3vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 320ms var(--ease), border-color 320ms var(--ease), box-shadow 320ms var(--ease);
+}
+
+.need::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(150deg, var(--copper-pale), transparent 62%);
+  opacity: 0;
+  transition: opacity 340ms var(--ease);
+}
+
+.need:hover,
+.need:focus-visible {
+  transform: translateY(-5px);
+  border-color: rgba(184, 115, 51, 0.45);
+  box-shadow: var(--shadow-md);
+}
+
+.need:hover::before,
+.need:focus-visible::before {
+  opacity: 1;
+}
+
+.need-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: var(--copper-pale);
+  color: var(--copper);
+}
+
+.need-icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.need h3 {
+  margin: 4px 0 0;
+  font-size: var(--step-2);
+  font-weight: 800;
+  letter-spacing: -0.022em;
+}
+
+.need p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.need-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-family: var(--font-display);
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--copper);
+}
+
+.need-go span {
+  transition: transform 240ms var(--ease);
+}
+
+.need:hover .need-go span {
+  transform: translateX(4px);
+}
+
+/* Linea de servicios secundarios: mantiene los enlaces internos sin peso visual */
+.also {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 10px;
+  margin-top: clamp(30px, 3.4vw, 44px);
+  font-size: 0.95rem;
+  color: var(--text-mute);
+}
+
+.also a {
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--line-strong);
+  color: var(--text-soft);
+  transition: color 180ms var(--ease), border-color 180ms var(--ease);
+}
+
+.also a:hover,
+.also a:focus-visible {
+  color: var(--copper);
+  border-color: currentColor;
+}
+
+.also i {
+  font-style: normal;
+  opacity: 0.4;
+}
+
+.section-head--center {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
 }
