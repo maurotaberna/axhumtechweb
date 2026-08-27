@@ -86,11 +86,94 @@ Ademas conviene revisar a mano, despues de cada cambio grande:
 3. Que cada `canonical` figure en el sitemap.
 4. Que cada pagina tenga exactamente un `h1` y todas las imagenes tengan `alt`.
 
+## Alta en Google, paso a paso
+
+Son **dos altas distintas** y conviene no confundirlas. Para una empresa sin
+local a la calle, la que de verdad importa es la primera.
+
+### 1. Google Search Console (obligatoria, no depende de tener local)
+
+Es lo que hace que Google entienda, indexe y rankee el sitio. No pregunta por
+direccion ni por local. Es gratis. Sin esto, el resto no sirve de mucho.
+
+1. Entrar a `search.google.com/search-console` con la cuenta de Google de la
+   empresa (no una personal que despues no se pueda transferir).
+2. Elegir el tipo de propiedad **Dominio**, no "Prefijo de URL". La de dominio
+   cubre `axhumtech.com`, `www`, subdominios y http/https de una sola vez.
+3. Google devuelve un registro `TXT` del estilo
+   `google-site-verification=xxxxxxxx`.
+4. Cargarlo en Cloudflare: panel de `axhumtech.com` -> DNS -> Add record ->
+   Type `TXT`, Name `@`, Content el valor que dio Google. Guardar.
+5. Esperar unos minutos y darle **Verificar**.
+6. Ya dentro: **Sitemaps** -> agregar `sitemap.xml`.
+7. **Inspeccion de URL** -> pegar `https://axhumtech.com/` -> "Solicitar
+   indexacion". Repetir con las paginas de servicio. Hay cupo diario, asi que
+   conviene priorizar `/`, `/posicionamiento`, `/webs` y `/software-a-medida`.
+
+Si por algun motivo no se puede tocar el DNS, la alternativa es la propiedad de
+tipo "Prefijo de URL" con la etiqueta `<meta name="google-site-verification">`
+en el `<head>`. En ese caso hay que sumarla a las 13 paginas de
+`builds/preview/`, o al menos a `index.html`.
+
+### 2. Google Business Profile (la ficha de Maps): se puede, con una condicion
+
+Se puede tener ficha **sin local a la calle**, como *empresa de servicio a
+domicilio* (service-area business): se carga una direccion real solo para
+verificar, se la **oculta** y se declaran las zonas de cobertura.
+
+⚠️ **La condicion excluyente:** Google exige que el negocio tenga contacto
+presencial con los clientes. Una empresa 100% remota no califica y la ficha se
+puede suspender. Axhum si califica por la instalacion, la capacitacion y el
+soporte presencial de Gestion y Comanda; la ficha tiene que describir *ese*
+servicio local, no el desarrollo remoto.
+
+Pasos:
+
+1. `business.google.com` -> agregar empresa.
+2. Nombre **exactamente** "Axhum Tech", igual que en el sitio y en el JSON-LD.
+   El nombre, el telefono y la web tienen que coincidir en todos lados.
+3. Categoria principal: desarrollador de software. Secundarias: diseñador de
+   sitios web, consultor de marketing.
+4. Cuando pregunta si los clientes pueden visitar la direccion: **No**.
+5. Cargar las zonas de cobertura (hasta 20; el limite razonable es unas 2 horas
+   de manejo desde la base): Concepcion, Aguilares, Monteros, San Miguel de
+   Tucuman y alrededores.
+6. Verificacion: hoy suele ser por video. Hay que mostrar la zona, el lugar de
+   trabajo y algo que pruebe que la empresa opera ahi.
+7. Completar telefono `+54 3865 267037`, web `https://axhumtech.com`, horarios,
+   servicios, descripcion y fotos reales.
+8. Pedir reseñas a clientes reales. No se compran ni se inventan.
+
+No sirven: casilla de correo, oficina virtual ni una direccion prestada.
+
+### 3. Bing Webmaster Tools (opcional, cuesta cinco minutos)
+
+`bing.com/webmasters` permite importar todo desde Search Console con un clic.
+Alimenta a Bing y a Copilot.
+
+## El robots.txt en vivo no es el del repositorio
+
+Cloudflare **inyecta un bloque propio arriba** del `public/robots.txt`. Se ve
+con `curl -s https://axhumtech.com/robots.txt`. Ese bloque:
+
+- Deja pasar a Googlebot y declara `Content-Signal: search=yes`. **La busqueda
+  normal de Google no esta afectada.**
+- Bloquea `Google-Extended`, que solo controla el entrenamiento y el grounding
+  de Gemini. Segun la documentacion de Google, esto **no** afecta el ranking ni
+  la aparicion en AI Overviews.
+- Bloquea `GPTBot`, `ClaudeBot`, `CCBot`, `Bytespider`, `Applebot-Extended`,
+  `meta-externalagent` y `Amazonbot`. Consecuencia real: Axhum Tech **no puede
+  ser citada en las respuestas de ChatGPT, Claude ni Perplexity**.
+
+Es una decision comercial, no un error. Se cambia en el panel de Cloudflare, en
+la seccion de control de rastreadores de IA. Para una empresa que vende
+posicionamiento, aparecer en asistentes de IA suele convenir mas que proteger
+el contenido de la portada.
+
 ## Pendiente, fuera del repositorio
 
-- Dar de alta el sitio en **Google Search Console** y enviar el sitemap.
-- Configurar **analitica** (el sitio hoy no carga ningun script de medicion).
-- Crear o reclamar la **ficha de Google Business Profile** de Axhum Tech. Es una
-  empresa de servicio en el area: se verifica con una direccion, se la oculta y
-  se declaran las zonas de cobertura.
+- Dar de alta el sitio en Google Search Console y enviar el sitemap (arriba).
+- Crear la ficha de Google Business Profile (arriba).
+- Decidir que hacer con el bloqueo de rastreadores de IA de Cloudflare (arriba).
+- Configurar **analitica**: el sitio hoy no carga ningun script de medicion.
 - Completar `sameAs` de la `Organization` cuando existan mas perfiles publicos.
