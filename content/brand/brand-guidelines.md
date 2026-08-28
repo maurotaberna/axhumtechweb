@@ -39,6 +39,14 @@ El isotipo oficial es la X del logo maestro circular: dos brazos azul marino a l
 
 ## Paleta
 
+La interfaz web utiliza desde 2026-08-28 una aplicacion fria de la marca:
+blanco `#FFFFFF`, gris `#F4F6F8`, azul marino `#102D43`, texto `#152F45`
+y cobre de acento `#A65327`. Su modo oscuro usa fondo `#101E2D`, texto
+`#EEF3F8` y acento `#E3A575`. Detalles y reglas en `docs/visual-system.md`.
+Estos colores de interfaz no cambian los colores de los archivos oficiales del logo.
+
+Paleta de los materiales previos (no trasladar el crema a la nueva interfaz web):
+
 - Azul petroleo: `#0D3B4E`.
 - Azul secundario: `#3E5F6E`.
 - Cobre: `#B87333`.
@@ -47,7 +55,7 @@ El isotipo oficial es la X del logo maestro circular: dos brazos azul marino a l
 - Amarillo: `#D4A017`.
 - Rojo: `#C0392B`.
 
-La comunicacion institucional prioriza azul petroleo, cobre, crema y mucho espacio. La X de Axhum es un elemento visual importante y debe usarse como recurso grafico cuando el formato lo permita.
+La web prioriza blanco frio, azul marino y mucho espacio. El cobre es un acento, no un fondo dominante. La X oficial se mantiene sin alteraciones ni efectos.
 
 ## Tipografia
 

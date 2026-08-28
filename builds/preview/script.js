@@ -159,36 +159,14 @@
   }
 
   /* ---------------------------------------------------------------
-     Brillo que sigue al cursor en las tarjetas
+     Cabecera fija y CTA movil
      --------------------------------------------------------------- */
-  if (!reduceMotion && window.matchMedia("(hover: hover)").matches) {
-    document.querySelectorAll(".card").forEach(function (card) {
-      card.addEventListener("pointermove", function (event) {
-        var box = card.getBoundingClientRect();
-        card.style.setProperty("--mx", ((event.clientX - box.left) / box.width) * 100 + "%");
-        card.style.setProperty("--my", ((event.clientY - box.top) / box.height) * 100 + "%");
-      });
-    });
-  }
-
-  /* ---------------------------------------------------------------
-     Progreso de lectura, cabecera fija y CTA movil
-     --------------------------------------------------------------- */
-  var progress = document.querySelector(".progress-bar");
   var header = document.querySelector(".site-header");
   var dock = document.querySelector(".dock");
-  var heroPanel = document.querySelector("[data-float]");
-  var lastY = window.scrollY;
   var ticking = false;
 
   function onFrame() {
     var y = window.scrollY;
-    var range = document.documentElement.scrollHeight - window.innerHeight;
-
-    if (progress) {
-      progress.style.transform = "scaleX(" + (range > 0 ? Math.min(y / range, 1) : 0) + ")";
-    }
-
     if (header) {
       header.classList.toggle("is-stuck", y > 12);
     }
@@ -197,11 +175,6 @@
       dock.classList.toggle("is-visible", y > 420);
     }
 
-    if (heroPanel && !reduceMotion && y < window.innerHeight * 1.4) {
-      heroPanel.style.transform = "translate3d(0," + (y * -0.045).toFixed(2) + "px,0)";
-    }
-
-    lastY = y;
     ticking = false;
   }
 

@@ -21,6 +21,7 @@ New-Item -ItemType Directory -Path $outputDir | Out-Null
 Get-ChildItem -LiteralPath $sourceDir -Filter "*.html" | Copy-Item -Destination $outputDir -Force
 Copy-Item -LiteralPath (Join-Path $sourceDir "styles.css") -Destination $outputDir -Force
 Copy-Item -LiteralPath (Join-Path $sourceDir "script.js") -Destination $outputDir -Force
+Copy-Item -LiteralPath (Join-Path $sourceDir "theme.js") -Destination $outputDir -Force
 
 $outputBranding = Join-Path $outputDir "assets/branding"
 New-Item -ItemType Directory -Path $outputBranding -Force | Out-Null
@@ -44,6 +45,7 @@ $huella = {
 }
 $vCss = & $huella "styles.css"
 $vJs = & $huella "script.js"
+$vTheme = & $huella "theme.js"
 
 # UTF-8 sin BOM, explicito: Windows PowerShell 5.1 lee/escribe ANSI por defecto
 # y eso rompe los acentos de los datos estructurados JSON-LD.
@@ -55,6 +57,7 @@ Get-ChildItem -LiteralPath $outputDir -Filter "*.html" | ForEach-Object {
   $html = $html.Replace("../../public/", "./")
   $html = $html.Replace('href="./styles.css"', 'href="./styles.css?v=' + $vCss + '"')
   $html = $html.Replace('src="./script.js"', 'src="./script.js?v=' + $vJs + '"')
+  $html = $html.Replace('src="./theme.js"', 'src="./theme.js?v=' + $vTheme + '"')
 
   # URLs limpias. Cloudflare Pages redirige /pagina.html a /pagina con un 308,
   # asi que si dejaramos los .html cada enlace interno y cada canonical

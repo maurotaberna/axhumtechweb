@@ -12,6 +12,7 @@ Desde la raiz del proyecto:
 node --check builds/production/script.js
 node src/validate-seo.mjs
 node --test src/validate-seo.test.mjs
+node --test src/theme.test.mjs
 ```
 
 El HTML/CSS/JS editable vive en `builds/preview/`, no en esta carpeta.
@@ -21,3 +22,7 @@ validaciones antes de publicar en Cloudflare Pages.
 
 El validador revisa las convenciones del HTML estatico de este proyecto; no
 sustituye una prueba visual ni la inspeccion de URL de Search Console.
+
+El build tambien copia y versiona `theme.js`, cargado antes del CSS para recuperar
+el tema guardado sin un destello del modo equivocado. El sistema visual y sus
+pruebas estan documentados en `docs/visual-system.md`.
