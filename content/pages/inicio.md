@@ -2,7 +2,7 @@
 
 ## Propuesta principal
 
-Tu necesidad puede convertirse en software.
+Desarrollamos soluciones digitales que hacen crecer tu negocio.
 
 Axhum Tech disena y desarrolla sistemas, plataformas, automatizaciones, aplicaciones y experiencias web para resolver desafios reales de negocio.
 

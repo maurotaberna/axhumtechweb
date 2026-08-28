@@ -29,6 +29,8 @@ Productos activos:
 
 ## Mision
 
+Lema principal de la web, aprobado el 2026-08-28: "Desarrollamos soluciones digitales que hacen crecer tu negocio."
+
 Hacer que la tecnologia correcta este al alcance de cada negocio. Axhum Tech transforma problemas reales en herramientas claras, mantenibles y preparadas para crecer.
 
 ## Identidad
