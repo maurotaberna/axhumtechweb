@@ -32,147 +32,224 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://axhumtech.com/#organizacion",
+      "name": "Axhum Tech",
+      "alternateName": "Axhum Tech | Software para empresas",
+      "url": "https://axhumtech.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://axhumtech.com/assets/branding/logos/axhum-tech-logo-professional-50kb.png",
+        "width": 720,
+        "height": 720
+      },
+      "image": "https://axhumtech.com/assets/branding/social/axhum-tech-og.png",
+      "description": "Empresa argentina de desarrollo de software a medida, páginas web, tiendas online, automatizaciones y posicionamiento en Google. Atención 100% remota para negocios y empresas de toda Argentina.",
+      "telephone": "+543865267037",
+      "email": "hola@axhumtech.com",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "knowsLanguage": "es-AR",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://axhumtech.com/nosotros.html#fundador",
+        "name": "Mauro Gustavo Exequel Taberna",
+        "jobTitle": "Fundador y desarrollador"
+      },
+      "sameAs": [
+        "https://www.instagram.com/axhumtech"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "url": "https://axhumtech.com/contacto.html",
+          "telephone": "+543865267037",
+          "email": "hola@axhumtech.com",
+          "availableLanguage": [
+            "Spanish"
+          ],
+          "areaServed": "AR"
+        }
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://axhumtech.com/#sitio",
+      "url": "https://axhumtech.com/",
+      "name": "Axhum Tech",
+      "inLanguage": "es-AR",
+      "publisher": {
+        "@id": "https://axhumtech.com/#organizacion"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://axhumtech.com/#pagina",
+      "url": "https://axhumtech.com/",
+      "name": "Axhum Tech | Software a medida, páginas web y posicionamiento en Google",
+      "description": "Empresa de desarrollo de software a medida, páginas web, tiendas online y automatizaciones. Atención 100% remota para empresas de Argentina.",
+      "inLanguage": "es-AR",
+      "isPartOf": {
+        "@id": "https://axhumtech.com/#sitio"
+      },
+      "about": {
+        "@id": "https://axhumtech.com/#organizacion"
+      },
+      "primaryImageOfPage": "https://axhumtech.com/assets/branding/social/axhum-tech-og.png"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://axhumtech.com/#servicio",
+      "name": "Axhum Tech",
+      "url": "https://axhumtech.com/",
+      "image": "https://axhumtech.com/assets/branding/social/axhum-tech-og.png",
+      "provider": {
+        "@id": "https://axhumtech.com/#organizacion"
+      },
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://axhumtech.com/contacto.html",
+        "availableLanguage": "Spanish"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "serviceType": [
+        "Desarrollo de software a medida",
+        "Diseño y desarrollo de páginas web",
+        "Posicionamiento en Google (SEO)",
+        "Tiendas online",
+        "Automatización de WhatsApp",
+        "Plataformas SaaS",
+        "CRM y gestión comercial",
+        "Integraciones y reportes"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Axhum Tech",
+        "itemListElement": [
           {
-            "@type": "Organization",
-            "@id": "https://axhumtech.com/#organizacion",
-            "name": "Axhum Tech",
-            "alternateName": "Axhum Tech | Software para empresas",
-            "url": "https://axhumtech.com/",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://axhumtech.com/assets/branding/logos/axhum-tech-logo-professional-50kb.png",
-              "width": 720,
-              "height": 720
-            },
-            "image": "https://axhumtech.com/assets/branding/social/axhum-tech-og.png",
-            "description": "Empresa argentina de desarrollo de software a medida, páginas web, tiendas online, automatizaciones y posicionamiento en Google. Atención 100% remota para negocios y empresas de toda Argentina.",
-            "telephone": "+543865267037",
-            "email": "hola@axhumtech.com",
-            "areaServed": { "@type": "Country", "name": "Argentina" },
-            "knowsLanguage": "es-AR",
-            "founder": {
-              "@type": "Person",
-              "@id": "https://axhumtech.com/nosotros.html#fundador",
-              "name": "Mauro Gustavo Exequel Taberna",
-              "jobTitle": "Fundador y desarrollador"
-            },
-            "sameAs": ["https://www.instagram.com/axhumtech"],
-            "contactPoint": [
-              {
-                "@type": "ContactPoint",
-                "contactType": "sales",
-                "url": "https://axhumtech.com/contacto.html",
-                "telephone": "+543865267037",
-                "email": "hola@axhumtech.com",
-                "availableLanguage": ["Spanish"],
-                "areaServed": "AR"
-              }
-            ]
-          },
-          {
-            "@type": "WebSite",
-            "@id": "https://axhumtech.com/#sitio",
-            "url": "https://axhumtech.com/",
-            "name": "Axhum Tech",
-            "inLanguage": "es-AR",
-            "publisher": { "@id": "https://axhumtech.com/#organizacion" }
-          }
-,
-          {
-            "@type": "WebPage",
-            "@id": "https://axhumtech.com/#pagina",
-            "url": "https://axhumtech.com/",
-            "name": "Axhum Tech | Software a medida, páginas web y posicionamiento en Google",
-            "description": "Empresa de desarrollo de software a medida, páginas web, tiendas online y automatizaciones. Atención 100% remota para empresas de Argentina.",
-            "inLanguage": "es-AR",
-            "isPartOf": { "@id": "https://axhumtech.com/#sitio" },
-            "about": { "@id": "https://axhumtech.com/#organizacion" },
-            "primaryImageOfPage": "https://axhumtech.com/assets/branding/social/axhum-tech-og.png"
-          },
-          {
-            "@type": "Service",
-            "@id": "https://axhumtech.com/#servicio",
-            "name": "Axhum Tech",
-            "url": "https://axhumtech.com/",
-            "image": "https://axhumtech.com/assets/branding/social/axhum-tech-og.png",
-            "provider": { "@id": "https://axhumtech.com/#organizacion" },
-            "availableChannel": {
-              "@type": "ServiceChannel",
-              "serviceUrl": "https://axhumtech.com/contacto.html",
-              "availableLanguage": "Spanish"
-            },
-            "areaServed": { "@type": "Country", "name": "Argentina" },
-            "serviceType": [
-              "Desarrollo de software a medida",
-              "Diseño y desarrollo de páginas web",
-              "Posicionamiento en Google (SEO)",
-              "Tiendas online",
-              "Automatización de WhatsApp",
-              "Plataformas SaaS",
-              "CRM y gestión comercial",
-              "Integraciones y reportes"
-            ],
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Servicios de Axhum Tech",
-              "itemListElement": [
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Software a medida", "url": "https://axhumtech.com/software-a-medida.html" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Páginas web y tiendas online", "url": "https://axhumtech.com/webs.html" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Posicionamiento en Google", "url": "https://axhumtech.com/posicionamiento.html" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatización de WhatsApp", "url": "https://axhumtech.com/servicios.html#automatizacion" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CRM y gestión comercial", "url": "https://axhumtech.com/servicios.html#crm" } },
-                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Integraciones, datos y reportes", "url": "https://axhumtech.com/servicios.html#datos" } }
-              ]
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Software a medida",
+              "url": "https://axhumtech.com/software-a-medida.html"
             }
           },
           {
-            "@type": "ItemList",
-            "@id": "https://axhumtech.com/#productos",
-            "name": "Productos de Axhum Tech",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "Axhum Gestión", "url": "https://axhumtech.com/gestion.html" },
-              { "@type": "ListItem", "position": 2, "name": "Axhum Comanda", "url": "https://axhumtech.com/comanda.html" },
-              { "@type": "ListItem", "position": 3, "name": "Arena", "url": "https://axhumtech.com/arena.html" }
-            ]
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Páginas web y tiendas online",
+              "url": "https://axhumtech.com/webs.html"
+            }
           },
           {
-            "@type": "FAQPage",
-            "@id": "https://axhumtech.com/#preguntas",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "¿Cuánto tarda un proyecto?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Apuntamos a una primera versión funcional entre 2 y 8 semanas, según complejidad, cuando el alcance inicial está acordado. Los proyectos mayores se dividen en etapas para entregar valor sin esperar meses." }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Publican precios?",
-                "acceptedAnswer": { "@type": "Answer", "text": "No publicamos tablas generales. Primero conversamos la necesidad, después definimos el alcance y recién entonces presentamos una propuesta con números concretos." }
-              },
-              {
-                "@type": "Question",
-                "name": "¿En cuánto tiempo se ven resultados de posicionamiento?",
-                "acceptedAnswer": { "@type": "Answer", "text": "El SEO técnico y la ficha de Google Business Profile pueden mostrar mejoras en semanas. El posicionamiento orgánico por palabras clave competidas es un trabajo sostenido: se mide mes a mes y se ajusta." }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Se puede empezar por algo chico?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Sí, y suele ser lo recomendable. Una landing, una automatización puntual o un módulo son un buen primer paso para validar antes de invertir en algo mayor." }
-              },
-              {
-                "@type": "Question",
-                "name": "¿Trabajan con negocios de todo el país?",
-                "acceptedAnswer": { "@type": "Answer", "text": "Sí. Trabajamos de forma remota en toda Argentina, con reuniones por videollamada y seguimiento por WhatsApp." }
-              }
-            ]
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Posicionamiento en Google",
+              "url": "https://axhumtech.com/posicionamiento.html"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Automatización de WhatsApp",
+              "url": "https://axhumtech.com/servicios.html#automatizacion"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "CRM y gestión comercial",
+              "url": "https://axhumtech.com/servicios.html#crm"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Integraciones, datos y reportes",
+              "url": "https://axhumtech.com/servicios.html#datos"
+            }
           }
         ]
       }
-    </script>
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://axhumtech.com/#productos",
+      "name": "Productos de Axhum Tech",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Axhum Gestión",
+          "url": "https://axhumtech.com/gestion"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Axhum Service",
+          "url": "https://axhumtech.com/service"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Axhum Comanda",
+          "url": "https://axhumtech.com/comanda"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Arena",
+          "url": "https://axhumtech.com/arena"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Axhum Distribuidora",
+          "url": "https://axhumtech.com/distribuidora"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Axhum Gestión Online",
+          "url": "https://axhumtech.com/productos#gestion-online"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Axhum Bot",
+          "url": "https://axhumtech.com/productos#bot"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Axhum Logística",
+          "url": "https://axhumtech.com/productos#logistica"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Axhum CRM",
+          "url": "https://axhumtech.com/productos#crm"
+        }
+      ]
+    }
+  ]
+}</script>
   </head>
   <body>
     <a class="skip-link" href="#contenido">Ir al contenido</a>
@@ -205,7 +282,7 @@
                 <a href="./gestion.html"><strong>Axhum Gesti&oacute;n</strong><small>Ventas, stock, caja y clientes</small></a>
                 <a href="./comanda.html"><strong>Axhum Comanda</strong><small>Mesas, pedidos y caja para gastronom&iacute;a</small></a>
                 <a href="./arena.html"><strong>Arena</strong><small>Gesti&oacute;n integral para gimnasios</small></a>
-                <a href="./productos.html"><strong>Todo el ecosistema</strong><small>Distribuidora, CRM, Bot y Log&iacute;stica</small></a>
+                <a href="./service.html"><strong>Axhum Service</strong><small>Reparaciones y mostrador para talleres</small></a><a href="./distribuidora.html"><strong>Axhum Distribuidora</strong><small>Depósitos, mayorista y reparto</small></a><a href="./productos.html"><strong>Todo el ecosistema</strong><small>Distribuidora, CRM, Bot y Log&iacute;stica</small></a>
               </div>
             </li>
             <li><a class="nav-link" href="./nosotros.html">Nosotros</a></li>
@@ -241,7 +318,7 @@
           <a href="./gestion.html">Axhum Gesti&oacute;n</a>
           <a href="./comanda.html">Axhum Comanda</a>
           <a href="./arena.html">Arena &middot; gimnasios</a>
-          <a href="./productos.html">Todo el ecosistema</a>
+          <a href="./service.html">Axhum Service</a><a href="./distribuidora.html">Axhum Distribuidora</a><a href="./productos.html">Todo el ecosistema</a>
         </div></div>
       </div>
       <div class="drawer-group"><a href="./nosotros.html">Nosotros</a></div>
@@ -256,26 +333,24 @@
 
     <main id="contenido">
       <!-- ================= HERO ================= -->
-      <section class="hero hero--center">
-        <div class="wrap">
-          <div class="hero-inner" data-reveal>
-            <p class="eyebrow">Desarrollo de software y soluciones digitales</p>
-            <h1>Desarrollamos soluciones digitales que hacen <span class="accent">crecer</span> tu negocio.</h1>
-            <p class="hero-intro">
-              Software a medida, p&aacute;ginas web que generan consultas y posicionamiento en Google. Contanos qu&eacute; necesit&aacute;s resolver y te decimos c&oacute;mo.
-            </p>
-            <div class="actions">
-              <a class="btn btn--lg" href="./contacto.html">Contar mi necesidad <span aria-hidden="true">&#8594;</span></a>
-              <a class="btn btn--on-dark-ghost btn--lg" href="https://wa.me/543865267037?text=Hola%20Axhum%20Tech%2C%20quiero%20conversar%20un%20proyecto." target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
-            </div>
-            <ul class="hero-proof">
-              <li>Primera versi&oacute;n funcional en 2 a 8 semanas</li>
-              <li>Habl&aacute;s directo con quien desarrolla</li>
-              <li>Argentina &middot; Remoto</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <section class="signature-hero">
+  <div class="wrap signature-grid">
+    <div class="signature-copy">
+      <p class="eyebrow">AXHUM TECH / SOFTWARE & SOLUCIONES DIGITALES</p>
+      <h1>Tu negocio.<br>Más simple.<br><span>Más adelante.</span></h1>
+      <p class="signature-intro">Software para ordenar tu operación. Webs para mostrar lo que hacés. Tecnología para dar el próximo paso.</p>
+      <div class="actions"><a class="btn btn--lg" href="./productos.html">Encontrá tu sistema <span aria-hidden="true">↗</span></a><a class="signature-link" href="./contacto.html">Hablemos de tu proyecto <span aria-hidden="true">↗</span></a></div>
+      <p class="signature-note">Desarrollo propio. Trato directo. Desde Argentina.</p>
+    </div>
+    <div class="signature-product">
+      <div class="signature-label"><span class="live-dot" aria-hidden="true"></span> AXHUM GESTIÓN <span>SOFTWARE PROPIO</span></div>
+      <a class="product-window" href="./gestion.html" aria-label="Conocer Axhum Gestión"><div class="window-bar" aria-hidden="true"><span>● ● ●</span><span>Tu operación, en un solo lugar</span><span>↗</span></div><img src="../../assets/products/gestion-demo.png" alt="Pantalla de Axhum Gestión con ventas, caja e inventario de un comercio de ejemplo" width="1360" height="697" fetchpriority="high" /></a>
+      <div class="signature-product-foot"><p>Menos planillas.<br><strong>Más control de cada día.</strong></p><a href="./gestion.html">Explorar Gestión <span aria-hidden="true">↗</span></a></div>
+      <p class="demo-caption">Pantalla del producto · Datos de demostración</p>
+    </div>
+  </div>
+  <div class="wrap signature-bottom"><span>TECNOLOGÍA CON UN PROPÓSITO</span><p>Ordenar. Conectar. Hacer crecer.</p><a href="#necesidades" aria-label="Explorar soluciones">↓</a></div>
+</section>
 
       <!-- ================= NECESIDADES ================= -->
       <section class="section" id="necesidades">
@@ -310,7 +385,7 @@
             <a class="need" href="./productos.html" data-reveal>
               <span class="need-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2.5" y="4" width="19" height="13" rx="2" /><path d="M8 21h8M12 17v4" /></svg></span>
               <h3>Necesito ordenar ventas, stock y caja</h3>
-              <p>Software terminado y probado para comercios, gastronom&iacute;a y gimnasios. Se instala, se configura y arranca a funcionar esta semana.</p>
+              <p>Sistemas para comercios, talleres, gastronomía y gimnasios. Elegí tu rubro y coordinamos una demostración antes de la puesta en marcha.</p>
               <span class="need-go">Ver productos <span aria-hidden="true">&#8594;</span></span>
             </a>
           </div>
@@ -332,16 +407,16 @@
           <div class="section-head section-head--split" data-reveal>
             <div>
               <p class="eyebrow">Productos propios</p>
-              <h2>Software que ya est&aacute; hecho y funcionando.</h2>
+              <h2>Un sistema para cada<br>forma de trabajar.</h2>
             </div>
-            <p class="lede">Si tu necesidad es una de estas, no hace falta desarrollar desde cero: se instala y arranca.</p>
+            <p class="lede">Conocé las funciones, elegí la edición y probá el circuito de tu negocio con nosotros.</p>
           </div>
 
           <div class="grid grid--3">
             <article class="product-card" data-reveal>
               <div class="product-card-top">
                 <img class="product-logo" src="../../assets/branding/logos/axhum-gestion-logo-on-light.svg" alt="Axhum Gesti&oacute;n" width="210" height="42" />
-                <span class="badge badge--live">Disponible</span>
+                <span class="badge badge--live">Coordiná una demo</span>
               </div>
               <p class="kicker">Comercios y empresas</p>
               <h3>Ventas, stock y caja en una sola PC.</h3>
@@ -349,34 +424,26 @@
               <a class="arrow-link" href="./gestion.html">Ver c&oacute;mo funciona <span aria-hidden="true">&#8594;</span></a>
             </article>
 
-            <article class="product-card" data-reveal>
-              <div class="product-card-top">
-                <img class="product-logo" src="../../assets/branding/logos/axhum-comanda-logo-on-light.svg" alt="Axhum Comanda" width="210" height="42" />
-                <span class="badge badge--live">Disponible</span>
-              </div>
-              <p class="kicker">Gastronom&iacute;a</p>
-              <h3>Mesas, pedidos y caja sin papeles.</h3>
-              <p>Comandas, sal&oacute;n, para llevar, delivery, caja y an&aacute;lisis de la operaci&oacute;n diaria.</p>
-              <a class="arrow-link" href="./comanda.html">Ver c&oacute;mo funciona <span aria-hidden="true">&#8594;</span></a>
-            </article>
+            <article class="product-card" data-reveal><div class="product-card-top"><span class="eyebrow">AXHUM SERVICE</span><span class="badge badge--live">Nuevo</span></div><p class="kicker">Talleres de celulares</p><h3>Cada equipo, desde que entra hasta que se entrega.</h3><p>Órdenes de reparación, repuestos, presupuestos, garantías, mostrador y caja.</p><a class="arrow-link" href="./service.html">Ver cómo funciona <span aria-hidden="true">↗</span></a></article>
 
             <article class="product-card" data-reveal>
               <div class="product-card-top">
                 <img class="product-logo product-logo--raw" src="../../assets/branding/logos/arena-mark.png" alt="Arena" width="48" height="48" />
-                <span class="badge badge--live">Disponible</span>
+                <span class="badge badge--live">Coordiná una demo</span>
               </div>
               <p class="kicker">Gimnasios y clubes</p>
-              <h3>Socios, cuotas y accesos sin planillas.</h3>
-              <p>Membres&iacute;as, pagos, control de accesos, clases, rutinas, sedes y portal del socio.</p>
+              <h3>Socios, cuotas y accesos en orden.</h3>
+              <p>Membresías, pagos, accesos y clases. Funciones según la edición y los módulos elegidos.</p>
               <a class="arrow-link" href="./arena.html">Ver c&oacute;mo funciona <span aria-hidden="true">&#8594;</span></a>
             </article>
           </div>
 
           <div class="actions" style="margin-top: 34px" data-reveal>
-            <a class="btn btn--light" href="./productos.html">Ver los 8 productos Axhum <span aria-hidden="true">&#8594;</span></a>
+            <a class="btn btn--light" href="./productos.html">Explorar todos los productos <span aria-hidden="true">&#8594;</span></a>
           </div>
         </div>
       </section>
+
 
       <!-- ================= METODO ================= -->
       <section class="section" id="proceso">
@@ -575,7 +642,7 @@
               <li><a href="./gestion.html">Axhum Gesti&oacute;n</a></li>
               <li><a href="./comanda.html">Axhum Comanda</a></li>
               <li><a href="./arena.html">Arena &middot; gimnasios</a></li>
-              <li><a href="./productos.html">Ecosistema completo</a></li>
+              <li><a href="./service.html">Axhum Service</a></li><li><a href="./distribuidora.html">Axhum Distribuidora</a></li><li><a href="./productos.html">Ecosistema completo</a></li>
             </ul>
           </div>
 

@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 $projectRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 $sourceDir = Join-Path $projectRoot "builds/preview"
@@ -22,6 +22,9 @@ Get-ChildItem -LiteralPath $sourceDir -Filter "*.html" | Copy-Item -Destination 
 Copy-Item -LiteralPath (Join-Path $sourceDir "styles.css") -Destination $outputDir -Force
 Copy-Item -LiteralPath (Join-Path $sourceDir "script.js") -Destination $outputDir -Force
 Copy-Item -LiteralPath (Join-Path $sourceDir "theme.js") -Destination $outputDir -Force
+
+New-Item -ItemType Directory -Path (Join-Path $outputDir "assets") -Force | Out-Null
+Copy-Item -LiteralPath (Join-Path $projectRoot "assets/products") -Destination (Join-Path $outputDir "assets/products") -Recurse -Force
 
 $outputBranding = Join-Path $outputDir "assets/branding"
 New-Item -ItemType Directory -Path $outputBranding -Force | Out-Null

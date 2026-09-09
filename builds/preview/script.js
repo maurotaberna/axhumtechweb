@@ -67,6 +67,7 @@
 
     var parent = trigger.closest("li");
     var hoverTimer;
+    var openedByHover = false;
 
     function open() {
       closeAllPanels(trigger);
@@ -81,6 +82,13 @@
 
     trigger.addEventListener("click", function (event) {
       event.preventDefault();
+      // A pointer first enters the button (opening the panel), then clicks it.
+      // Keep that first click open instead of immediately undoing the hover.
+      if (openedByHover && event.detail > 0) {
+        openedByHover = false;
+        return;
+      }
+      openedByHover = false;
       if (trigger.getAttribute("aria-expanded") === "true") close();
       else open();
     });
@@ -88,6 +96,7 @@
     if (parent && window.matchMedia("(hover: hover)").matches) {
       parent.addEventListener("mouseenter", function () {
         window.clearTimeout(hoverTimer);
+        openedByHover = trigger.getAttribute("aria-expanded") !== "true";
         open();
       });
       parent.addEventListener("mouseleave", function () {
