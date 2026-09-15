@@ -28,6 +28,8 @@ test('analytics is configured but does not load Google before consent', () => {
   assert.equal(externalScripts, 0);
   assert.equal(window.dataLayer, undefined);
   assert.match(source, /var measurementId = "G-0QX9YV7TZ6";/);
+  assert.match(source, /Aceptar y continuar/);
+  assert.match(source, /data-analytics-reject>Rechazar/);
 });
 
 test('analytics only permits non-sensitive commercial context', () => {

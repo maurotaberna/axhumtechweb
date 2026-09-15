@@ -37,7 +37,7 @@
     box.className = "analytics-consent";
     box.setAttribute("role", "dialog");
     box.setAttribute("aria-labelledby", "analytics-consent-title");
-    box.innerHTML = '<div><strong id="analytics-consent-title">Medición del sitio</strong><p>Usamos Google Analytics para entender qué páginas y acciones resultan útiles. No enviamos datos escritos en el formulario.</p></div><div class="analytics-consent__actions"><button type="button" class="btn btn--ghost" data-analytics-reject>Rechazar</button><button type="button" class="btn" data-analytics-accept>Aceptar</button></div>';
+    box.innerHTML = '<div><strong id="analytics-consent-title">Cookies de medición</strong><p>Usamos Google Analytics para entender qué páginas y acciones resultan útiles. No enviamos datos escritos en el formulario.</p></div><div class="analytics-consent__actions"><button type="button" class="btn analytics-consent__accept" data-analytics-accept>Aceptar y continuar</button><button type="button" class="analytics-consent__reject" data-analytics-reject>Rechazar</button></div>';
     document.body.appendChild(box);
     box.querySelector("[data-analytics-reject]").addEventListener("click", function () { saveConsent("denied"); box.remove(); });
     box.querySelector("[data-analytics-accept]").addEventListener("click", function () { saveConsent("granted"); box.remove(); loadGoogleTag(); });

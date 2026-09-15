@@ -2898,9 +2898,12 @@ img[src*="-on-light.svg"] { background: #ffffff; border-radius: 4px; }
 .section--dark .product-card-top { flex-wrap:wrap; }
 .section--dark .product-card .badge { white-space:normal; }
 .signature-hero :focus-visible { outline: 3px solid #f4c5a0; outline-offset:5px; }
-.analytics-consent { position:fixed; z-index:120; right:24px; bottom:24px; width:min(520px,calc(100% - 48px)); display:grid; grid-template-columns:1fr auto; gap:22px; align-items:center; padding:22px; border:1px solid var(--line-strong); border-radius:16px; background:var(--surface); color:var(--text); box-shadow:var(--shadow-lg); }
-.analytics-consent strong { display:block; margin-bottom:5px; font-family:var(--font-display); }
+.analytics-consent { position:fixed; z-index:120; right:24px; bottom:24px; width:min(610px,calc(100% - 48px)); display:grid; grid-template-columns:minmax(0,1fr) 190px; gap:28px; align-items:center; padding:24px; border:1px solid var(--line-strong); border-radius:16px; background:var(--surface); color:var(--text); box-shadow:var(--shadow-lg); }
+.analytics-consent strong { display:block; margin-bottom:5px; font-family:var(--font-display); font-size:1rem; }
 .analytics-consent p { margin:0; color:var(--text-soft); font-size:.875rem; line-height:1.55; }
-.analytics-consent__actions { display:flex; gap:8px; }
-.analytics-consent__actions .btn { min-height:42px; padding:10px 16px; font-size:.875rem; }
-@media (max-width:640px) { .analytics-consent { right:16px; bottom:16px; width:calc(100% - 32px); grid-template-columns:1fr; } .analytics-consent__actions .btn { flex:1; } }
+.analytics-consent__actions { display:flex; flex-direction:column; gap:7px; }
+.analytics-consent__accept { width:100%; min-height:54px; padding:14px 20px; font-size:.95rem; font-weight:700; }
+.analytics-consent__reject { align-self:center; min-height:28px; padding:4px 10px; border:0; background:transparent; color:var(--text-mute); font:500 .72rem var(--font-body); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }
+.analytics-consent__reject:hover { color:var(--text); }
+.analytics-consent__reject:focus-visible { color:var(--text); }
+@media (max-width:640px) { .analytics-consent { right:16px; bottom:16px; width:calc(100% - 32px); grid-template-columns:1fr; gap:18px; padding:20px; } .analytics-consent__accept { min-height:56px; } }
