@@ -1,15 +1,15 @@
 # SEO y posicionamiento de Axhum Tech
 
-Actualizado: 2026-08-27. Modalidad confirmada por el titular: **100% remota**.
-Mercado comunicado: Argentina. Marca: Axhum Tech. Web: https://axhumtech.com/.
+Actualizado: 2026-09-14. Modalidad confirmada por el titular: **remota cuando el alcance lo permite y presencial coordinada segun proyecto**.
+Mercado base: Argentina, con posibilidad de proyectos en otras provincias o paises segun planificacion. Marca: Axhum Tech. Web: https://axhumtech.com/.
 
 ## Estado y limites
 
 - La web tiene paginas por servicio, metadatos, sitemap y datos estructurados.
-- Se eliminaron las promesas de atencion presencial de Nosotros, Contacto y FAQ.
+- La web diferencia trabajo remoto de instalaciones o puestas en marcha presenciales coordinadas. No comunica un local abierto al publico.
 - La empresa se describe como `Organization`, no como un negocio local.
 - Search Console: alta, verificacion y envio del sitemap **pendientes de confirmar**.
-- Correo institucional: en configuracion; falta la direccion confirmada y operativa.
+- Correo institucional confirmado: `hola@axhumtech.com`; `contacto@axhumtech.com` tambien deriva al titular.
 - No se han contratado anuncios, creado perfiles ni modificado DNS en este trabajo.
 - La preparacion tecnica no demuestra indexacion ni garantiza posiciones en Google.
 
@@ -17,8 +17,8 @@ Mercado comunicado: Argentina. Marca: Axhum Tech. Web: https://axhumtech.com/.
 
 Descripcion base para perfiles institucionales:
 
-> Axhum Tech es una empresa argentina de desarrollo de software con atencion
-> 100% remota. Creamos software a medida, paginas web, tiendas online,
+> Axhum Tech es una empresa argentina de desarrollo de software. Trabajamos de
+> forma remota y coordinamos instancias presenciales cuando el proyecto lo requiere. Creamos software a medida, paginas web, tiendas online,
 > automatizaciones, CRM e integraciones para negocios y empresas. Tambien
 > desarrollamos productos propios y acompanamos su implementacion y soporte.
 
@@ -63,16 +63,12 @@ verifica automaticamente Search Console. Su publicacion en la web puede hacerse
 despues: confirmar direccion, probar envio/recepcion, agregar enlace de correo en
 Contacto y actualizar el `email` de Organization de forma consistente.
 
-## Google Business Profile / Maps: no aplica
+## Google Business Profile / Maps
 
-Google excluye a las empresas exclusivamente online de Google Business Profile.
-Axhum Tech no ofrece atencion presencial: **no crear una ficha**, tampoco con
-direccion oculta, una oficina virtual o una zona de servicio ficticia.
+La disponibilidad para instalaciones presenciales no implica por si sola una sede abierta ni horarios de atencion en un domicilio. No crear una ficha con direccion, oficina virtual o zona ficticia. Antes de crear un perfil de area de servicio hay que confirmar que Axhum Tech mantiene contacto presencial habitual con clientes y cumple las reglas vigentes de Google.
 
 El servicio de posicionamiento que Axhum Tech ofrece a otros negocios puede
-incluir fichas para clientes que si cumplan los requisitos. Eso no vuelve elegible
-a Axhum Tech. Solo reconsiderar si cambia realmente la modalidad de atencion y
-se revisan nuevamente los requisitos de Google.
+incluir fichas para clientes que si cumplan los requisitos. La elegibilidad de Axhum Tech debe revisarse si la atencion presencial pasa a ser una parte habitual y demostrable del servicio.
 
 ## Contenido y captacion: orden de trabajo propuesto
 
@@ -123,8 +119,7 @@ y Twitter Card. La 404 lleva `noindex`, no tiene canonical ni entra al sitemap.
 
 Los datos estructurados usan `Organization`, `WebSite` y el tipo correspondiente
 a cada pagina. La portada describe la oferta con `Service` y un canal online.
-No usar `ProfessionalService` ni `LocalBusiness` para la empresa exclusivamente
-remota. La informacion debe coincidir con lo visible. Los FAQ no garantizan
+Mantener `Organization` mientras no exista una sede publica verificable. La informacion debe coincidir con lo visible. Los FAQ no garantizan
 resultados enriquecidos ni un panel de empresa.
 
 El JSON-LD usa UTF-8 real, nunca entidades HTML como `&aacute;`. Todas las copias
@@ -147,7 +142,7 @@ node --test src/validate-seo.test.mjs
 ```
 
 El validador comprueba titulos, canonical, indexabilidad, un `h1`, imagenes con
-`alt`, JSON-LD, identidad remota consistente, sitemap, enlaces y anclas internas.
+`alt`, JSON-LD, identidad y modalidad consistentes, sitemap, enlaces y anclas internas.
 Corre antes de cada despliegue. No sustituye la inspeccion de Google.
 
 Comprobar tambien el sitio publicado: respuestas 200 de las paginas, 404 real

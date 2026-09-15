@@ -8,17 +8,19 @@ Axhum Tech es una empresa de software, desarrollo web y soluciones digitales par
 
 Axhum Tech debe comunicarse como empresa de soluciones digitales, no unicamente como empresa de software de gestion.
 
-Modalidad confirmada el 2026-08-27: atencion 100% remota en toda Argentina. No ofrecer visitas, soporte presencial ni una oficina abierta al publico. El posicionamiento propio se trabaja en la busqueda web; no crear una ficha de Google Business Profile para esta modalidad exclusivamente online.
+Modalidad actualizada el 2026-09-14: el trabajo se realiza de forma remota siempre que el alcance lo permita. Tambien se coordinan instalaciones y puestas en marcha presenciales segun ubicacion, tiempos y necesidades del proyecto. Se pueden evaluar trabajos en otras provincias o paises cuando la planificacion lo justifica. Axhum Tech no tiene un local abierto al publico ni debe comunicar una sede de atencion permanente.
 
 Axhum Gestion, Axhum Comanda y Axhum CRM son productos propios que demuestran capacidad de ejecucion. No definen ni limitan la oferta general de Axhum Tech.
 
 Productos activos:
 
-- Axhum Gestion: escritorio.
-- Axhum Gestion Online: SaaS en version 0.9 y evolucion; no comunicar como version 1.0 terminada.
-- Axhum Comanda: sistema para restaurantes. No comunicarlo como SaaS completo hasta que esa linea este desarrollada.
+- Axhum Gestion: escritorio, version 1.0.4, prueba de 15 dias y descarga publica verificada.
+- Axhum Gestion + ARCA: escritorio, version 1.0.4, prueba de 15 dias e integracion fiscal verificada por QA. La puesta en produccion requiere certificado, autorizaciones y punto de venta de cada comercio.
+- Axhum Gestion Online: SaaS con ARCA validada en homologacion. Incorporacion coordinada por USD 20 o ARS 30.000 mensuales por negocio, con actualizaciones, mejoras y soporte. No ofrecer alta automatica mientras la infraestructura productiva no este activa y configurada para el cliente.
+- Axhum Comanda: escritorio, version 1.0.1 y prueba de 15 dias. Falta publicar su instalador en un canal publico antes de habilitar descarga directa desde la web.
+- Axhum Service: escritorio, version 1.0.1 y prueba de 15 dias. Falta publicar su instalador en un canal publico antes de habilitar descarga directa desde la web.
 - Axhum CRM: version en desarrollo. No comunicarlo como producto comercial cerrado hasta nuevo aviso.
-- Arena: gestion para gimnasios en ediciones Desktop y SaaS.
+- Arena: producto en preparacion. No comunicarlo como listo para contratacion general hasta nueva confirmacion.
 - Axhum Distribuidora: version 1.0 para Windows lista para implementacion.
 - Axhum Bot: automatizaciones multiempresa sobre WhatsApp.
 - Axhum Logistica: plataforma empresarial funcional que requiere infraestructura e implementacion por cliente.
@@ -26,6 +28,14 @@ Productos activos:
 - Tiendas online.
 - Automatizaciones de WhatsApp.
 - Sistemas y soluciones a medida.
+
+## Precios de entrada confirmados
+
+- Landing pages profesionales: desde USD 100.
+- Software a medida: desde USD 200.
+- Axhum Gestion Online: USD 20 o ARS 30.000 mensuales por negocio, con actualizaciones, mejoras y soporte.
+
+Los importes "desde" expresan un punto de partida. El precio final depende del alcance acordado. Tiendas, sitios con panel, integraciones, migraciones, instalaciones y adaptaciones se cotizan por separado cuando corresponda.
 
 ## Mision
 
@@ -80,6 +90,8 @@ Firmas de producto:
 
 - `assets/branding/logos/axhum-gestion-logo-on-light.svg`.
 - `assets/branding/logos/axhum-comanda-logo-on-light.svg`.
+- `assets/branding/logos/axhum-service-logo-on-light.svg`.
+- `assets/branding/logos/axhum-distribuidora-logo-on-light.svg`.
 
 ## Reglas de uso
 

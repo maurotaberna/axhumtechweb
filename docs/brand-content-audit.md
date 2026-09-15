@@ -8,7 +8,7 @@ Las decisiones bloqueantes quedaron confirmadas y aplicadas:
 
 - El logo maestro circular recibido el 13 de agosto de 2026 es la fuente oficial.
 - La A queda retirada de las piezas nuevas de la web.
-- Prueba de 7 dias, licencia de pago unico y funcionamiento local confirmados.
+- Prueba de 15 dias, licencia de pago unico y funcionamiento local confirmados.
 - Mauro Gustavo Exequel Taberna se presenta como fundador y Tecnico en Computacion y Redes.
 - La conversion principal es una conversacion directa; no se publican tablas generales de precios.
 - Operations X y el branding anterior fueron preservados en `_legacy/`.
@@ -90,7 +90,7 @@ El material existente incluye afirmaciones valiosas que no aparecen todavia en l
 
 - Operacion local y sin depender de internet.
 - Escenario ideal de una PC con Windows.
-- Prueba de 7 dias.
+- Prueba de 15 dias.
 - Licencia de pago unico.
 - Demo con datos reales del comercio.
 - Instalacion, capacitacion y soporte como servicios adicionales.
@@ -158,7 +158,7 @@ Completado: logo maestro, isotipo circular, firmas horizontales, versiones clara
 
 1. Completado: confirmar el logo maestro circular y retirar Operations X y la A.
 2. Elegir tipografia corporativa: serif editorial o sans moderna.
-3. Confirmar prueba de 7 dias, pago unico y alcance del soporte.
+3. Confirmar prueba de 15 dias, pago unico y alcance del soporte.
 4. Autorizar o descartar la publicacion del perfil de Mauro Taberna como fundador y Tecnico en Computacion y Redes.
 5. Confirmar WhatsApp, correo, redes y zona comercial.
 6. Definir si la web mostrara precios o trabajara solo con solicitud de demo.

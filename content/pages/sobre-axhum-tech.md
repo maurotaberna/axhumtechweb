@@ -2,7 +2,7 @@
 
 Axhum Tech desarrolla software, plataformas, automatizaciones y experiencias digitales para equipos que necesitan trabajar con mas orden, claridad y confianza.
 
-La atencion es 100% remota para toda Argentina: relevamiento, reuniones, implementacion, capacitacion y soporte a distancia. No se ofrece atencion presencial ni se comunica una sede abierta al publico.
+La atencion se realiza de forma remota siempre que el alcance lo permite. Las instalaciones y puestas en marcha presenciales se coordinan segun lugar, tiempo y proyecto, incluso en otras provincias o paises cuando la planificacion lo justifica. No se comunica un local abierto al publico.
 
 ## Mision
 

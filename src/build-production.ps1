@@ -22,6 +22,7 @@ Get-ChildItem -LiteralPath $sourceDir -Filter "*.html" | Copy-Item -Destination 
 Copy-Item -LiteralPath (Join-Path $sourceDir "styles.css") -Destination $outputDir -Force
 Copy-Item -LiteralPath (Join-Path $sourceDir "script.js") -Destination $outputDir -Force
 Copy-Item -LiteralPath (Join-Path $sourceDir "theme.js") -Destination $outputDir -Force
+Copy-Item -LiteralPath (Join-Path $sourceDir "analytics.js") -Destination $outputDir -Force
 
 New-Item -ItemType Directory -Path (Join-Path $outputDir "assets") -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $projectRoot "assets/products") -Destination (Join-Path $outputDir "assets/products") -Recurse -Force
@@ -49,6 +50,7 @@ $huella = {
 $vCss = & $huella "styles.css"
 $vJs = & $huella "script.js"
 $vTheme = & $huella "theme.js"
+$vAnalytics = & $huella "analytics.js"
 
 # UTF-8 sin BOM, explicito: Windows PowerShell 5.1 lee/escribe ANSI por defecto
 # y eso rompe los acentos de los datos estructurados JSON-LD.
@@ -61,6 +63,7 @@ Get-ChildItem -LiteralPath $outputDir -Filter "*.html" | ForEach-Object {
   $html = $html.Replace('href="./styles.css"', 'href="./styles.css?v=' + $vCss + '"')
   $html = $html.Replace('src="./script.js"', 'src="./script.js?v=' + $vJs + '"')
   $html = $html.Replace('src="./theme.js"', 'src="./theme.js?v=' + $vTheme + '"')
+  $html = $html.Replace('src="./analytics.js"', 'src="./analytics.js?v=' + $vAnalytics + '"')
 
   # URLs limpias. Cloudflare Pages redirige /pagina.html a /pagina con un 308,
   # asi que si dejaramos los .html cada enlace interno y cada canonical
@@ -74,8 +77,10 @@ Get-ChildItem -LiteralPath $outputDir -Filter "*.html" | ForEach-Object {
   $html = $html.Replace("axhum-tech-logo-professional-50kb.png`"", "axhum-tech-logo-professional-50kb.png?v=logo-professional-20260821`"")
   $html = $html.Replace("axhum-tech-logo-on-light.svg`"", "axhum-tech-logo-on-light.svg?v=mark-centered-20260826`"")
   $html = $html.Replace("axhum-mark-on-light.svg`"", "axhum-mark-on-light.svg?v=mark-centered-20260826`"")
-  $html = $html.Replace("axhum-gestion-logo-on-light.svg`"", "axhum-gestion-logo-on-light.svg?v=mark-centered-20260826`"")
-  $html = $html.Replace("axhum-comanda-logo-on-light.svg`"", "axhum-comanda-logo-on-light.svg?v=mark-centered-20260826`"")
+  $html = $html.Replace("axhum-gestion-logo-on-light.svg`"", "axhum-gestion-logo-on-light.svg?v=product-lockup-20260915`"")
+  $html = $html.Replace("axhum-comanda-logo-on-light.svg`"", "axhum-comanda-logo-on-light.svg?v=product-lockup-20260915`"")
+  $html = $html.Replace("axhum-service-logo-on-light.svg`"", "axhum-service-logo-on-light.svg?v=product-lockup-20260915`"")
+  $html = $html.Replace("axhum-distribuidora-logo-on-light.svg`"", "axhum-distribuidora-logo-on-light.svg?v=product-lockup-20260915`"")
   $html = $html.Replace("axhum-tech-og.png`"", "axhum-tech-og.png?v=logo-master-20260814`"")
   $html = $html.Replace("favicon-512.png`"", "favicon-512.png?v=mark-centered-20260826`"")
   $html = $html.Replace("favicon.svg`"", "favicon.svg?v=mark-centered-20260826`"")

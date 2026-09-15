@@ -9,6 +9,22 @@
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  var track = function (eventName, detail) {
+    var payload = Object.assign({ event: eventName, path: window.location.pathname }, detail || {});
+    window.dispatchEvent(new CustomEvent("axhum:track", { detail: payload }));
+  };
+
+  document.addEventListener("click", function (event) {
+    var link = event.target.closest("a");
+    if (!link) return;
+    var explicit = link.getAttribute("data-track");
+    if (explicit) {
+      track(explicit, { product: link.getAttribute("data-track-product") || undefined });
+    } else if (link.href && link.href.indexOf("wa.me/") !== -1) {
+      track("whatsapp_clicked");
+    }
+  });
+
   /* ---------------------------------------------------------------
      Ano en curso
      --------------------------------------------------------------- */
@@ -213,6 +229,13 @@
     var status = contactForm.querySelector("[data-wa-status]");
     var label = contactForm.querySelector("[data-wa-label]");
     var hint = contactForm.querySelector("[data-wa-hint]");
+    var formStarted = false;
+
+    contactForm.addEventListener("input", function () {
+      if (formStarted) return;
+      formStarted = true;
+      track("contact_form_started");
+    });
 
     var canalElegido = function () {
       var marcado = contactForm.querySelector('input[name="canal"]:checked');
@@ -266,7 +289,12 @@
         "",
         "Nombre: " + (get("nombre") || "-"),
         "Negocio: " + (get("negocio") || "-"),
+        "País y ciudad: " + (get("ubicacion") || "-"),
         "Necesito: " + interes,
+        "Solución actual: " + (get("solucion_actual") || "-"),
+        "Presupuesto: " + (get("presupuesto") || "-"),
+        "Plazo: " + (get("plazo") || "-"),
+        "Decisión: " + (get("decision") || "-"),
       ];
 
       var detalle = get("detalle");
@@ -283,6 +311,12 @@
       var canal = canalElegido();
       var t = textos[canal] || textos.whatsapp;
       var url;
+
+      track("contact_form_prepared", {
+        channel: canal,
+        interest: interes,
+        budgetBand: get("presupuesto") || "-",
+      });
       var opened;
 
       if (canal === "correo") {

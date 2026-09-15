@@ -82,7 +82,7 @@ for (const file of files) {
   if (file !== '404.html') {
     const org = nodes.find((node) => node['@type'] === 'Organization');
     check(org?.['@id'] === `${origin}/#organizacion` && org?.name === 'Axhum Tech', `${file}: missing company identity`);
-    check(!org?.address && org?.description?.includes('100% remota'), `${file}: company must describe remote-only service`);
+    check(!org?.address && org?.description?.includes('Trabajo remoto'), `${file}: company must describe its service modality without publishing a street address`);
     if (org) {
       const serialized = JSON.stringify(org);
       organization ??= serialized;
@@ -118,5 +118,5 @@ if (errors.length) {
   console.error(errors.join('\n'));
   process.exitCode = 1;
 } else {
-  console.log(`SEO checks passed: ${files.length} HTML files, ${locations.length} indexable URLs, consistent remote company identity.`);
+  console.log(`SEO checks passed: ${files.length} HTML files, ${locations.length} indexable URLs, consistent company identity and service modality.`);
 }

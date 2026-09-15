@@ -5,17 +5,17 @@ Canales confirmados:
 - Web oficial: https://axhumtech.com/
 - WhatsApp: https://wa.me/543865267037
 
-Atencion 100% remota para toda Argentina, por videollamada y WhatsApp. No se ofrece atencion presencial.
+Trabajamos de forma remota siempre que el alcance lo permite. Las instalaciones y puestas en marcha presenciales se coordinan segun lugar, tiempo y proyecto; tambien se pueden evaluar otras provincias o paises.
 
-La conversion principal de la web es una conversacion directa. No se publican tablas de precios generales.
+La conversion principal de la web es una consulta calificada. Se publican precios de entrada confirmados y el alcance final se cotiza antes de empezar.
 
 Temas de contacto:
 
 - Demo de Axhum Gestion.
 - Demo de Axhum Comanda.
-- Implementacion, capacitacion o soporte remoto.
+- Implementacion, capacitacion o soporte remoto o presencial coordinado.
 - Landings y sitios web.
 - Software a medida, SaaS, CRM e integraciones.
 - Tiendas online y automatizaciones para negocios.
 
-Correo institucional en configuracion. Publicar la direccion solo cuando el titular la confirme y haya probado envio y recepcion. No inventar buzones ni sustituir registros DNS de correo al verificar Search Console.
+Correos institucionales confirmados: hola@axhumtech.com y contacto@axhumtech.com. Ambos llegan al titular. Tiempo habitual de respuesta: entre 10 minutos y 48 horas.

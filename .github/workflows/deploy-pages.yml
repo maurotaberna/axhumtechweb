@@ -29,12 +29,13 @@ jobs:
         run: |
           node --check builds/production/script.js
           node --check builds/production/theme.js
+          node --check builds/production/analytics.js
 
       - name: Validate SEO and internal links
         run: node src/validate-seo.mjs
 
-      - name: Test SEO checks
-        run: node --test src/validate-seo.test.mjs src/theme.test.mjs
+      - name: Run site tests
+        run: node --test src/*.test.mjs
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

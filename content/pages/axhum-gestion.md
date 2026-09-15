@@ -8,7 +8,7 @@ Todo lo importante, en una operacion clara.
 
 ## Condiciones confirmadas
 
-- Prueba de 7 dias.
+- Prueba de 15 dias.
 - Licencia de pago unico.
 - Funcionamiento local sin depender de internet.
 - Escenario inicial para una PC con Windows.
@@ -25,4 +25,4 @@ Todo lo importante, en una operacion clara.
 
 ## Limite comercial
 
-Los comprobantes y reportes son internos de gestion. El producto no emite factura fiscal ni se integra con ARCA/AFIP.
+La edicion comun genera comprobantes y reportes internos, sin emision fiscal. Axhum Gestion + ARCA incorpora facturacion electronica; la integracion fue verificada por QA y la activacion productiva requiere certificado, autorizaciones y punto de venta configurados para cada negocio.
