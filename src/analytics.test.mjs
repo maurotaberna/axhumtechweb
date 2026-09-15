@@ -5,11 +5,29 @@ import { runInNewContext } from 'node:vm';
 
 const source = readFileSync(new URL('../builds/preview/analytics.js', import.meta.url), 'utf8');
 
-test('analytics stays inert while no measurement ID is configured', () => {
-  let touched = false;
-  const guarded = new Proxy({}, { get() { touched = true; return undefined; } });
-  runInNewContext(source, { window: guarded, document: guarded, localStorage: guarded });
-  assert.equal(touched, false);
+test('analytics is configured but does not load Google before consent', () => {
+  let domReady;
+  let externalScripts = 0;
+  const window = { addEventListener() {} };
+  const document = {
+    readyState: 'loading',
+    addEventListener(name, callback) {
+      if (name === 'DOMContentLoaded') domReady = callback;
+    },
+    createElement() {
+      externalScripts += 1;
+      return {};
+    },
+    head: { appendChild() { externalScripts += 1; } },
+  };
+  const localStorage = { getItem: () => null };
+
+  runInNewContext(source, { window, document, localStorage });
+
+  assert.equal(typeof domReady, 'function');
+  assert.equal(externalScripts, 0);
+  assert.equal(window.dataLayer, undefined);
+  assert.match(source, /var measurementId = "G-0QX9YV7TZ6";/);
 });
 
 test('analytics only permits non-sensitive commercial context', () => {

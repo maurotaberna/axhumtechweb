@@ -2,17 +2,16 @@
 
 Actualizado: 2026-09-15.
 
-La web ya tiene preparada la integracion con Google Analytics 4 (GA4). Permanece
-completamente inactiva mientras `measurementId` este vacio en
-`builds/preview/analytics.js`.
+La web tiene activa la integracion con Google Analytics 4 (GA4), identificador
+`G-0QX9YV7TZ6`. La etiqueta de Google solo se descarga despues de que el visitante
+acepta la medicion.
 
 ## Activacion
 
-1. En Google Analytics, crear o elegir la propiedad de Axhum Tech.
-2. Crear un flujo de datos web para `https://axhumtech.com`.
-3. Copiar el ID de medicion con formato `G-XXXXXXXXXX`.
-4. Colocarlo en `measurementId` dentro de `builds/preview/analytics.js`.
-5. Generar el build de produccion, validar y publicar solo con aprobacion.
+1. Propiedad de Axhum Tech creada en Google Analytics.
+2. Flujo de datos web configurado para `https://axhumtech.com`.
+3. ID de medicion instalado en `builds/preview/analytics.js`.
+4. Build, validacion y publicacion realizados desde el repositorio oficial.
 
 Al configurarse un ID valido, la web muestra un aviso con `Aceptar` y
 `Rechazar`. La etiqueta de Google no se descarga antes de la aceptacion. La

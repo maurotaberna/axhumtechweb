@@ -1,7 +1,7 @@
 /* GA4 stays inactive until a valid G- ID is configured. */
 (function () {
   "use strict";
-  var measurementId = "";
+  var measurementId = "G-0QX9YV7TZ6";
   if (!/^G-[A-Z0-9]+$/i.test(measurementId)) return;
 
   var consentKey = "axhum-analytics-consent";
