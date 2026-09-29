@@ -9,7 +9,7 @@ Las decisiones bloqueantes quedaron confirmadas y aplicadas:
 - El logo maestro circular recibido el 13 de agosto de 2026 es la fuente oficial.
 - La A queda retirada de las piezas nuevas de la web.
 - Prueba de 15 dias, licencia de pago unico y funcionamiento local confirmados.
-- Mauro Gustavo Exequel Taberna se presenta como fundador y Tecnico en Computacion y Redes.
+- Mauro Gustavo Exequiel Taberna se presenta como fundador y Tecnico en Computacion y Redes.
 - La conversion principal es una conversacion directa; no se publican tablas generales de precios.
 - Operations X y el branding anterior fueron preservados en `_legacy/`.
 - El paquete oficial vive en `assets/branding/logos/`.

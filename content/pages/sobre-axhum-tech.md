@@ -10,7 +10,7 @@ Convertir la tecnologia en una ventaja concreta para cada negocio. Escuchamos, o
 
 ## Fundador
 
-Mauro Gustavo Exequel Taberna es Tecnico en Computacion y Redes, fundador y desarrollador de Axhum Tech.
+Mauro Gustavo Exequiel Taberna es Tecnico en Computacion y Redes, fundador y desarrollador de Axhum Tech.
 
 Participa directamente en el relevamiento, la demostracion y el acompanamiento comercial inicial.
 

@@ -1,6 +1,6 @@
 # Fundador
 
-## Mauro Gustavo Exequel Taberna
+## Mauro Gustavo Exequiel Taberna
 
 Fundador y desarrollador de Axhum Tech. Tecnico en Computacion y Redes.
 
