@@ -1,81 +1,61 @@
 # Sistema visual web
 
-Actualizado: 2026-08-28. Direccion: minimalista, fria, corporativa y tecnologica.
-Se aplicaron las indicaciones escritas; no habia una imagen adjunta accesible
-en el mensaje de solicitud. No se utilizaron recursos externos nuevos.
+Actualizado: 2026-09-29. Direccion: editorial corporativa, clara y tecnologica.
+La web conserva cuatro paginas: inicio, servicios, productos y contacto.
 
-## Alcance
+## Principios
 
-- Se conservan las 13 paginas, URLs, contenido comercial, formularios y diagramas.
-- El lema sigue siendo: Desarrollamos soluciones digitales que hacen crecer tu negocio.
-- Portada editorial alineada a la izquierda; solo la palabra crecer lleva acento.
-- Servicios de portada separados por lineas, sin cajas ni brillos decorativos.
-- Fondos claros predominantes; productos y llamadas a la accion usan azul marino.
-- Botones rectangulares con radios de 6 px, sombras discretas y tipografia legible.
-- No se modificaron archivos, proporciones ni colores del logo oficial.
-  Los logos de producto ya no se invierten por CSS; se muestran sobre blanco.
+- Mucho espacio negativo, tipografia de gran escala y jerarquia comercial breve.
+- Superficies blancas y gris frio; azul marino para contraste y cobre solo como acento.
+- Tarjetas de radio amplio (22-32 px), controles de 14 px y sombras discretas.
+- Composiciones asimetricas y separadores finos en lugar de una reticula uniforme de tarjetas.
+- Movimiento limitado a la entrada inicial y estados de interaccion; respetar `prefers-reduced-motion`.
+- Nada de capturas de producto ficticias, cifras no verificadas o fotos de banco genericas.
+- El logo oficial se usa sin redibujar, deformar o recolorear sus archivos.
 
-## Paleta de interfaz
+## Paleta y tipografia
 
-| Uso | Claro | Oscuro |
-| --- | --- | --- |
-| Fondo | #FFFFFF | #101E2D |
-| Panel | #FFFFFF | #17283A |
-| Superficie secundaria | #F4F6F8 | #132335 |
-| Texto principal | #152F45 | #EEF3F8 |
-| Texto secundario | #4B6071 | #BDCCDA |
-| Texto auxiliar | #627384 | #A1B3C5 |
-| Acento | #A65327 | #E3A575 |
-| Separadores | #DDE4EA | #2D4256 |
+Los tokens de `src/site.css` son la fuente de verdad. En claro: blanco `#FFFFFF`,
+superficie `#F4F6F8`, texto `#152F45`, azul institucional `#102D43` y cobre
+`#A65327`. En oscuro: fondo `#101E2D`, superficie `#172A3B`, texto `#EEF3F8`
+y acento `#E3A575`. Los paneles azules mantienen contraste propio en ambos temas.
 
-Las secciones azul marino tienen su propio contexto de contraste en ambos modos:
-texto claro y botones cobre claro con texto azul. No invertir toda la pagina ni
-aplicar filtros a las imagenes. La paleta de interfaz no recolorea el logo.
+Manrope se utiliza en titulos y etiquetas; DM Sans en lectura, controles y
+acciones. El peso y el interlineado deben priorizar legibilidad sobre densidad.
 
-Manrope se mantiene en titulos, con peso 600; DM Sans en lectura y acciones;
-IBM Plex Mono se reserva para etiquetas y datos. Se reducen sombras, radios y
-movimientos. Se retiran el brillo que seguia al cursor, fondos animados y reticula
-decorativa de la portada. Los diagramas explicativos conservan su interaccion.
+## Componentes
 
-## Tema
+- Portada: titular y CTA a la izquierda; composicion geometrica original a la
+  derecha, declarada decorativa para lectores de pantalla. No representa una
+  interfaz real de producto.
+- Servicios: una tarjeta principal azul marino y dos tarjetas secundarias, con
+  simbolos lineales de CSS; la pagina de servicios desarrolla la oferta.
+- Productos: dos proyectos online confirmados, Axhum Gestion Online y Axenda,
+  en superficies diferenciadas. Las herramientas de escritorio y descargas
+  viven en la pagina de productos.
+- Paginas internas: encabezado numerado, secciones breves y CTA contextual.
+- Contacto: canales directos y formulario que prepara un mensaje de WhatsApp;
+  no envia ni almacena datos por si mismo.
 
-El modo inicial es claro, incluso si el sistema operativo prefiere oscuro.
-El boton de luna/sol de la cabecera permite elegir y funciona en escritorio y
-movil. Su nombre accesible es Modo oscuro y `aria-pressed` informa si esta activo.
+## Tema y accesibilidad
 
-`builds/preview/theme.js` aplica el tema antes de cargar el CSS. La eleccion se
-guarda en `localStorage` bajo `axhum-theme`, se recupera en otras paginas y se
-sincroniza entre pestanas del mismo origen. Si el almacenamiento esta bloqueado,
-el cambio sigue funcionando en la pagina actual, sin prometer persistencia.
-Sin JavaScript se usa la version clara y se oculta el selector inoperante.
+El tema inicial es claro. El control de cabecera cambia a oscuro y guarda la
+eleccion bajo `axhum-theme` cuando `localStorage` esta disponible. El script
+`builds/preview/theme.js` aplica el tema antes del CSS. El selector conserva
+`aria-pressed`; sin JavaScript se oculta. La navegacion tiene enlace de salto,
+estados de foco visibles y menu movil. Toda animacion se desactiva con
+`prefers-reduced-motion`.
 
-## Mantenimiento
+## Mantenimiento y verificacion
 
-- HTML y estructura: `builds/preview/*.html`.
-- Tokens, componentes y responsive: `builds/preview/styles.css`.
-- Preferencia de tema: `builds/preview/theme.js`.
-- Navegacion, diagramas y formulario: `builds/preview/script.js`.
-- Logo y assets originales: `assets/branding/`, sin cambios.
-- Copia y versionado de recursos: `src/build-production.ps1`.
-- Build generado: `builds/production/`; no editarlo a mano.
-- Publicacion: workflow de GitHub Actions hacia Cloudflare Pages.
+- Editar estructura, textos y componentes compartidos en `src/build-site.mjs`.
+- Editar tokens, componentes y responsive en `src/site.css`.
+- Editar interacciones en `src/site.js`.
+- `builds/preview/` y `builds/production/` son salidas generadas: no editar su
+  HTML o CSS manualmente.
+- Generar con `./src/build-production.ps1` y comprobar con
+  `node --test src/*.test.mjs`.
+- Antes de publicar, revisar inicio y las tres paginas internas en desktop y
+  movil, en ambos temas, y verificar enlaces de contacto y productos.
 
-## Verificacion
-
-```powershell
-./src/build-production.ps1
-node --check builds/production/script.js
-node --check builds/production/theme.js
-node src/validate-seo.mjs
-node --test src/validate-seo.test.mjs src/theme.test.mjs
-```
-
-La suite del tema cubre inicio claro, restauracion antes del render, alternancia,
-almacenamiento bloqueado, sincronizacion y presencia/versionado en cada pagina.
-Se comparo el texto del body con la revision anterior: contenido comercial intacto.
-
-Revision en navegador: 13 paginas en ambos temas a 320 px, portada a 390 y
-1440 px, menu movil, selector del canal de contacto, persistencia entre paginas
-y diagrama interactivo. Sin desbordamientos ni imagenes rotas en esa revision.
-Se comprobaron pares de color de textos/acciones principales de la portada con
-contraste minimo 4.5:1; esto no equivale a una auditoria integral de accesibilidad.
+El despliegue de produccion se describe en `docs/github-cloudflare.md`.

@@ -17,7 +17,6 @@ Software de gestion para talleres de celulares.
 - Prueba gratuita de 15 dias, sin tarjeta ni registro.
 - Instalador de aproximadamente 82,5 MB.
 - Release oficial: `https://github.com/maurotaberna/AxhumService-releases/releases/tag/v1.0.1`.
-- SHA-256: `CF59B0FC9CD2BD36C553E15CEAA0EB990D88EC75EDD9DEB6327F520AF638658A`.
 - El instalador todavia no tiene firma digital comercial; comunicar la advertencia de SmartScreen sin pedir que se desactive ninguna proteccion.
 
 ## Limite comercial

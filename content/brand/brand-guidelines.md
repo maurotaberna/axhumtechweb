@@ -14,16 +14,17 @@ Axhum Gestion, Axhum Comanda y Axhum CRM son productos propios que demuestran ca
 
 Productos activos:
 
-- Axhum Gestion: escritorio, version 1.0.4, prueba de 15 dias y descarga publica verificada.
-- Axhum Gestion + ARCA: escritorio, version 1.0.4, prueba de 15 dias e integracion fiscal verificada por QA. La puesta en produccion requiere certificado, autorizaciones y punto de venta de cada comercio.
-- Axhum Gestion Online: SaaS con ARCA validada en homologacion. Incorporacion coordinada por USD 20 o ARS 30.000 mensuales por negocio, con actualizaciones, mejoras y soporte. No ofrecer alta automatica mientras la infraestructura productiva no este activa y configurada para el cliente.
-- Axhum Comanda: escritorio, version 1.0.1 y prueba de 15 dias. Falta publicar su instalador en un canal publico antes de habilitar descarga directa desde la web.
-- Axhum Service: escritorio, version 1.0.1 y prueba de 15 dias. Falta publicar su instalador en un canal publico antes de habilitar descarga directa desde la web.
+- Axhum Gestion: escritorio, version 1.0.9, prueba de 15 dias y descarga publica verificada.
+- Axhum Gestion + ARCA: escritorio, version 1.0.9, prueba de 15 dias e integracion fiscal verificada por QA. La puesta en produccion requiere certificado, autorizaciones y punto de venta de cada comercio.
+- Axhum Gestion Online: web comercial y acceso de comerciantes en `https://axhumgestion.com.ar/`. La portada publica prueba de 15 dias y planes Plus/Pro; condiciones vigentes en ese sitio.
+- Axhum Comanda: escritorio, version 1.0.1 y prueba de 15 dias, con instalador oficial publicado.
+- Axhum Service: escritorio, version 1.0.1 y prueba de 15 dias, con instalador oficial publicado.
 - Axhum CRM: version en desarrollo. No comunicarlo como producto comercial cerrado hasta nuevo aviso.
 - Arena: producto en preparacion. No comunicarlo como listo para contratacion general hasta nueva confirmacion.
 - Axhum Distribuidora: version 1.0 para Windows lista para implementacion.
 - Axhum Bot: automatizaciones multiempresa sobre WhatsApp.
 - Axhum Logistica: plataforma empresarial funcional que requiere infraestructura e implementacion por cliente.
+- Axenda: pagina de reservas y agenda online para negocios, con portada publica en `https://axenda.date/`. Prueba de 15 dias indicada en el producto.
 - Paginas web para empresas y negocios.
 - Tiendas online.
 - Automatizaciones de WhatsApp.
@@ -33,7 +34,7 @@ Productos activos:
 
 - Landing pages profesionales: desde USD 100.
 - Software a medida: desde USD 200.
-- Axhum Gestion Online: USD 20 o ARS 30.000 mensuales por negocio, con actualizaciones, mejoras y soporte.
+- Axhum Gestion Online: consultar planes y precios vigentes en `https://axhumgestion.com.ar/`.
 
 Los importes "desde" expresan un punto de partida. El precio final depende del alcance acordado. Tiendas, sitios con panel, integraciones, migraciones, instalaciones y adaptaciones se cotizan por separado cuando corresponda.
 

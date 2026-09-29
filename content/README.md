@@ -1,20 +1,17 @@
-# Content
+# Contenido comercial
 
-Fuente editable del sitio.
+Referencia editorial y de afirmaciones de Axhum Tech.
 
 ## Incluye
 
-- `pages/`: paginas institucionales.
-- `services/`: servicios comerciales.
+- `pages/`: fichas y material editorial de productos.
+- `services/`: alcance de servicios comerciales.
 - `brand/`: reglas de marca y referencia editorial.
+- `commercial/`: oferta, condiciones y preguntas frecuentes.
 
 ## Regla
 
-Todo texto que pueda cambiar sin tocar el frontend debe vivir aca.
-
-
-
-## Rediseño 2026-09-09
-La fuente vigente de textos está en `builds/preview/*.html`. Se amplió el catálogo a nueve líneas y se añadieron páginas propias de Service y Distribuidora. Se distingue edición local, implementación online y piloto. No se publicaron precios sin definir modalidad y alcance. Las capturas Gestión/Service contienen datos de ejemplo. `axhum-modular.webp` es una imagen original para software a medida.
-
-La capacitación en IA queda pendiente por pedido del usuario. No forma parte del sitio, la navegación ni el sitemap. El borrador local permanece archivado fuera de producción.
+El contenido publicado se edita en `src/build-site.mjs`, contrastando las
+afirmaciones con estas fichas. `builds/preview/` es una salida generada y no
+debe editarse manualmente. Los materiales historicos no son oferta vigente
+por el solo hecho de permanecer en este directorio.

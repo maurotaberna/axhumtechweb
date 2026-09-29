@@ -33,6 +33,7 @@
   });
 
   function renderConsent() {
+    if (document.querySelector('.analytics-consent')) return;
     var box = document.createElement("aside");
     box.className = "analytics-consent";
     box.setAttribute("role", "dialog");
@@ -49,4 +50,8 @@
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", renderConsent, { once: true });
     else renderConsent();
   }
+
+  document.addEventListener('click', function (event) {
+    if (event.target.closest('[data-consent-open]')) renderConsent();
+  });
 })();

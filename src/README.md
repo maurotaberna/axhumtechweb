@@ -1,28 +1,14 @@
-# Herramientas de la web
+# Implementación
 
-- `build-production.ps1`: genera `builds/production/` desde `builds/preview/`,
-  copia assets y archivos publicos, normaliza URLs y versiona CSS/JS.
-- `validate-seo.mjs`: verifica el resultado del build (metadatos, JSON-LD,
-  identidad remota, sitemap, recursos y enlaces internos). Usa solo Node.js.
+- `build-site.mjs`: fuente editable de las cuatro páginas, cabecera, pie y SEO.
+- `site.css`: sistema visual claro/oscuro y responsive.
+- `site.js`: eventos de medición y formulario breve hacia WhatsApp.
+- `build-production.ps1`: genera preview y producción, copia assets, normaliza
+  URLs y versiona CSS/JS.
+- `validate-seo.mjs` y `*.test.mjs`: validación de contenido técnico,
+  redirecciones y descargas.
 
-Desde la raiz del proyecto:
-
-```powershell
-./src/build-production.ps1
-node --check builds/production/script.js
-node src/validate-seo.mjs
-node --test src/validate-seo.test.mjs
-node --test src/theme.test.mjs
-```
-
-El HTML/CSS/JS editable vive en `builds/preview/`, no en esta carpeta.
-Los textos de referencia viven en `content/`, los assets en `assets/` y los
-archivos de rastreo/despliegue en `public/`. GitHub Actions ejecuta las
-validaciones antes de publicar en Cloudflare Pages.
-
-El validador revisa las convenciones del HTML estatico de este proyecto; no
-sustituye una prueba visual ni la inspeccion de URL de Search Console.
-
-El build tambien copia y versiona `theme.js`, cargado antes del CSS para recuperar
-el tema guardado sin un destello del modo equivocado. El sistema visual y sus
-pruebas estan documentados en `docs/visual-system.md`.
+No editar HTML, CSS ni `script.js` generados en `builds/preview/`; serán
+sobrescritos por el próximo build. `theme.js` y `analytics.js` son las dos
+excepciones editables de esa carpeta por compatibilidad con el despliegue
+actual.

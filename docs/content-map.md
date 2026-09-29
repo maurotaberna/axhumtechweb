@@ -30,4 +30,9 @@
 
 ## Criterio
 
-Las paginas deben conservarse como fuente editable, separadas del codigo de renderizado. El frontend consume estos textos, pero no los reemplaza.
+Los archivos de `content/` conservan la verdad editorial y comercial. El copy
+que aparece publicado se edita en `src/build-site.mjs`, donde también viven
+las cuatro plantillas y los elementos compartidos. Revisar ambos lugares al
+cambiar precios, estado de productos o promesas. Los documentos de producto
+anteriores pueden contener contexto histórico y no representan páginas
+separadas del sitio nuevo.

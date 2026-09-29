@@ -1,29 +1,15 @@
 # Axhum Tech
 
-> Axhum Tech es una empresa argentina de desarrollo de software. Hace software a medida, páginas web y tiendas online, posicionamiento en Google (SEO) y productos de gestión listos para usar por rubro: comercios, talleres de celulares, gastronomía, gimnasios y distribuidoras. Atiende de forma remota y presencial coordinada según el proyecto. Contacto por WhatsApp: +54 3865 267037.
+> Empresa argentina de desarrollo de software y soluciones digitales. Desarrolla páginas web, software a medida y automatizaciones. Trabaja en remoto y coordina puestas en marcha presenciales según el proyecto.
 
-## Servicios
+## Sitio
 
-- [Servicios](https://axhumtech.com/servicios): software a medida, páginas web, tiendas online, posicionamiento en Google, automatización de WhatsApp, CRM, plataformas SaaS e integraciones.
-- [Software a medida](https://axhumtech.com/software-a-medida): sistemas de gestión, apps de escritorio y plataformas web; primera versión funcional entre 2 y 8 semanas.
-- [Páginas web y tiendas online](https://axhumtech.com/webs): landing pages, webs con catálogo y tiendas online.
-- [Posicionamiento en Google](https://axhumtech.com/posicionamiento): SEO técnico, ficha de Google Business Profile, contenido y medición.
+- [Inicio](https://axhumtech.com/): presentación de Axhum Tech.
+- [Servicios](https://axhumtech.com/servicios): webs, tiendas online, software a medida y automatizaciones.
+- [Productos](https://axhumtech.com/productos): Axhum Gestión Online, Axenda y soluciones de escritorio.
+- [Contacto](https://axhumtech.com/contacto): WhatsApp y correo para consultas.
 
-## Productos
+## Productos online
 
-- [Productos](https://axhumtech.com/productos): catálogo de software por rubro.
-- [Axhum Gestión](https://axhumtech.com/gestion): ventas, stock, caja, clientes, compras y reportes para comercios; edición con facturación electrónica ARCA y 15 días de prueba.
-- [Axhum Service](https://axhumtech.com/service): recepción de equipos, seguimiento de reparaciones, repuestos, cobros y entregas para talleres de celulares.
-- [Axhum Comanda](https://axhumtech.com/comanda): mesas, comandas, pedidos para llevar, delivery, menú, insumos y caja para gastronomía; funciona sin internet.
-- [Axhum Arena](https://axhumtech.com/arena): gestión de gimnasios y clubes.
-- [Axhum Distribuidora](https://axhumtech.com/distribuidora): pedidos, stock por depósito, cuentas corrientes, consignaciones y reparto para mayoristas.
-
-## Información
-
-- [Preguntas frecuentes](https://axhumtech.com/faq): plazos, precios, propiedad del desarrollo, dominio y hosting, licencias y soporte.
-- [Nosotros](https://axhumtech.com/nosotros): quiénes somos, forma de trabajo y fundador, Mauro Taberna.
-- [Contacto](https://axhumtech.com/contacto): cómo escribirnos para consultar un proyecto.
-
-## Opcional
-
-- [Mapa del sitio](https://axhumtech.com/sitemap.xml)
+- [Axhum Gestión Online](https://axhumgestion.com.ar/): gestión comercial online, con prueba de 15 días.
+- [Axenda](https://axenda.date/): página de reservas y agenda online, con prueba de 15 días.

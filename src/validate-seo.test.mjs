@@ -19,12 +19,12 @@ test('current production build passes, including inline SVG title elements', () 
 const cases = [
   ['noindex', 'index.html', 'index, follow', 'noindex, follow', /indexation disabled/],
   ['duplicate title', 'index.html', '</head>', '<title>Unexpected title</title></head>', /duplicate title/],
-  ['invalid JSON', 'index.html', '"@graph": [', '"@graph": [oops', /invalid JSON-LD/],
-  ['local business', 'index.html', '"@type": "Service"', '"@type": "ProfessionalService"', /local-business schema/],
-  ['company mismatch', 'index.html', '"name": "Axhum Tech"', '"name": "Other company"', /company identity|company details/],
+  ['invalid JSON', 'index.html', '"@graph":[', '"@graph":[oops', /invalid JSON-LD/],
+  ['local business', 'index.html', '"@type":"Organization"', '"@type":"ProfessionalService"', /local-business schema/],
+  ['company mismatch', 'index.html', '"name":"Axhum Tech"', '"name":"Other company"', /company identity|company details/],
   ['broken link', 'index.html', 'href="/contacto"', 'href="/missing-page"', /missing internal resource/],
   ['broken anchor', 'index.html', 'href="/contacto"', 'href="/contacto#missing-anchor"', /missing anchor/],
-  ['wrong sitemap', 'sitemap.xml', '<loc>https://axhumtech.com/webs</loc>', '<loc>https://axhumtech.com/missing</loc>', /missing from sitemap/],
+  ['wrong sitemap', 'sitemap.xml', '<loc>https://axhumtech.com/servicios</loc>', '<loc>https://axhumtech.com/missing</loc>', /missing from sitemap/],
   ['blocked robots', 'robots.txt', 'Allow: /', 'Disallow: /', /blocks crawling/],
 ];
 

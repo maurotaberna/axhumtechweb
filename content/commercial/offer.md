@@ -27,7 +27,8 @@ Precios de entrada confirmados:
 
 - Axhum Gestion Desktop: gestion comercial local para Windows.
 - Axhum Gestion + ARCA: edicion Desktop con facturacion electronica integrada.
-- Axhum Gestion Online: edicion SaaS con ARCA, incorporacion coordinada por USD 20 o ARS 30.000 mensuales por negocio. Incluye actualizaciones, mejoras y soporte.
+- Axhum Gestion Online: web comercial y acceso de comerciantes en `https://axhumgestion.com.ar/`. La portada ofrece alta, prueba de 15 dias y planes Plus/Pro. La web institucional dirige alli para conocer las condiciones vigentes; no duplica precios fijos.
+- Axenda: agenda y pagina de reservas con identidad propia para negocios, en `https://axenda.date/`. Su portada ofrece prueba de 15 dias. Pagos de senas y WhatsApp automatico no forman parte de la oferta comprobada.
 - Axhum Comanda: operacion gastronomica, Desktop 1.0.1.
 - Axhum Service: gestion de talleres de celulares, Desktop 1.0.1.
 - Arena: gestion de gimnasios en preparacion; no ofrecer como producto terminado.

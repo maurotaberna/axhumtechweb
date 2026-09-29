@@ -5,6 +5,9 @@ $sourceDir = Join-Path $projectRoot "builds/preview"
 $outputDir = Join-Path $projectRoot "builds/production"
 $expectedOutput = [System.IO.Path]::GetFullPath((Join-Path $projectRoot "builds/production"))
 
+& node (Join-Path $PSScriptRoot "build-site.mjs")
+if ($LASTEXITCODE -ne 0) { throw "No se pudo generar la vista previa." }
+
 if (-not (Test-Path -LiteralPath $sourceDir -PathType Container)) {
   throw "No se encontro el sitio fuente en $sourceDir"
 }
@@ -75,7 +78,7 @@ Get-ChildItem -LiteralPath $outputDir -Filter "*.html" | ForEach-Object {
   # porque ahi el sitio se abre directamente desde el disco.
   $html = $html.Replace('href="./index.html"', 'href="/"')
   $html = $html.Replace('href="./index.html#', 'href="/#')
-  $html = [regex]::Replace($html, 'href="\./([a-z0-9-]+)\.html(#[a-z0-9-]+)?"', 'href="/$1$2"')
+  $html = [regex]::Replace($html, 'href="\./([a-z0-9-]+)\.html([^\"]*)"', 'href="/$1$2"')
   $html = $html.Replace("https://axhumtech.com/index.html", "https://axhumtech.com/")
   $html = [regex]::Replace($html, 'https://axhumtech\.com/([a-z0-9-]+)\.html', 'https://axhumtech.com/$1')
   $html = $html.Replace("axhum-tech-logo-professional-50kb.png`"", "axhum-tech-logo-professional-50kb.png?v=logo-professional-20260821`"")

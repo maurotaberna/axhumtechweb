@@ -8,11 +8,11 @@ Este documento define donde vive cada parte de la web de Axhum Tech.
 | --- | --- | --- |
 | Contenido editorial | `content/` | Paginas, servicios, mensajes y copys base |
 | Identidad reutilizable | `assets/branding/` | Logos SVG, marca y recursos graficos aprobados |
-| Implementacion | `src/` | Codigo de la web cuando se construya |
-| Componentes UI | `src/components/` | Componentes visuales y reutilizables cuando exista codigo |
+| Implementacion | `src/build-site.mjs`, `src/site.css`, `src/site.js` | Paginas, componentes compartidos, estilos e interacciones |
+| Componentes UI | `src/build-site.mjs` | Cabecera, pie, metadatos y estructura compartida |
 | Publico estatico | `public/` | Archivos servidos directamente |
 | Documentacion | `docs/` | Estructura, decisiones y mantenimiento |
-| Entregas | `builds/` | Versiones publicables o paquetes listos |
+| Entregas | `builds/preview/`, `builds/production/` | Vista generada y salida publicable; no editar HTML generado |
 | Respaldos | `backups/` | Copias de trabajo y recuperacion |
 | Legado | `_legacy/` | Material antiguo, de prueba o importado |
 
@@ -30,6 +30,6 @@ Todo material nuevo para la web debe entrar primero por `content/` o `assets/` s
 ## Despliegue
 
 Cloudflare Pages, proyecto `axhumtech`, dominio `axhumtech.com`. El build lo
-genera `src/build-production.ps1` desde `builds/preview/` y lo publica el flujo
+genera `src/build-production.ps1` desde `src/build-site.mjs` y lo publica el flujo
 de GitHub Actions en cada push a `main`. Detalle en `docs/github-cloudflare.md`,
 `docs/deployment.md` y `docs/seo.md`.

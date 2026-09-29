@@ -1,79 +1,52 @@
 # Axhum Tech Web
 
-Proyecto independiente para presentacion, posicionamiento, captacion y comunicacion comercial de Axhum Tech.
+Web institucional independiente de Gestion, Comanda, SaaS y el resto de productos.
+Su función es presentar la empresa, explicar sus servicios, mostrar productos
+disponibles y convertir visitas en consultas. El sitio público tiene cuatro
+páginas: Inicio (`/`), Servicios (`/servicios`), Productos (`/productos`) y
+Contacto (`/contacto`).
 
-## Objetivo
+## Dónde vive cada parte
 
-Mantener la web separada de Gestion, Comanda, Gym y SaaS, con una estructura clara para contenido, activos, codigo, builds y respaldo.
+| Área | Ruta | Función |
+| --- | --- | --- |
+| Contenido publicado y componentes compartidos | `src/build-site.mjs` | Copy, HTML, navegación y metadatos de las cuatro páginas |
+| Estilos editables | `src/site.css` | Diseño, responsive y modo oscuro |
+| Interacciones editables | `src/site.js` | Eventos y formulario sin backend |
+| Marca y límites comerciales | `content/` | Fuente de verdad para afirmaciones y tono |
+| Logos y recursos aprobados | `assets/` | Identidad oficial, sin archivos operativos de otros productos |
+| Archivos públicos y redirects | `public/` | Sitemap, robots, Worker, cabeceras e iconos |
+| Vista local generada | `builds/preview/` | HTML con rutas relativas; no editar a mano |
+| Build desplegable | `builds/production/` | Salida con URLs limpias y assets |
+| Decisiones | `docs/` | Arquitectura, SEO y despliegue |
+| Respaldo anterior | `backups/site-before-minimal-2026-09-29/` | Copia local no publicada |
+| Material antiguo | `_legacy/` | Fuentes históricas separadas |
 
-## Estructura principal
+`builds/preview/theme.js` y `builds/preview/analytics.js` conservan la lógica
+existente de tema y medición con consentimiento. Los productos externos
+permanecen en sus propios dominios y repositorios.
 
-- `content/`: copys, paginas y servicios en formato fuente.
-- `assets/`: imagenes, logos y recursos reutilizables.
-- `src/`: implementacion web cuando exista codigo.
-- `public/`: archivos estaticos servidos sin procesar.
-- `docs/`: decisiones, mapa de estructura y notas de mantenimiento.
-- `builds/`: entregas o snapshots publicables.
-- `backups/`: respaldos de trabajo.
-- `_legacy/`: material viejo, de prueba o importado sin curar.
+## Construir y validar
 
-## Fuentes de referencia ya separadas
-
-- `_legacy/source/Website/`
-- `_legacy/source/Branding/`
-
-## Branding oficial
-
-- Identidad: logo maestro circular de Axhum Tech.
-- Fuentes oficiales: `assets/branding/logos/`.
-- Pieza social: `assets/branding/social/axhum-tech-og.png`.
-- Version anterior: `_legacy/branding-v1-placeholder-20260802/`.
-
-## Web navegable
-
-El sitio vive en `builds/preview/`. Ahi estan los archivos fuente: cada pagina es
-un HTML completo y autonomo, con enlaces `.html` para poder abrirla desde el
-disco. `builds/production/` se genera desde ahi.
-
-| Archivo | URL publicada |
-| --- | --- |
-| `index.html` | `/` |
-| `servicios.html` | `/servicios` |
-| `software-a-medida.html` | `/software-a-medida` |
-| `webs.html` | `/webs` (tiendas online en `#tiendas`) |
-| `posicionamiento.html` | `/posicionamiento` |
-| `productos.html` | `/productos` |
-| `gestion.html` | `/gestion` |
-| `comanda.html` | `/comanda` |
-| `arena.html` | `/arena` |
-| `faq.html` | `/faq` |
-| `nosotros.html` | `/nosotros` |
-| `contacto.html` | `/contacto` |
-| `404.html` | pagina de error (no indexada) |
-
-Al agregar una pagina hay que sumarla al menu (cabecera y cajon movil), al pie y
-a `public/sitemap.xml`.
-
-### Previsualizar
-
+```powershell
+./src/build-production.ps1
+node src/validate-seo.mjs
+node --test src/*.test.mjs
 ```
+
+El build ejecuta `src/build-site.mjs`, genera la vista previa y luego prepara
+`builds/production/`. Para ver la vista local:
+
+```powershell
 python -m http.server 5410 --directory "E:\Axhum Tech\Web Axhum Tech"
 ```
 
-y abrir `http://localhost:5410/builds/preview/index.html`. Hay que servir la raiz
-del proyecto, no `builds/preview`, porque las paginas referencian `../../assets/`.
+Abrir `http://127.0.0.1:5410/builds/preview/index.html`. Servir la raíz del
+proyecto permite cargar `../../assets/`.
 
-## Publicacion
+## Publicación
 
-- Repositorio oficial: `https://github.com/maurotaberna/axhumtechweb`.
-- Hosting: Cloudflare Pages.
-- Dominio oficial: `https://axhumtech.com`.
-- URL tecnica de respaldo: `https://axhumtech.pages.dev`.
-- Build: `powershell -ExecutionPolicy Bypass -File .\src\build-production.ps1`.
-- Salida generada: `builds/production/`.
-
-El build reescribe los enlaces `.html` a URLs limpias (`/servicios`), porque
-Cloudflare Pages redirige `pagina.html` a `pagina`. Por eso `builds/production/`
-no se navega bien abriendola a mano: es para desplegar, no para mirar.
-
-La integracion y los pasos de despliegue se documentan en `docs/github-cloudflare.md`. La migracion y validacion del dominio oficial viven en `docs/domain-axhumtech-com.md`. Las decisiones de SEO y posicionamiento estan en `docs/seo.md`.
+Repositorio: `https://github.com/maurotaberna/axhumtechweb`. El push a `main`
+construye y publica en Cloudflare Pages (`axhumtech.com`). `public/_worker.js`
+redirige las URLs antiguas a las cuatro páginas nuevas. Ver
+`docs/github-cloudflare.md` y `docs/seo.md` antes de desplegar.
