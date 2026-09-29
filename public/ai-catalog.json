@@ -1,0 +1,26 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Axhum Tech",
+    "identifier": "https://axhumtech.com",
+    "documentationUrl": "https://axhumtech.com/llms.txt"
+  },
+  "entries": [
+    {
+      "identifier": "https://axhumtech.com/llms.txt",
+      "displayName": "Axhum Tech: guía del sitio para modelos de lenguaje",
+      "description": "Resumen en Markdown de los servicios, productos y páginas de Axhum Tech, con enlaces a cada una.",
+      "mediaType": "text/markdown",
+      "url": "https://axhumtech.com/llms.txt",
+      "tags": ["documentacion", "sitio-web"]
+    },
+    {
+      "identifier": "https://axhumtech.com/sitemap.xml",
+      "displayName": "Mapa del sitio de Axhum Tech",
+      "description": "Lista de todas las páginas públicas del sitio.",
+      "mediaType": "application/xml",
+      "url": "https://axhumtech.com/sitemap.xml",
+      "tags": ["sitemap"]
+    }
+  ]
+}

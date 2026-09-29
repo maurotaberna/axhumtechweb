@@ -35,9 +35,13 @@ $outputSocial = Join-Path $outputBranding "social"
 New-Item -ItemType Directory -Path $outputSocial | Out-Null
 Copy-Item -LiteralPath (Join-Path $projectRoot "assets/branding/social/axhum-tech-og.png") -Destination $outputSocial -Force
 
-@("favicon.svg", "favicon-512.png", "_headers", "_worker.js", "robots.txt", "sitemap.xml") | ForEach-Object {
+@("favicon.svg", "favicon-512.png", "_headers", "_worker.js", "robots.txt", "sitemap.xml", "llms.txt", "ai-catalog.json") | ForEach-Object {
   Copy-Item -LiteralPath (Join-Path $projectRoot "public/$_") -Destination $outputDir -Force
 }
+
+# El catalogo de recursos para agentes se descubre en /.well-known/.
+New-Item -ItemType Directory -Path (Join-Path $outputDir ".well-known") -Force | Out-Null
+Copy-Item -LiteralPath (Join-Path $projectRoot "public/ai-catalog.json") -Destination (Join-Path $outputDir ".well-known/ai-catalog.json") -Force
 
 # Huella de la hoja de estilos y del script. Sin esto, Cloudflare sigue
 # sirviendo la version anterior hasta un dia entero (`_headers` les pone
