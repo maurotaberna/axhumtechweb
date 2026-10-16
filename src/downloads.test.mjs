@@ -5,15 +5,15 @@ import { readFileSync } from 'node:fs';
 const products = [
   {
     page: 'productos.html',
-    name: 'Axhum Gestión 1.0.9',
-    download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.0.9/Axhum.Gestion-Setup-1.0.9.exe',
-    release: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/tag/v1.0.9',
+    name: 'Axhum Gestión 1.1.0',
+    download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.1.0/Axhum.Gestion-Setup-1.1.0.exe',
+    release: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/tag/v1.1.0',
   },
   {
     page: 'productos.html',
-    name: 'Axhum Gestión + ARCA 1.0.9',
-    download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.0.9/Axhum.Gestion.%2B.ARCA-Setup-1.0.9.exe',
-    release: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/tag/v1.0.9',
+    name: 'Axhum Gestión + ARCA 1.1.0',
+    download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.1.0/Axhum.Gestion.%2B.ARCA-Setup-1.1.0.exe',
+    release: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/tag/v1.1.0',
   },
   {
     page: 'productos.html',
