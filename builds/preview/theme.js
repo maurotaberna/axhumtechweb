@@ -3,6 +3,12 @@
   "use strict";
   var key = "axhum-theme";
   var root = document.documentElement;
+  var labels = {
+    es: ["Activar modo claro", "Activar modo oscuro"],
+    en: ["Switch to light mode", "Switch to dark mode"],
+    pt: ["Ativar modo claro", "Ativar modo escuro"],
+    fr: ["Activer le mode clair", "Activer le mode sombre"],
+  };
 
   function apply(value) {
     var dark = value === "dark";
@@ -12,7 +18,9 @@
     document.querySelectorAll("[data-theme-toggle]").forEach(function (button) {
       button.hidden = false;
       button.setAttribute("aria-pressed", String(dark));
-      button.setAttribute("title", dark ? "Activar modo claro" : "Activar modo oscuro");
+      var label = (labels[(root.lang || 'es').slice(0, 2)] || labels.es)[dark ? 0 : 1];
+      button.setAttribute("title", label);
+      button.setAttribute("aria-label", label);
     });
   }
 

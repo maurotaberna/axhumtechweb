@@ -21,7 +21,12 @@ if (Test-Path -LiteralPath $outputDir) {
 }
 
 New-Item -ItemType Directory -Path $outputDir | Out-Null
-Get-ChildItem -LiteralPath $sourceDir -Filter "*.html" | Copy-Item -Destination $outputDir -Force
+Get-ChildItem -LiteralPath $sourceDir -Filter "*.html" -Recurse | ForEach-Object {
+  $relative = $_.FullName.Substring($sourceDir.Length).TrimStart('\', '/')
+  $target = Join-Path $outputDir $relative
+  New-Item -ItemType Directory -Path (Split-Path $target -Parent) -Force | Out-Null
+  Copy-Item -LiteralPath $_.FullName -Destination $target -Force
+}
 Copy-Item -LiteralPath (Join-Path $sourceDir "styles.css") -Destination $outputDir -Force
 Copy-Item -LiteralPath (Join-Path $sourceDir "script.js") -Destination $outputDir -Force
 Copy-Item -LiteralPath (Join-Path $sourceDir "theme.js") -Destination $outputDir -Force
@@ -63,35 +68,7 @@ $vAnalytics = & $huella "analytics.js"
 # y eso rompe los acentos de los datos estructurados JSON-LD.
 $utf8 = New-Object System.Text.UTF8Encoding($false)
 
-Get-ChildItem -LiteralPath $outputDir -Filter "*.html" | ForEach-Object {
-  $html = [System.IO.File]::ReadAllText($_.FullName, $utf8)
-  $html = $html.Replace("../../assets/", "./assets/")
-  $html = $html.Replace("../../public/", "./")
-  $html = $html.Replace('href="./styles.css"', 'href="./styles.css?v=' + $vCss + '"')
-  $html = $html.Replace('src="./script.js"', 'src="./script.js?v=' + $vJs + '"')
-  $html = $html.Replace('src="./theme.js"', 'src="./theme.js?v=' + $vTheme + '"')
-  $html = $html.Replace('src="./analytics.js"', 'src="./analytics.js?v=' + $vAnalytics + '"')
-
-  # URLs limpias. Cloudflare Pages redirige /pagina.html a /pagina con un 308,
-  # asi que si dejaramos los .html cada enlace interno y cada canonical
-  # apuntaria a una redireccion. En builds/preview los .html se conservan
-  # porque ahi el sitio se abre directamente desde el disco.
-  $html = $html.Replace('href="./index.html"', 'href="/"')
-  $html = $html.Replace('href="./index.html#', 'href="/#')
-  $html = [regex]::Replace($html, 'href="\./([a-z0-9-]+)\.html([^\"]*)"', 'href="/$1$2"')
-  $html = $html.Replace("https://axhumtech.com/index.html", "https://axhumtech.com/")
-  $html = [regex]::Replace($html, 'https://axhumtech\.com/([a-z0-9-]+)\.html', 'https://axhumtech.com/$1')
-  $html = $html.Replace("axhum-tech-logo-professional-50kb.png`"", "axhum-tech-logo-professional-50kb.png?v=logo-professional-20260821`"")
-  $html = $html.Replace("axhum-tech-logo-on-light.svg`"", "axhum-tech-logo-on-light.svg?v=mark-centered-20260826`"")
-  $html = $html.Replace("axhum-mark-on-light.svg`"", "axhum-mark-on-light.svg?v=mark-centered-20260826`"")
-  $html = $html.Replace("axhum-gestion-logo-on-light.svg`"", "axhum-gestion-logo-on-light.svg?v=product-lockup-20260915`"")
-  $html = $html.Replace("axhum-comanda-logo-on-light.svg`"", "axhum-comanda-logo-on-light.svg?v=product-lockup-20260915`"")
-  $html = $html.Replace("axhum-service-logo-on-light.svg`"", "axhum-service-logo-on-light.svg?v=product-lockup-20260915`"")
-  $html = $html.Replace("axhum-distribuidora-logo-on-light.svg`"", "axhum-distribuidora-logo-on-light.svg?v=product-lockup-20260915`"")
-  $html = $html.Replace("axhum-tech-og.png`"", "axhum-tech-og.png?v=logo-master-20260814`"")
-  $html = $html.Replace("favicon-512.png`"", "favicon-512.png?v=mark-centered-20260826`"")
-  $html = $html.Replace("favicon.svg`"", "favicon.svg?v=mark-centered-20260826`"")
-  [System.IO.File]::WriteAllText($_.FullName, $html, $utf8)
-}
+& node (Join-Path $PSScriptRoot 'prepare-production.mjs') $outputDir $vCss $vJs $vTheme $vAnalytics
+if ($LASTEXITCODE -ne 0) { throw 'No se pudieron preparar los enlaces de produccion.' }
 
 Write-Host "Build de produccion creado en $outputDir"

@@ -24,6 +24,14 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
+    if (url.pathname === "/locale-hint") {
+      const country = request.cf?.country || "";
+      const language = country === "BR" || country === "PT" ? "pt"
+        : ["FR", "BE", "CH", "LU"].includes(country) ? "fr"
+        : ["US", "GB", "CA", "AU", "NZ", "IE"].includes(country) ? "en" : "es";
+      return Response.json({ language }, { headers: { "Cache-Control": "private, no-store" } });
+    }
+
     const oldPath = url.pathname.replace(/\.html$/, "").replace(/\/$/, "");
     if (MOVED_PAGES[oldPath]) {
       const destination = new URL(MOVED_PAGES[oldPath], url.origin);

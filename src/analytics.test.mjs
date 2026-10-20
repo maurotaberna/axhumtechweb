@@ -29,7 +29,8 @@ test('analytics is configured but does not load Google before consent', () => {
   assert.equal(window.dataLayer, undefined);
   assert.match(source, /var measurementId = "G-0QX9YV7TZ6";/);
   assert.match(source, /Aceptar y continuar/);
-  assert.match(source, /data-analytics-reject>Rechazar/);
+  assert.match(source, /'Rechazar'/);
+  assert.match(source, /'Accept and continue'/);
 });
 
 test('analytics only permits non-sensitive commercial context', () => {
@@ -41,10 +42,12 @@ test('analytics only permits non-sensitive commercial context', () => {
 
 test('every production page loads one versioned analytics script before the site script', () => {
   const root = new URL('../builds/production/', import.meta.url);
-  for (const file of readdirSync(root).filter(name => name.endsWith('.html'))) {
-    const html = readFileSync(new URL(file, root), 'utf8');
-    assert.equal((html.match(/analytics\.js/g) || []).length, 1, file);
-    assert.match(html, /<script src="\.\/analytics\.js\?v=[a-f0-9]{10}" defer><\/script>/, file);
-    assert.ok(html.indexOf('./analytics.js') < html.indexOf('./script.js'), file);
+  const files = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap(entry =>
+    entry.isDirectory() ? files(new URL(entry.name + '/', dir)) : entry.name.endsWith('.html') ? [new URL(entry.name, dir)] : []);
+  for (const file of files(root)) {
+    const html = readFileSync(file, 'utf8');
+    assert.equal((html.match(/analytics\.js/g) || []).length, 1, file.href);
+    assert.match(html, /<script src="\/analytics\.js\?v=[a-f0-9]{10}" defer><\/script>/, file.href);
+    assert.ok(html.indexOf('/analytics.js') < html.indexOf('/script.js'), file.href);
   }
 });

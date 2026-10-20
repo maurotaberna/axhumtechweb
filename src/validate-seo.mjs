@@ -1,6 +1,7 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
-import { resolve, join } from 'node:path';
+import { resolve, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { locales, pageKeys, routeFor } from './site-copy.mjs';
 
 const root = resolve(process.argv[2] || fileURLToPath(new URL('../builds/production/', import.meta.url)));
 const origin = 'https://axhumtech.com';
@@ -25,7 +26,14 @@ if (!existsSync(root)) {
   process.exit(1);
 }
 
-const files = readdirSync(root).filter((file) => file.endsWith('.html'));
+const htmlFiles = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+  const path = join(dir, entry.name);
+  return entry.isDirectory() ? htmlFiles(path) : entry.name.endsWith('.html') ? [relative(root, path).replaceAll('\\', '/')] : [];
+});
+const files = htmlFiles(root);
+const routes = new Map(Object.keys(locales).flatMap((locale) => pageKeys.map((page) => [
+  `${locales[locale].folder ? locales[locale].folder + '/' : ''}${locales[locale].files[page]}.html`, { locale, page },
+])));
 const sitemap = read('sitemap.xml');
 const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(([, url]) => url);
 const titles = new Set();
@@ -41,7 +49,8 @@ for (const [, date] of sitemap.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)) {
 for (const file of files) {
   const html = read(file);
   const head = html.match(/<head>([\s\S]*?)<\/head>/i)?.[1] || '';
-  const url = `${origin}/${file === 'index.html' ? '' : file.replace(/\.html$/, '')}`;
+  const route = routes.get(file);
+  const url = `${origin}${route ? routeFor(route.locale, route.page) : '/404'}`;
   const meta = tags(html, 'meta');
   const links = tags(html, 'link');
   const getMeta = (name) => meta.find((tag) => tag.name === name || tag.property === name)?.content;
@@ -52,7 +61,7 @@ for (const file of files) {
   check(!!getMeta('description')?.trim(), `${file}: missing description`);
   check((html.match(/<h1\b/gi) || []).length === 1, `${file}: expected one h1`);
   check(tags(html, 'img').every((tag) => Object.hasOwn(tag, 'alt')), `${file}: image without alt`);
-  check(/<html\b[^>]*lang="es-AR"/i.test(html), `${file}: missing Spanish language`);
+  check(new RegExp(`<html\\b[^>]*lang="${route ? locales[route.locale].tag : 'es-AR'}"`, 'i').test(html), `${file}: missing page language`);
 
   const canonical = links.filter((tag) => tag.rel === 'canonical');
   if (file === '404.html') {
@@ -66,6 +75,10 @@ for (const file of files) {
       `${file}: indexation disabled`);
     check(getMeta('og:url') === url, `${file}: Open Graph URL differs from canonical`);
     check(!!getMeta('og:image') && !!getMeta('twitter:card'), `${file}: missing social metadata`);
+    for (const [locale, spec] of Object.entries(locales)) {
+      check(links.some((tag) => tag.rel === 'alternate' && tag.hreflang === spec.tag &&
+        tag.href === origin + routeFor(locale, route.page)), `${file}: missing ${locale} hreflang`);
+    }
   }
 
   const blocks = [...html.matchAll(/<script\b[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)];
@@ -82,11 +95,11 @@ for (const file of files) {
   if (file !== '404.html') {
     const org = nodes.find((node) => node['@type'] === 'Organization');
     check(org?.['@id'] === `${origin}/#organizacion` && org?.name === 'Axhum Tech', `${file}: missing company identity`);
-    check(!org?.address && org?.description?.includes('Trabajo remoto'), `${file}: company must describe its service modality without publishing a street address`);
+    check(!org?.address && typeof org?.description === 'string', `${file}: company must describe its service modality without publishing a street address`);
     if (org) {
       const serialized = JSON.stringify(org);
-      organization ??= serialized;
-      check(serialized === organization, `${file}: inconsistent company details`);
+      organization ??= { name: org.name, url: org.url, email: org.email };
+      check(org.name === organization.name && org.url === organization.url && org.email === organization.email, `${file}: inconsistent company details`);
     }
   }
 
@@ -99,7 +112,7 @@ for (const file of files) {
     if (target.origin !== origin) continue;
     check(!target.pathname.endsWith('.html'), `${file}: internal link redirects: ${value}`);
     const relative = decodeURIComponent(target.pathname).replace(/^\//, '');
-    const candidate = relative === '' ? 'index.html' : relative.includes('.') ? relative : `${relative}.html`;
+    const candidate = relative === '' ? 'index.html' : relative.endsWith('/') ? `${relative}index.html` : relative.includes('.') ? relative : `${relative}.html`;
     const path = resolve(root, candidate);
     check(path.startsWith(resolve(root) + (process.platform === 'win32' ? '\\' : '/')) && existsSync(path),
       `${file}: missing internal resource: ${value}`);

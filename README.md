@@ -4,20 +4,22 @@ Web institucional independiente de Gestion, Comanda, SaaS y el resto de producto
 Su función es presentar la empresa, explicar sus servicios, mostrar productos
 disponibles y convertir visitas en consultas. El sitio público tiene cuatro
 páginas: Inicio (`/`), Servicios (`/servicios`), Productos (`/productos`) y
-Contacto (`/contacto`).
+Contacto (`/contacto`) en español, con versiones completas en `/en/`, `/pt/`
+y `/fr/`. Cada idioma conserva sus cuatro páginas y un selector equivalente.
 
 ## Dónde vive cada parte
 
 | Área | Ruta | Función |
 | --- | --- | --- |
-| Contenido publicado y componentes compartidos | `src/build-site.mjs` | Copy, HTML, navegación y metadatos de las cuatro páginas |
+| Copy traducido y rutas | `src/site-copy.mjs` | Contenido comercial, metadatos, slugs y selector ES/EN/PT-BR/FR |
+| Componentes compartidos | `src/build-site.mjs` | HTML, navegación y páginas de los cuatro idiomas |
 | Estilos editables | `src/site.css` | Diseño, responsive y modo oscuro |
 | Interacciones editables | `src/site.js` | Eventos y formulario sin backend |
 | Marca y límites comerciales | `content/` | Fuente de verdad para afirmaciones y tono |
 | Logos y recursos aprobados | `assets/` | Identidad oficial, sin archivos operativos de otros productos |
 | Archivos públicos y redirects | `public/` | Sitemap, robots, Worker, cabeceras e iconos |
 | Vista local generada | `builds/preview/` | HTML con rutas relativas; no editar a mano |
-| Build desplegable | `builds/production/` | Salida con URLs limpias y assets |
+| Build desplegable | `builds/production/` | Salida con URLs limpias, sitemap multilingüe y assets |
 | Decisiones | `docs/` | Arquitectura, SEO y despliegue |
 | Respaldo anterior | `backups/site-before-minimal-2026-09-29/` | Copia local no publicada |
 | Material antiguo | `_legacy/` | Fuentes históricas separadas |
@@ -43,6 +45,11 @@ python -m http.server 5410 --directory "E:\Axhum Tech\Web Axhum Tech"
 
 Abrir `http://127.0.0.1:5410/builds/preview/index.html`. Servir la raíz del
 proyecto permite cargar `../../assets/`.
+
+La traducción cubre todas las páginas institucionales, interfaz, formulario,
+preferencias de cookies y metadatos. No se aplica un traductor automático
+externo ni se traducen los productos alojados en otros dominios. Consultar
+`docs/localization.md` antes de editar textos o agregar un idioma.
 
 ## Publicación
 

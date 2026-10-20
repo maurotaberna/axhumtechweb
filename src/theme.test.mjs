@@ -57,11 +57,13 @@ test('invalid saved values fall back to light; tabs synchronize', () => {
 });
 test('every production page loads the versioned theme before CSS and has one toggle', () => {
   const root = new URL('../builds/production/', import.meta.url);
-  for (const file of readdirSync(root).filter(name => name.endsWith('.html'))) {
-    const html = readFileSync(new URL(file, root), 'utf8');
-    assert.match(html, /<script src="\.\/theme\.js\?v=[a-f0-9]{10}"><\/script>/, file);
-    assert.ok(html.indexOf('./theme.js') < html.indexOf('./styles.css'), file);
+  const files = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap(entry =>
+    entry.isDirectory() ? files(new URL(entry.name + '/', dir)) : entry.name.endsWith('.html') ? [new URL(entry.name, dir)] : []);
+  for (const file of files(root)) {
+    const html = readFileSync(file, 'utf8');
+    assert.match(html, /<script src="\/theme\.js\?v=[a-f0-9]{10}"><\/script>/, file.href);
+    assert.ok(html.indexOf('/theme.js') < html.indexOf('/styles.css'), file.href);
     assert.equal((html.match(/data-theme-toggle/g) || []).length, 1, file);
-    assert.match(html, /aria-label="Modo oscuro" aria-pressed="false"[^>]+hidden/, file);
+    assert.match(html, /aria-pressed="false"[^>]+hidden/, file.href);
   }
 });
