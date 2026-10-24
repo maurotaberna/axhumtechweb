@@ -66,7 +66,7 @@ function header(locale, page) {
   return `<a class="skip-link" href="#contenido">${h(shared.skip)}</a><header class="site-header"><div class="shell header-inner">
 <a class="brand" href="${link(locale, 'home')}" aria-label="Axhum Tech"><img class="logo-light" src="${assets(locale)}branding/logos/axhum-tech-logo-on-light.svg" alt="Axhum Tech" width="178" height="52"><img class="logo-dark" src="${assets(locale)}branding/logos/axhum-tech-logo-on-dark.svg" alt="" width="178" height="52"></a>
 <nav class="desktop-nav" aria-label="${h(shared.nav[0])}">${nav}</nav><div class="header-actions">
-<details class="language-menu"><summary aria-label="${h(shared.language)}">${locales[locale].code} <span aria-hidden="true">⌄</span></summary><div class="language-options">${languageLinks(locale, page)}</div></details>
+<details class="language-menu"><summary aria-label="${h(shared.language)}">${locales[locale].code}</summary><div class="language-options">${languageLinks(locale, page)}</div></details>
 <button class="theme-toggle" type="button" data-theme-toggle aria-label="${h(shared.theme)}" aria-pressed="false" hidden><span aria-hidden="true">◐</span></button>
 <a class="header-contact" href="${link(locale, 'contact')}">${h(shared.talk)} <span aria-hidden="true">↗</span></a>
 <details class="mobile-menu"><summary aria-label="${h(shared.nav[0])}">${h(locale === 'es' ? 'Menú' : 'Menu')}</summary><nav aria-label="${h(shared.nav[0])}">${nav}</nav></details>

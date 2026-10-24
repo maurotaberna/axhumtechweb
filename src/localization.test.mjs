@@ -55,3 +55,12 @@ test('Dutch interactions include native consent, theme and WhatsApp copy', () =>
   assert.ok(script.includes('Hallo Axhum Tech, ik wil graag een project bespreken.'));
   assert.ok(script.includes("fr', 'nl'"));
 });
+
+test('language selector uses a centered CSS chevron rather than a font glyph', () => {
+  const html = readFileSync(new URL('en/index.html', output), 'utf8');
+  const css = readFileSync(new URL('styles.css', output), 'utf8');
+  assert.match(html, /<summary aria-label="Choose language">EN<\/summary>/);
+  assert.doesNotMatch(html, /⌄/);
+  assert.match(css, /\.language-menu summary\{[^}]*align-items:center;justify-content:center/);
+  assert.match(css, /\.language-menu summary::after\{[^}]*border-right:2px solid/);
+});
