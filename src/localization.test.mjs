@@ -9,6 +9,7 @@ const pages = {
   en: ['en/index.html', 'en/services.html', 'en/products.html', 'en/contact.html'],
   pt: ['pt/index.html', 'pt/servicos.html', 'pt/produtos.html', 'pt/contato.html'],
   fr: ['fr/index.html', 'fr/services.html', 'fr/produits.html', 'fr/contact.html'],
+  nl: ['nl/index.html', 'nl/diensten.html', 'nl/producten.html', 'nl/contact.html'],
 };
 
 test('every institutional page has a complete language selector and reciprocal SEO links', () => {
@@ -28,7 +29,7 @@ test('every institutional page has a complete language selector and reciprocal S
 });
 
 test('translated product pages disclose that external product sites remain Spanish', () => {
-  for (const locale of ['en', 'pt', 'fr']) {
+  for (const locale of ['en', 'pt', 'fr', 'nl']) {
     const html = readFileSync(new URL(pages[locale][2], output), 'utf8');
     assert.match(html, /product-language/);
     assert.match(html, /axhumgestion\.com\.ar/);
@@ -43,4 +44,14 @@ test('contact form keeps stable interest values across languages', () => {
       assert.ok(html.includes(`<option value="${value}"`), files[3]);
     }
   }
+});
+
+test('Dutch interactions include native consent, theme and WhatsApp copy', () => {
+  const analytics = readFileSync(new URL('../builds/production/analytics.js', import.meta.url), 'utf8');
+  const theme = readFileSync(new URL('../builds/production/theme.js', import.meta.url), 'utf8');
+  const script = readFileSync(new URL('../builds/production/script.js', import.meta.url), 'utf8');
+  assert.ok(analytics.includes('Analytische cookies'));
+  assert.ok(theme.includes('Donkere modus inschakelen'));
+  assert.ok(script.includes('Hallo Axhum Tech, ik wil graag een project bespreken.'));
+  assert.ok(script.includes("fr', 'nl'"));
 });

@@ -3,7 +3,7 @@
 ## Alcance
 
 La web de Axhum Tech publica cuatro páginas en español, inglés, portugués
-brasileño y francés. Las rutas equivalentes, textos comerciales, metadatos,
+brasileño, francés y neerlandés. Las rutas equivalentes, textos comerciales, metadatos,
 consentimiento de Analytics, formulario de contacto y avisos están traducidos.
 La marca, nombres de productos, enlaces oficiales y datos de contacto no se
 traducen.
@@ -14,6 +14,7 @@ traducen.
 | EN | `/en/` | `/en/services` | `/en/products` | `/en/contact` |
 | PT-BR | `/pt/` | `/pt/servicos` | `/pt/produtos` | `/pt/contato` |
 | FR | `/fr/` | `/fr/services` | `/fr/produits` | `/fr/contact` |
+| NL | `/nl/` | `/nl/diensten` | `/nl/producten` | `/nl/contact` |
 
 El selector de idioma apunta a la página equivalente. Se recuerda la elección
 en el navegador. En la portada española puede mostrarse una sugerencia no

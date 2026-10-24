@@ -1,6 +1,6 @@
 # SEO de la web institucional
 
-Actualizado: 2026-09-29.
+Actualizado: 2026-10-24.
 
 ## URLs públicas
 
@@ -11,7 +11,8 @@ Actualizado: 2026-09-29.
 | `/productos` | Axhum Gestión Online, Axenda y productos de escritorio |
 | `/contacto` | Consulta comercial a Axhum Tech |
 
-El sitemap incluye solo estas cuatro URLs. Las páginas anteriores se
+El sitemap incluye las cuatro páginas en cinco idiomas (20 URLs), con
+`hreflang` recíproco para ES, EN, PT-BR, FR y NL-NL. Las páginas anteriores se
 redirigen con 301 en `public/_worker.js` hacia la nueva sección equivalente.
 No se publican páginas duplicadas ni subpáginas de producto cuyo contenido
 queda mejor en los sitios propios `axhumgestion.com.ar` y `axenda.date`.
@@ -27,7 +28,7 @@ queda mejor en los sitios propios `axhumgestion.com.ar` y `axenda.date`.
 - `node src/validate-seo.mjs` y `node --test src/*.test.mjs` son obligatorios
   antes de publicar.
 
-Después del despliegue, verificar en Search Console las cuatro páginas y
+Después del despliegue, verificar en Search Console las veinte URLs y
 solicitar nueva indexación de la portada, Servicios y Productos. Comprobar
 las redirecciones antiguas en el dominio real y actualizar campañas o perfiles
 que aún enlacen a URLs anteriores.

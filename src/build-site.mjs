@@ -69,7 +69,7 @@ function header(locale, page) {
 <details class="language-menu"><summary aria-label="${h(shared.language)}">${locales[locale].code} <span aria-hidden="true">⌄</span></summary><div class="language-options">${languageLinks(locale, page)}</div></details>
 <button class="theme-toggle" type="button" data-theme-toggle aria-label="${h(shared.theme)}" aria-pressed="false" hidden><span aria-hidden="true">◐</span></button>
 <a class="header-contact" href="${link(locale, 'contact')}">${h(shared.talk)} <span aria-hidden="true">↗</span></a>
-<details class="mobile-menu"><summary aria-label="${h(shared.nav[0])}">${h(locale === 'en' ? 'Menu' : locale === 'pt' ? 'Menu' : locale === 'fr' ? 'Menu' : 'Menú')}</summary><nav aria-label="${h(shared.nav[0])}">${nav}</nav></details>
+<details class="mobile-menu"><summary aria-label="${h(shared.nav[0])}">${h(locale === 'es' ? 'Menú' : 'Menu')}</summary><nav aria-label="${h(shared.nav[0])}">${nav}</nav></details>
 </div></div></header>`;
 }
 
@@ -164,4 +164,4 @@ for (const locale of Object.keys(locales)) {
 writeFileSync(join(output, '404.html'), notFound(), 'utf8');
 copyFileSync(join(root, 'src/site.css'), join(output, 'styles.css'));
 copyFileSync(join(root, 'src/site.js'), join(output, 'script.js'));
-console.log('Vista previa generada: 16 páginas en 4 idiomas y 404.');
+console.log(`Vista previa generada: ${Object.keys(locales).length * pageKeys.length} páginas en ${Object.keys(locales).length} idiomas y 404.`);

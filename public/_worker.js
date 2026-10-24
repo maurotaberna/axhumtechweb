@@ -26,7 +26,8 @@ export default {
 
     if (url.pathname === "/locale-hint") {
       const country = request.cf?.country || "";
-      const language = country === "BR" || country === "PT" ? "pt"
+      const language = country === "NL" ? "nl"
+        : country === "BR" || country === "PT" ? "pt"
         : ["FR", "BE", "CH", "LU"].includes(country) ? "fr"
         : ["US", "GB", "CA", "AU", "NZ", "IE"].includes(country) ? "en" : "es";
       return Response.json({ language }, { headers: { "Cache-Control": "private, no-store" } });

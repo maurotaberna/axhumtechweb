@@ -5,14 +5,14 @@ Su función es presentar la empresa, explicar sus servicios, mostrar productos
 disponibles y convertir visitas en consultas. El sitio público tiene cuatro
 páginas: Inicio (`/`), Servicios (`/servicios`), Productos (`/productos`) y
 Contacto (`/contacto`) en español, con versiones completas en `/en/`, `/pt/`
-y `/fr/`. Cada idioma conserva sus cuatro páginas y un selector equivalente.
+y `/fr/` y `/nl/`. Cada idioma conserva sus cuatro páginas y un selector equivalente.
 
 ## Dónde vive cada parte
 
 | Área | Ruta | Función |
 | --- | --- | --- |
-| Copy traducido y rutas | `src/site-copy.mjs` | Contenido comercial, metadatos, slugs y selector ES/EN/PT-BR/FR |
-| Componentes compartidos | `src/build-site.mjs` | HTML, navegación y páginas de los cuatro idiomas |
+| Copy traducido y rutas | `src/site-copy.mjs` | Contenido comercial, metadatos, slugs y selector ES/EN/PT-BR/FR/NL |
+| Componentes compartidos | `src/build-site.mjs` | HTML, navegación y páginas de los cinco idiomas |
 | Estilos editables | `src/site.css` | Diseño, responsive y modo oscuro |
 | Interacciones editables | `src/site.js` | Eventos y formulario sin backend |
 | Marca y límites comerciales | `content/` | Fuente de verdad para afirmaciones y tono |

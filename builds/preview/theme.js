@@ -8,6 +8,7 @@
     en: ["Switch to light mode", "Switch to dark mode"],
     pt: ["Ativar modo claro", "Ativar modo escuro"],
     fr: ["Activer le mode clair", "Activer le mode sombre"],
+    nl: ["Lichte modus inschakelen", "Donkere modus inschakelen"],
   };
 
   function apply(value) {

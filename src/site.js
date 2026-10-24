@@ -26,6 +26,7 @@
     en: { intro: 'Hello Axhum Tech, I would like to discuss a project.', fields: ['Name', 'Business or industry', 'I need', 'Details'], status: 'WhatsApp opened with your draft message. Please review and send it.' },
     pt: { intro: 'Olá Axhum Tech, gostaria de conversar sobre um projeto.', fields: ['Nome', 'Empresa ou setor', 'Preciso de', 'Detalhes'], status: 'O WhatsApp abriu com a mensagem preparada. Revise e envie.' },
     fr: { intro: 'Bonjour Axhum Tech, je souhaite discuter d’un projet.', fields: ['Nom', 'Entreprise ou secteur', 'J’ai besoin de', 'Détails'], status: 'WhatsApp s’est ouvert avec votre message. Vérifiez-le puis envoyez-le.' },
+    nl: { intro: 'Hallo Axhum Tech, ik wil graag een project bespreken.', fields: ['Naam', 'Bedrijf of branche', 'Ik zoek', 'Details'], status: 'WhatsApp is geopend met uw conceptbericht. Controleer het voordat u het verstuurt.' },
   };
   var messageCopy = messages[language] || messages.es;
   var hint = document.querySelector('[data-language-hint]');
@@ -34,10 +35,10 @@
     try { saved = localStorage.getItem('axhum-language'); } catch (_) { /* Ignore unavailable storage. */ }
     if (!saved) {
       var preferred = (navigator.languages || [navigator.language]).map(function (item) { return item.toLowerCase(); });
-      var suggestion = preferred.find(function (item) { return /^(en|pt|fr)(-|$)/.test(item); });
+      var suggestion = preferred.find(function (item) { return /^(en|pt|fr|nl)(-|$)/.test(item); });
       function showSuggestion(code) {
-        if (!['en', 'pt', 'fr'].includes(code)) return;
-        var label = { en: 'English', pt: 'Português', fr: 'Français' }[code];
+        if (!['en', 'pt', 'fr', 'nl'].includes(code)) return;
+        var label = { en: 'English', pt: 'Português', fr: 'Français', nl: 'Nederlands' }[code];
         var languageLink = document.querySelector('a[data-locale-choice="' + code + '"]');
         if (!languageLink) return;
         hint.innerHTML = '<span>¿Preferís ver este sitio en ' + label + '?</span> <a href="' + languageLink.getAttribute('href') + '" data-locale-choice="' + code + '">Cambiar idioma</a> <button type="button" aria-label="Cerrar sugerencia de idioma" data-hint-close>×</button>';

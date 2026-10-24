@@ -40,6 +40,7 @@
       en: ['Analytics cookies', 'We use Google Analytics to understand which pages and actions are useful. We do not send information entered in the contact form.', 'Accept and continue', 'Reject'],
       pt: ['Cookies de análise', 'Usamos o Google Analytics para entender quais páginas e ações são úteis. Não enviamos os dados preenchidos no formulário.', 'Aceitar e continuar', 'Recusar'],
       fr: ['Cookies de mesure', 'Nous utilisons Google Analytics pour comprendre quelles pages et actions sont utiles. Nous ne transmettons pas les données saisies dans le formulaire.', 'Accepter et continuer', 'Refuser'],
+      nl: ['Analytische cookies', 'We gebruiken Google Analytics om te begrijpen welke pagina’s en acties nuttig zijn. We versturen geen gegevens die u in het contactformulier invult.', 'Accepteren en doorgaan', 'Weigeren'],
     }[locale] || ['Analytics cookies', 'We use analytics to understand site usage.', 'Accept', 'Reject'];
     var box = document.createElement("aside");
     box.className = "analytics-consent";
