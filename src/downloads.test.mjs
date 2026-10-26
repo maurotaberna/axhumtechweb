@@ -23,9 +23,9 @@ const products = [
   },
   {
     page: 'productos.html',
-    name: 'Axhum Service 1.0.1',
-    download: 'https://github.com/maurotaberna/AxhumService-releases/releases/download/v1.0.1/Axhum.Service-Setup-1.0.1.exe',
-    release: 'https://github.com/maurotaberna/AxhumService-releases/releases/tag/v1.0.1',
+    name: 'Axhum Service 1.0.2',
+    download: 'https://github.com/maurotaberna/AxhumService-releases/releases/download/v1.0.2/Axhum.Service-Setup-1.0.2.exe',
+    release: 'https://github.com/maurotaberna/AxhumService-releases/releases/tag/v1.0.2',
   },
 ];
 
@@ -48,4 +48,17 @@ test('download section does not display hashes or outdated Gestión installers',
     const html = readFileSync(new URL(`../builds/${build}/productos.html`, import.meta.url), 'utf8');
     assert.doesNotMatch(html, /SHA-256|1\.0\.4|82fb1009e01931a38df9904d932d176fef4efdd8b0a04d835585e447ee945733|CF59B0FC9CD2BD36C553E15CEAA0EB990D88EC75EDD9DEB6327F520AF638658A/i);
   }
+});
+
+test('Axhum Service 1.0.2 shows its trial and update details in every language', () => {
+  for (const page of ['productos.html', 'en/products.html', 'pt/produtos.html', 'fr/produits.html', 'nl/producten.html']) {
+    const html = readFileSync(new URL(`../builds/production/${page}`, import.meta.url), 'utf8');
+    assert.match(html, /Axhum Service 1\.0\.2/);
+    assert.match(html, /Windows 10\/11/);
+    assert.match(html, /82[,.]5/);
+    assert.doesNotMatch(html, /Axhum\.Service-Setup-1\.0\.1\.exe/);
+  }
+  const spanish = readFileSync(new URL('../builds/production/productos.html', import.meta.url), 'utf8');
+  assert.match(spanish, /Windows protegió tu PC/);
+  assert.match(spanish, /No desactives el antivirus ni SmartScreen/);
 });

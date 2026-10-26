@@ -20,7 +20,7 @@ const releases = [
   { name: 'Axhum Gestión', version: '1.1.1', repository: 'AxhumGestion-releases', file: 'Axhum.Gestion-Setup-1.1.1.exe' },
   { name: 'Axhum Gestión + ARCA', version: '1.1.1', repository: 'AxhumGestion-releases', file: 'Axhum.Gestion.%2B.ARCA-Setup-1.1.1.exe' },
   { name: 'Axhum Comanda', version: '1.0.1', repository: 'AxhumComanda-releases', file: 'Axhum.Comanda-Setup-1.0.1.exe' },
-  { name: 'Axhum Service', version: '1.0.1', repository: 'AxhumService-releases', file: 'Axhum.Service-Setup-1.0.1.exe' },
+  { name: 'Axhum Service', version: '1.0.2', repository: 'AxhumService-releases', file: 'Axhum.Service-Setup-1.0.2.exe' },
 ];
 
 function languageLinks(locale, page) {
@@ -123,7 +123,8 @@ function products(locale) {
   const desktop = desktopProducts.map((name, index) => `<div><strong>${h(name)}</strong><span>${h(c.desktopDescriptions[index])}</span></div>`).join('');
   const downloads = releases.map(({ name, version, repository, file }) => {
     const base = `https://github.com/maurotaberna/${repository}/releases`;
-    return `<li><a href="${base}/tag/v${version}" target="_blank" rel="noopener noreferrer">${h(name)} ${version} · ${h(c.release)}</a> <a href="${base}/download/v${version}/${file}" data-track="download_clicked" data-track-product="${h(name)} ${version}">${h(c.download)} ↗</a></li>`;
+    const serviceNote = name === 'Axhum Service' ? `<br><small>${h(c.serviceDownloadNote)}</small>` : '';
+    return `<li><a href="${base}/tag/v${version}" target="_blank" rel="noopener noreferrer">${h(name)} ${version} · ${h(c.release)}</a> <a href="${base}/download/v${version}/${file}" data-track="download_clicked" data-track-product="${h(name)} ${version}">${h(c.download)} ↗</a>${serviceNote}</li>`;
   }).join('');
   return page(locale, 'products', `
 <section class="page-intro shell" data-index="02"><p class="eyebrow">${h(c.eyebrow)}</p><h1>${h(c.headline)} <em>${h(c.accent)}</em></h1><p class="lead">${h(c.lead)}</p></section>
