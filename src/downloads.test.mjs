@@ -15,18 +15,6 @@ const products = [
   },
   {
     page: 'productos.html',
-    name: 'Axhum Gestión 1.1.1',
-    download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.1.1/Axhum.Gestion-Setup-1.1.1.exe',
-    release: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/tag/v1.1.1',
-  },
-  {
-    page: 'productos.html',
-    name: 'Axhum Gestión + ARCA 1.1.1',
-    download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.1.1/Axhum.Gestion.%2B.ARCA-Setup-1.1.1.exe',
-    release: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/tag/v1.1.1',
-  },
-  {
-    page: 'productos.html',
     name: 'Axhum Comanda 1.0.1',
     download: 'https://github.com/maurotaberna/AxhumComanda-releases/releases/download/v1.0.1/Axhum.Comanda-Setup-1.0.1.exe',
     release: 'https://github.com/maurotaberna/AxhumComanda-releases/releases/tag/v1.0.1',
@@ -60,13 +48,13 @@ test('download section does not display hashes or outdated Gestión installers',
   }
 });
 
-test('Gestion candidates remain distinct from stable releases in every language', () => {
+test('Gestion 1.1.2 replaces 1.1.1 without candidate labels in every language', () => {
   for (const page of ['productos.html', 'en/products.html', 'pt/produtos.html', 'fr/produits.html', 'nl/producten.html']) {
     const html = readFileSync(new URL(`../builds/production/${page}`, import.meta.url), 'utf8');
-    assert.match(html, /Axhum Gestión 1\.1\.2 RC/);
-    assert.match(html, /Axhum Gestión \+ ARCA 1\.1\.2 RC/);
-    assert.match(html, /Axhum Gestión 1\.1\.1/);
-    assert.match(html, /Axhum Gestión \+ ARCA 1\.1\.1/);
+    assert.match(html, /Axhum Gestión 1\.1\.2/);
+    assert.match(html, /Axhum Gestión \+ ARCA 1\.1\.2/);
+    assert.doesNotMatch(html, /Axhum Gestión(?: \+ ARCA)? 1\.1\.2 RC/);
+    assert.doesNotMatch(html, /Axhum\.Gestion[^"\s]*-Setup-1\.1\.1\.exe/);
   }
 });
 
