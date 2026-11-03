@@ -4,6 +4,16 @@ import { readFileSync } from 'node:fs';
 
 const products = [
   {
+    page: 'productos.html', name: 'Axhum Gestión 1.1.2',
+    download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.1.2/Axhum.Gestion-Setup-1.1.2.exe',
+    release: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/tag/v1.1.2',
+  },
+  {
+    page: 'productos.html', name: 'Axhum Gestión + ARCA 1.1.2',
+    download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.1.2/Axhum.Gestion.%2B.ARCA-Setup-1.1.2.exe',
+    release: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/tag/v1.1.2',
+  },
+  {
     page: 'productos.html',
     name: 'Axhum Gestión 1.1.1',
     download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.1.1/Axhum.Gestion-Setup-1.1.1.exe',
@@ -47,6 +57,16 @@ test('download section does not display hashes or outdated Gestión installers',
   for (const build of ['preview', 'production']) {
     const html = readFileSync(new URL(`../builds/${build}/productos.html`, import.meta.url), 'utf8');
     assert.doesNotMatch(html, /SHA-256|1\.0\.4|82fb1009e01931a38df9904d932d176fef4efdd8b0a04d835585e447ee945733|CF59B0FC9CD2BD36C553E15CEAA0EB990D88EC75EDD9DEB6327F520AF638658A/i);
+  }
+});
+
+test('Gestion candidates remain distinct from stable releases in every language', () => {
+  for (const page of ['productos.html', 'en/products.html', 'pt/produtos.html', 'fr/produits.html', 'nl/producten.html']) {
+    const html = readFileSync(new URL(`../builds/production/${page}`, import.meta.url), 'utf8');
+    assert.match(html, /Axhum Gestión 1\.1\.2 RC/);
+    assert.match(html, /Axhum Gestión \+ ARCA 1\.1\.2 RC/);
+    assert.match(html, /Axhum Gestión 1\.1\.1/);
+    assert.match(html, /Axhum Gestión \+ ARCA 1\.1\.1/);
   }
 });
 
