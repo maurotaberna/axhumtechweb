@@ -4,14 +4,14 @@ import { readFileSync } from 'node:fs';
 
 const products = [
   {
-    page: 'productos.html', name: 'Axhum Gestión 1.1.2',
-    download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.1.2/Axhum.Gestion-Setup-1.1.2.exe',
-    release: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/tag/v1.1.2',
+    page: 'productos.html', name: 'Axhum Gestión 1.1.3',
+    download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.1.3/Axhum.Gestion-Setup-1.1.3.exe',
+    release: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/tag/v1.1.3',
   },
   {
-    page: 'productos.html', name: 'Axhum Gestión + ARCA 1.1.2',
-    download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.1.2/Axhum.Gestion.%2B.ARCA-Setup-1.1.2.exe',
-    release: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/tag/v1.1.2',
+    page: 'productos.html', name: 'Axhum Gestión + ARCA 1.1.3',
+    download: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/download/v1.1.3/Axhum.Gestion.%2B.ARCA-Setup-1.1.3.exe',
+    release: 'https://github.com/maurotaberna/AxhumGestion-releases/releases/tag/v1.1.3',
   },
   {
     page: 'productos.html',
@@ -48,13 +48,13 @@ test('download section does not display hashes or outdated Gestión installers',
   }
 });
 
-test('Gestion 1.1.2 replaces 1.1.1 without candidate labels in every language', () => {
+test('Gestion 1.1.3 replaces earlier installers without candidate labels in every language', () => {
   for (const page of ['productos.html', 'en/products.html', 'pt/produtos.html', 'fr/produits.html', 'nl/producten.html']) {
     const html = readFileSync(new URL(`../builds/production/${page}`, import.meta.url), 'utf8');
-    assert.match(html, /Axhum Gestión 1\.1\.2/);
-    assert.match(html, /Axhum Gestión \+ ARCA 1\.1\.2/);
-    assert.doesNotMatch(html, /Axhum Gestión(?: \+ ARCA)? 1\.1\.2 RC/);
-    assert.doesNotMatch(html, /Axhum\.Gestion[^"\s]*-Setup-1\.1\.1\.exe/);
+    assert.match(html, /Axhum Gestión 1\.1\.3/);
+    assert.match(html, /Axhum Gestión \+ ARCA 1\.1\.3/);
+    assert.doesNotMatch(html, /Axhum Gestión(?: \+ ARCA)? 1\.1\.3 RC/);
+    assert.doesNotMatch(html, /Axhum\.Gestion[^"\s]*-Setup-1\.1\.[12]\.exe/);
   }
 });
 

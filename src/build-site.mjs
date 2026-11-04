@@ -17,8 +17,8 @@ const sharedFiles = (locale) => locale === 'es' ? './' : '../';
 
 const desktopProducts = ['Axhum Gestión', 'Axhum Comanda', 'Axhum Service', 'Axhum Distribuidora'];
 const releases = [
-  { name: 'Axhum Gestión', version: '1.1.2', repository: 'AxhumGestion-releases', file: 'Axhum.Gestion-Setup-1.1.2.exe' },
-  { name: 'Axhum Gestión + ARCA', version: '1.1.2', repository: 'AxhumGestion-releases', file: 'Axhum.Gestion.%2B.ARCA-Setup-1.1.2.exe' },
+  { name: 'Axhum Gestión', version: '1.1.3', repository: 'AxhumGestion-releases', file: 'Axhum.Gestion-Setup-1.1.3.exe' },
+  { name: 'Axhum Gestión + ARCA', version: '1.1.3', repository: 'AxhumGestion-releases', file: 'Axhum.Gestion.%2B.ARCA-Setup-1.1.3.exe' },
   { name: 'Axhum Comanda', version: '1.0.1', repository: 'AxhumComanda-releases', file: 'Axhum.Comanda-Setup-1.0.1.exe' },
   { name: 'Axhum Service', version: '1.0.2', repository: 'AxhumService-releases', file: 'Axhum.Service-Setup-1.0.2.exe' },
 ];
