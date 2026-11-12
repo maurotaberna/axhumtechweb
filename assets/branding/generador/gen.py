@@ -198,4 +198,5 @@ def main():
         print(n, len(sv))
 
 
-main()
+if __name__ == "__main__":
+    main()

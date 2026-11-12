@@ -24,6 +24,8 @@ quedo respaldado localmente en `_legacy/branding-circular-2026-11-12/`).
   `generador/gen.py`.
 - `social/instagram/destacadas/`: portadas de destacadas (Gestion, Referencias, Paginas Web),
   1080x1080 con icono turquesa sobre azul marino; se generan con `generador/destacadas.py`.
+- `social/instagram/presentacion/`: carrusel 4:5 (1080x1350) de presentacion de la marca, publicado
+  el 2026-11-12; se genera con `generador/post_presentacion.py` (reusa `gen.py` e `iso.py`).
 - `source/axhum-tech-logo-master.png` es el raster del logo anterior; no usarlo en piezas nuevas.
 - Las derivaciones raster se generan desde los SVG.
 - Los placeholders anteriores viven en `_legacy/branding-v1-placeholder-20260802/`.
