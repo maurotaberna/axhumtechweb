@@ -135,6 +135,34 @@ def og():
     return svg_doc((0, 0, W, Hh), body, 'Axhum Tech', 'Imagen para compartir la web', defs, W, Hh)
 
 
+def instagram(kind):
+    """Foto de perfil 1080x1080: isotipo centrado dentro del circulo de recorte."""
+    W = 1080
+    w = B[2] - B[0]
+    s = 640 / w                         # isotipo de 640 px de ancho
+    tx = W / 2 - (B[0] + w / 2) * s
+    ty = W / 2 - (B[1] + H / 2) * s + 12  # leve ajuste optico hacia abajo
+    if kind == 'azul':
+        bg = (f'<rect width="{W}" height="{W}" fill="{iso.NAVY}"/>'
+              f'<rect width="{W}" height="{W}" fill="url(#ga)"/>')
+        defs_bg = ('<radialGradient id="ga" cx="1" cy="1" r="1.05">'
+                   '<stop offset="0" stop-color="#18C4B8" stop-opacity=".38"/>'
+                   '<stop offset=".6" stop-color="#18C4B8" stop-opacity="0"/></radialGradient>')
+        defs, m = iso.mark_group(iso.WHITE, uid='ia')
+    elif kind == 'blanco':
+        bg, defs_bg = f'<rect width="{W}" height="{W}" fill="#FFFFFF"/>', ''
+        defs, m = iso.mark_group(iso.NAVY, uid='ib')
+    elif kind == 'turquesa':
+        bg, defs_bg = f'<rect width="{W}" height="{W}" fill="{iso.TURQ}"/>', ''
+        defs, m = iso.mark_group(iso.NAVY, a_color=iso.WHITE, uid='it')
+    else:
+        bg, defs_bg = '', ''
+        defs, m = iso.mark_group(iso.NAVY, uid='ix')
+    body = bg + f'<g transform="translate({tx:.1f} {ty:.1f}) scale({s:.5f})">{m}</g>'
+    return svg_doc((0, 0, W, W), body, 'Axhum Tech', f'Foto de perfil de Instagram, fondo {kind}',
+                   defs_bg + defs, W, W)
+
+
 def png(svg, path, width):
     data = resvg_py.svg_to_bytes(svg_string=svg, width=width)
     open(path, 'wb').write(bytes(data))
@@ -160,6 +188,11 @@ def main():
     png(o, os.path.join(REPO, 'assets/branding/social/axhum-tech-og.png'), 1200)
     png(out['axhum-tech-logo-on-light.svg'], os.path.join(REPO, 'assets/branding/previews/axhum-tech-logo-on-light.png'), 1200)
     png(out['axhum-tech-logo-on-light.svg'], os.path.join(L, 'axhum-tech-logo-professional-50kb.png'), 900)
+    IG = os.path.join(REPO, 'assets/branding/social/instagram')
+    for kind in ('azul', 'blanco', 'turquesa', 'transparente'):
+        sv = instagram(kind)
+        open(os.path.join(IG, f'axhum-perfil-{kind}.svg'), 'w', encoding='utf-8').write(sv)
+        png(sv, os.path.join(IG, f'axhum-perfil-{kind}.png'), 1080)
     print('aspect horizontal', round(hvb[2] / hvb[3], 4))
     for n, sv in out.items():
         print(n, len(sv))
