@@ -22,6 +22,8 @@ quedo respaldado localmente en `_legacy/branding-circular-2026-11-12/`).
 - `social/instagram/axhum-perfil-*.{svg,png}`: fotos de perfil 1080x1080 (azul marino con degradado,
   blanco, turquesa y transparente), con el isotipo dentro del circulo de recorte. Se generan con
   `generador/gen.py`.
+- `social/instagram/destacadas/`: portadas de destacadas (Gestion, Referencias, Paginas Web),
+  1080x1080 con icono turquesa sobre azul marino; se generan con `generador/destacadas.py`.
 - `source/axhum-tech-logo-master.png` es el raster del logo anterior; no usarlo en piezas nuevas.
 - Las derivaciones raster se generan desde los SVG.
 - Los placeholders anteriores viven en `_legacy/branding-v1-placeholder-20260802/`.

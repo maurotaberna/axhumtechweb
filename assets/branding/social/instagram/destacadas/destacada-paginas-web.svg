@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080"><title>Axhum Tech - destacada paginas-web</title><defs><radialGradient id="g" cx="1" cy="1" r="1.05"><stop offset="0" stop-color="#18C4B8" stop-opacity=".38"/><stop offset=".6" stop-color="#18C4B8" stop-opacity="0"/></radialGradient></defs><rect width="1080" height="1080" fill="#0F172A"/><rect width="1080" height="1080" fill="url(#g)"/><g fill="none" stroke="#18C4B8" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="280" y="320" width="520" height="440" rx="34"/>
+      <path d="M280 420 H800"/>
+      <circle cx="340" cy="370" r="12" fill="#18C4B8" stroke="none"/>
+      <circle cx="385" cy="370" r="12" fill="#18C4B8" stroke="none"/>
+      <circle cx="430" cy="370" r="12" fill="#18C4B8" stroke="none"/>
+      <rect x="345" y="480" width="180" height="210" rx="16"/>
+      <path d="M580 500 H735 M580 570 H735 M580 640 H690"/></g></svg>

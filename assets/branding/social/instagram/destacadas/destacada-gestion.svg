@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080"><title>Axhum Tech - destacada gestion</title><defs><radialGradient id="g" cx="1" cy="1" r="1.05"><stop offset="0" stop-color="#18C4B8" stop-opacity=".38"/><stop offset=".6" stop-color="#18C4B8" stop-opacity="0"/></radialGradient></defs><rect width="1080" height="1080" fill="#0F172A"/><rect width="1080" height="1080" fill="url(#g)"/><g fill="none" stroke="#18C4B8" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="290" y="330" width="500" height="330" rx="34"/>
+      <path d="M470 760 H610 M540 660 V760"/>
+      <path d="M385 585 V540 M465 585 V495 M545 585 V520 M625 585 V470" stroke-width="42"/>
+      <path d="M370 480 L465 425 L545 452 L700 400" stroke-width="28"/>
+      <circle cx="700" cy="400" r="14" fill="#18C4B8" stroke="none"/></g></svg>
