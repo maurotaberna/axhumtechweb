@@ -35,7 +35,7 @@ test('restores dark before parsing and persists explicit choices', () => {
   const p = page('dark');
   assert.equal(p.initial, 'dark');
   assert.equal(p.attributes['aria-pressed'], 'true');
-  assert.equal(p.meta.content, '#101e2d');
+  assert.equal(p.meta.content, '#0F172A');
   p.click();
   assert.equal(p.saved(), 'light');
   assert.equal(p.attributes.title, 'Activar modo oscuro');

@@ -53,7 +53,7 @@ function head(locale, page, title, description) {
 <meta property="og:locale" content="${spec.tag}"><meta property="og:title" content="${h(title)}"><meta property="og:description" content="${h(description)}"><meta property="og:url" content="${url}">
 <meta property="og:image" content="${origin}/assets/branding/social/axhum-tech-og.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="${locale === 'es' ? '../../public/' : '../../../public/'}favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="${prefix}theme.js"></script><link rel="stylesheet" href="${prefix}styles.css">
 <script src="${prefix}analytics.js" defer></script><script src="${prefix}script.js" defer></script>
 <script type="application/ld+json">${JSON.stringify(schema)}</script>`;
@@ -64,7 +64,7 @@ function header(locale, page) {
   const nav = pageKeys.map((key, index) =>
     `<a href="${link(locale, key)}"${key === page ? ' aria-current="page"' : ''}>${h(shared.nav[index])}</a>`).join('');
   return `<a class="skip-link" href="#contenido">${h(shared.skip)}</a><header class="site-header"><div class="shell header-inner">
-<a class="brand" href="${link(locale, 'home')}" aria-label="Axhum Tech"><img class="logo-light" src="${assets(locale)}branding/logos/axhum-tech-logo-on-light.svg" alt="Axhum Tech" width="178" height="52"><img class="logo-dark" src="${assets(locale)}branding/logos/axhum-tech-logo-on-dark.svg" alt="" width="178" height="52"></a>
+<a class="brand" href="${link(locale, 'home')}" aria-label="Axhum Tech"><img class="logo-light" src="${assets(locale)}branding/logos/axhum-tech-logo-on-light.svg" alt="Axhum Tech" width="210" height="49"><img class="logo-dark" src="${assets(locale)}branding/logos/axhum-tech-logo-on-dark.svg" alt="" width="210" height="49"></a>
 <nav class="desktop-nav" aria-label="${h(shared.nav[0])}">${nav}</nav><div class="header-actions">
 <details class="language-menu"><summary aria-label="${h(shared.language)}">${locales[locale].code}</summary><div class="language-options">${languageLinks(locale, page)}</div></details>
 <button class="theme-toggle" type="button" data-theme-toggle aria-label="${h(shared.theme)}" aria-pressed="false" hidden><span aria-hidden="true">◐</span></button>

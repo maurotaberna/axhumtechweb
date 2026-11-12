@@ -46,17 +46,23 @@ Hacer que la tecnologia correcta este al alcance de cada negocio. Axhum Tech tra
 
 ## Identidad
 
-El isotipo oficial es la X del logo maestro circular: dos brazos azul marino a la izquierda y un chevron naranja a la derecha, contenidos por un aro multicolor. La X pertenece a Axhum Tech y no debe sustituirse por una A, una X tipografica ni la version cruzada de Operations X.
+Desde el 2026-11-12 el isotipo oficial es una A turquesa con el vertice redondeado, atravesada por una estela azul marino (blanca sobre fondos oscuros); la pata derecha termina en un corte tipo rayo. El wordmark es AXHUM TECH en Montserrat Bold (TECH en turquesa) con SOLUCIONES DIGITALES debajo. Reemplaza a la X circular anterior, que no debe volver a usarse en piezas nuevas.
 
 ## Paleta
 
-La interfaz web utiliza desde 2026-08-28 una aplicacion fria de la marca:
-blanco `#FFFFFF`, gris `#F4F6F8`, azul marino `#102D43`, texto `#152F45`
-y cobre de acento `#A65327`. Su modo oscuro usa fondo `#101E2D`, texto
-`#EEF3F8` y acento `#E3A575`. Detalles y reglas en `docs/visual-system.md`.
-Estos colores de interfaz no cambian los colores de los archivos oficiales del logo.
+Paleta oficial desde 2026-11-12:
 
-Paleta de los materiales previos (no trasladar el crema a la nueva interfaz web):
+- Turquesa `#18C4B8`: principal; acciones, destaque y marca.
+- Azul marino `#0F172A`: primario; fondos, estructura y contraste.
+- Blanco `#FFFFFF`: neutro; limpieza, equilibrio y legibilidad.
+- Gris medio `#64748B`: secundario; textos, bordes y elementos de apoyo.
+- Gris claro `#E2E8F0`: interfaz; fondos suaves y separadores.
+
+Degradado de marca: azul marino que se abre a turquesa, para paneles y piezas
+destacadas. Para texto turquesa chico sobre fondo claro se usa `#08766F`, porque
+`#18C4B8` no alcanza el contraste minimo. Tokens y reglas en `docs/visual-system.md`.
+
+Paleta de materiales anteriores (cobre y azul petroleo; NO usar en piezas nuevas):
 
 - Azul petroleo: `#0D3B4E`.
 - Azul secundario: `#3E5F6E`.
@@ -66,12 +72,12 @@ Paleta de los materiales previos (no trasladar el crema a la nueva interfaz web)
 - Amarillo: `#D4A017`.
 - Rojo: `#C0392B`.
 
-La web prioriza blanco frio, azul marino y mucho espacio. El cobre es un acento, no un fondo dominante. La X oficial se mantiene sin alteraciones ni efectos.
+La web prioriza blanco frio, azul marino y mucho espacio. El turquesa es el acento de marca, no un fondo dominante. El logo oficial se mantiene sin alteraciones ni efectos.
 
 ## Tipografia
 
-- Titulares y web: Manrope.
-- Texto de lectura: DM Sans.
+- Familia unica: Montserrat (desde 2026-11-12).
+- Titulos: Bold / SemiBold. Textos: Regular / Medium.
 - Datos y codigos de producto: IBM Plex Mono.
 
 No usar Georgia, Times New Roman ni estilos serif ornamentales en piezas nuevas.
@@ -82,10 +88,18 @@ Archivos oficiales:
 
 - `assets/branding/logos/axhum-tech-logo-on-light.svg`.
 - `assets/branding/logos/axhum-tech-logo-on-dark.svg`.
+- `assets/branding/logos/axhum-tech-logo-vertical-on-light.svg`.
+- `assets/branding/logos/axhum-tech-logo-vertical-on-dark.svg`.
 - `assets/branding/logos/axhum-mark-on-light.svg`.
 - `assets/branding/logos/axhum-mark-on-dark.svg`.
 - `assets/branding/logos/axhum-mark-square.svg`.
 - `assets/branding/logos/axhum-mark-monochrome.svg`.
+
+Isotipo: una A turquesa (#18C4B8) con el vertice redondeado, atravesada por una estela
+azul marino (#0F172A, blanca sobre fondos oscuros); la pata derecha termina con un corte
+tipo rayo. Wordmark en Montserrat Bold: AXHUM en azul marino o blanco y TECH en turquesa;
+debajo SOLUCIONES DIGITALES en Montserrat SemiBold espaciada al mismo ancho. El texto
+esta convertido a trazos. Desde el 2026-11-12 reemplaza al logo circular anterior.
 
 Firmas de producto:
 
@@ -99,14 +113,14 @@ Firmas de producto:
 - No reconstruir el logo con texto HTML.
 - No cambiar la proporcion entre isotipo y wordmark.
 - No agregar sombras, biseles ni degradados que no formen parte de los archivos oficiales.
-- No recolorear el cobre para representar advertencias o errores.
+- No usar el turquesa de marca para representar advertencias o errores.
 - No usar la version para fondo oscuro sobre una superficie clara.
-- Mantener un area libre minima equivalente al grosor del aro circular.
+- Mantener un area libre minima equivalente al grosor de la estela del isotipo.
 - Por debajo de 120 px de ancho, usar solo el isotipo.
 
 ## Estados funcionales
 
-- Marca y acciones principales: cobre o petroleo.
+- Marca y acciones principales: turquesa `#18C4B8` y azul marino `#0F172A`.
 - Informacion: azul.
 - Exito: verde.
 - Advertencia: ambar.

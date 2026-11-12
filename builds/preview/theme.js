@@ -15,7 +15,7 @@
     var dark = value === "dark";
     root.dataset.theme = dark ? "dark" : "light";
     var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.setAttribute("content", dark ? "#101e2d" : "#ffffff");
+    if (meta) meta.setAttribute("content", dark ? "#0F172A" : "#ffffff");
     document.querySelectorAll("[data-theme-toggle]").forEach(function (button) {
       button.hidden = false;
       button.setAttribute("aria-pressed", String(dark));
